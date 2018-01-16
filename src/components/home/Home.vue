@@ -12,3 +12,10 @@ export default {
   
 }
 </script>
+
+<style>
+  .content--wrap {
+    background-image: url('../../../public/pool.png');
+    align-items: flex-end;
+  }
+</style>
