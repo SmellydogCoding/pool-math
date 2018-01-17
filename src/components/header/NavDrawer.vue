@@ -16,7 +16,10 @@
           v-list-tile-title About This Course
       v-list-tile
         v-list-tile-content
-          v-list-tile-title Chapter 1 - Conversions
+          v-list-tile-title Section 1 - Conversions
+      v-list-tile(@click="")
+        v-list-tile-content
+          router-link(to="/s2p1" tag="v-list-tile-title" active-class="active") Section 2 - Area and Volume
 </template>
 
 <script>

@@ -2,8 +2,7 @@
   v-app
     app-NavDrawer
     app-header
-    v-content
-      router-view
+    router-view
     v-footer(app dark)
       span &copy; 2017
 </template>

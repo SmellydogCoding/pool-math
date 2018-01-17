@@ -1,7 +1,7 @@
 import Home from './components/home/Home.vue'
-import P1 from './components/section1/P1.vue'
+import P1 from './components/section2/P1.vue'
 
 export const routes = [
     { path: '/', component: Home },
-    { path: '/p1', component: P1 }
+    { path: '/s2p1', component: P1 }
   ]
