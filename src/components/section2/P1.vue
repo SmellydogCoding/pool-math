@@ -6,11 +6,10 @@
       v-flex(xs12)
         img(src="public/pool-rec.png")
       v-flex(xs12)
-        v-select(v-bind:items="answers" label="Select Answer" v-model.number="answer")
-        v-tooltip(left v-model="noAnswer")
-          v-btn(v-if="showAnswerButton" color="info" dark @click="answerQuestion()") Answer
-          span Please select an answer
-        v-btn(v-if="showNextButton" color="info" dark @click="nextProblem()") Next Problem
+        v-select(:items="answers" label="Select Answer" v-model.number="answer" required)
+        v-btn(v-if="showAnswerButton" color="info" light @click="answerQuestion()" :disabled="noAnswer") Answer
+        v-btn(v-if="showNextButton" color="success" dark @click="nextProblem()") Next Problem
+        v-btn(v-if="showNextButton" color="info" dark @click="newProblem()") Create a New Pool Area Problem
       v-flex(xs12)
         v-alert(v-if="showCorrect" color="success" icon="check_circle" value="true") Correct!&nbsp;&nbsp;{{length}}ft x {{width}}ft = {{correct}}ft#[sup 2]
         v-alert(v-if="showIncorrect" color="error" icon="close" value="true") Bummer!&nbsp;&nbsp;That answer is not correct.&nbsp;&nbsp;Please try again.
@@ -26,22 +25,21 @@ export default {
       answer: 0,
       correct: 250,
       answers: [15,250,125,150],
+      noAnswer: true,
       showCorrect: false,
       showIncorrect: false,
       showAnswerButton: true,
-      showNexButton: false,
-      noAnswer: false
+      showNextButton: false,
     }
   },
   computed: {
-    correctAnswer() {
-      this.correct = this.length * this.width;
+    enableAnswerButton() {
+      if (this.answer != 0) { this.noAnswer = false; }
     }
   },
   methods: {
     answerQuestion() {
-      if (this.answer === 0) { this.noAnswer = true; }
-      else if (this.answer === this.correct) {
+      if (this.answer === this.correct) {
         this.showCorrect = true;
         this.showIncorrect = false;
         this.showAnswerButton = false;
@@ -52,6 +50,34 @@ export default {
     },
     nextProblem() {
       this.$router.push('/s2p2');
+    },
+    newProblem() {
+      this.noAnswer= true;
+      this.showCorrect = false;
+      this.showIncorrect = false;
+      this.showAnswerButton = true;
+      this.showNextButton = false;
+      this.length = Math.floor(Math.random() * 50 + 1);
+      this.width = Math.floor(Math.random() * 30 + 1);
+      this.correct = this.length * this.width;
+      this.answer = 0;
+      let answerPositions = []
+      let newAnswers = [this.length + this.width, this.correct, this.correct * 0.75, this.correct * 1.5];
+      let newAnswerSet = [];
+      const getAnswerPosition = () => { 
+        return Math.floor(Math.random() * 4);
+      }
+      for (let i = 1; i < 5; i++) {
+        let number;
+        do {
+          number = getAnswerPosition();
+        } while (answerPositions.includes(number));
+        answerPositions.push(number);
+      }
+      answerPositions.forEach((index, value) => {
+        newAnswerSet[value] = newAnswers[index];
+      });
+      this.answers = newAnswerSet;
     }
   }
 }
@@ -64,5 +90,10 @@ export default {
   .alert {
     font-size: 1.5rem;
     margin-top: 1.5rem;
+  }
+  /* disabled dark theme button disappears on light background. */
+  /* fix is to use light theme button and change button color */
+  .btn {
+    color: #fff !important;
   }
 </style>

@@ -4,7 +4,7 @@
     app-header
     router-view
     v-footer(app dark)
-      span &copy; 2017
+      span &copy; 2018 Smellydog Coding
 </template>
 
 <script>
@@ -22,3 +22,9 @@
     }
   }
 </script>
+
+<style>
+ footer {
+   color: white;
+ }
+</style>
