@@ -24,6 +24,12 @@ html {
 a {
   text-decoration: none;
 }
+.active {
+    background-color: rgba(0,0,0,0.17) !important;
+  }
+li.active > a {
+  color: #1976d2 !important;
+}
  footer {
    color: white;
  }

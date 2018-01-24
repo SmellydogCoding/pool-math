@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     v-toolbar-side-icon(@click="drawer = !drawer")
-    v-navigation-drawer(v-model="drawer" dark fixed temporary)
+    v-navigation-drawer(v-model="drawer" dark fixed temporary width="350")
       v-list.pa-1
         v-list-tile(avatar tag="div")
           v-list-tile-avatar
@@ -42,7 +42,7 @@
             router-link(to="/s2p1" tag="v-list-tile" active-class="active")
               v-list-tile-content
                   v-list-tile-title 2.1 - Area of a Swimming Pool
-            router-link(to="/s2p2" tag="v-list-tile" active-class="list__tile--active")
+            router-link(to="/s2p2" tag="v-list-tile" active-class="active")
               v-list-tile-content
                   v-list-tile-title 2.2 - Area of a Hot Tub
             router-link(to="/s2p3" tag="v-list-tile" active-class="active")
@@ -94,11 +94,5 @@ export default {
   }
   .how-to .list__tile__title {
     font-size: 1.15rem;
-  }
-  .active {
-    background-color: rgba(0,0,0,0.17) !important;
-  }
-  .active .list__tile--link {
-    color: #1976d2 !important;
   }
 </style>
