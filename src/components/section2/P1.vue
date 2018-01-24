@@ -1,18 +1,26 @@
 <template lang="pug">
   v-container
-    v-layout(text-xs-center row wrap)
+    v-layout(text-xs-center row wrap justify-center)
       v-flex(xs12)
-        p.title 1. You have a rectangular pool that is {{length}} feet long and {{width}} feet wide.  What is the area of this pool?
+        p.subheading.hidden-lg-and-up 1. You have a rectangular pool that is {{length}} feet long and {{width}} feet wide.  What is the area of this pool?
+        p.title.hidden-md-and-down 1. You have a rectangular pool that is {{length}} feet long and {{width}} feet wide.  What is the area of this pool?
       v-flex(xs12)
         img(src="public/pool-rec.png")
-      v-flex(xs12)
-        v-select(:items="answers" label="Select Answer" v-model.number="answer" required)
+      v-flex(xs12 lg4)
+        v-select.mt-2(:items="answers" label="Select Answer" v-model.number="answer" required)
         v-btn(v-if="!showCorrect" color="info" light @click="answerQuestion()" :disabled="answer === 0") Answer
+    v-layout(text-xs-center row wrap justify-center)
+      v-flex(xs12 lg5)
         v-btn(v-if="showCorrect" color="success" dark @click="nextProblem()") Next Problem: Area of a Hot Tub
+          v-icon.ml-2 arrow_forward
         v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") Create a New Pool Area Problem
-      v-flex(xs12)
+          v-icon.ml-2 refresh
+    v-layout(text-xs-center row wrap justify-center)
+      v-flex(xs12 lg6)
         v-alert(v-if="showCorrect" color="success" icon="check_circle" value="true") Correct!&nbsp;&nbsp;{{length}}ft x {{width}}ft = {{correct}}ft#[sup 2]
         v-alert(v-if="showIncorrect" color="error" icon="close" value="true") Bummer!&nbsp;&nbsp;That answer is not correct.&nbsp;&nbsp;Please try again.
+      v-flex.hint(xs12 lg5 v-if="showHint")
+        v-alert(color="info" icon="info" value="true") Hint:&nbsp;&nbsp;Area = Length x Width
         
 </template>
 
@@ -23,20 +31,25 @@ export default {
       length: 25,
       width: 10,
       answer: 0,
+      attempts: 0,
       correct: 250,
       answers: [15,250,125,150],
       noAnswer: true,
       showCorrect: false,
       showIncorrect: false,
+      showHint: false
     }
   },
   methods: {
     answerQuestion() {
       if (this.answer === this.correct) {
+        this.showHint = false;
         this.showCorrect = true;
         this.showIncorrect = false;
       } else {
         this.showIncorrect = true;
+        this.attempts ++;
+        if (this.attempts >= 2) { this.showHint = true; }
       }
     },
     nextProblem() {
@@ -49,6 +62,7 @@ export default {
       this.showIncorrect = false;
       this.showAnswerButton = true;
       this.showNextButton = false;
+      this.attempts = 0;
       this.answer = 0;
       // generate random numbers needed for a new problem
       this.length = Math.floor(Math.random() * 50 + 1);
@@ -84,12 +98,15 @@ export default {
 </script>
 
 <style scoped>
-  .title {
-    margin: 2.0rem;
+  .title, .subheading {
+    margin: 0 0 1.5rem 0;
   }
+  
+  img { width: 80%; }
+  
   .alert {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
+    font-size: 1.0rem;
+    margin-top: 1.0rem;
   }
   /* disabled dark theme button disappears on light background. */
   /* fix is to use light theme button and change button color */
@@ -97,12 +114,15 @@ export default {
     color: #fff !important;
   }
 
-  @media screen and (max-width: 960px) {
-    .title {
-      margin: 0 0 1.5rem 0
+  /*Changes for Large and Up*/
+  @media screen and (min-width: 960px) {
+    img { width: 35%; }
+    
+    .alert {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
     }
-    img {
-      width: 80%;
-    }
+    
+    .hint { margin-left: 0.5rem; }
   }
 </style>
