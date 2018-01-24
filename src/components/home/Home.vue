@@ -5,12 +5,14 @@
         v-flex
           p.display-1 Welcome to Pool Math
           p.title Practice math problems that you need to master in order to pass the Certified Pool Operator Exam.
-          v-btn(color="success" dark) Let's Get Started!
+          v-btn(color="success" dark @click="letsGo") Let's Get Started!
 </template>
 
 <script>
 export default {
-  
+  methods: {
+    letsGo() { this.$router.push('/howto'); }
+  }
 }
 </script>
 

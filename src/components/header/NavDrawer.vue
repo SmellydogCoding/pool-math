@@ -13,7 +13,7 @@
               v-icon close
       v-list.pt-0(dense)
         v-divider(light)
-        router-link(to="/s1p0" tag="v-list-tile" active-class="active").expansion-panel__header.how-to
+        router-link(to="/howto" tag="v-list-tile" active-class="active").expansion-panel__header.how-to
           v-list-tile-content
             v-list-tile-title.text-xs-center How to Use This Website
         v-expansion-panel
