@@ -1,15 +1,21 @@
 <template lang="pug">
   v-toolbar.mt-0(dark)
-    app-NavDrawer
+    //- app-NavDrawer
+    v-toolbar-side-icon(@click.stop="openDrawer")
     router-link(to="/" tag="v-toolbar-title") Pool Math
 </template>
 
 <script>
-import NavDrawer from './NavDrawer.vue'
+// import NavDrawer from './NavDrawer.vue'
 
 export default {
-  components: {
-    appNavDrawer: NavDrawer
+  // components: {
+  //   appNavDrawer: NavDrawer
+  // }
+  methods: {
+    openDrawer() {
+      this.$store.dispatch('navDrawer','open');
+    }
   }
 }
 </script>

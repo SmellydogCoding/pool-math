@@ -1,7 +1,8 @@
 <template lang="pug">
   div
-    v-toolbar-side-icon(@click="drawer = !drawer")
-    v-navigation-drawer(v-model="drawer" dark fixed temporary width="350")
+    //- v-toolbar-side-icon(@click="drawer = !drawer")
+    //- v-navigation-drawer(v-model="drawer" dark fixed temporary width="350")
+    v-navigation-drawer(:value="drawerState" @input="updateDrawerState" dark fixed temporary width="350")
       v-list.pa-1
         v-list-tile(avatar tag="div")
           v-list-tile-avatar
@@ -9,7 +10,7 @@
           v-list-tile-content
             v-list-tile-title Guest
           v-list-tile-action
-            v-btn(icon @click="drawer = !drawer")
+            v-btn(icon @click="closeDrawer")
               v-icon close
       v-list.pt-0(dense)
         v-divider(light)
@@ -78,7 +79,21 @@
 
 <script>
 export default {
-  data() { return { drawer: false } }
+  data() { return { drawer: false } },
+  computed: {
+    drawerState() {
+      return this.$store.getters.navDrawer;
+    }
+  },
+  methods: {
+    updateDrawerState(state) {
+      if (!state) { this.closeDrawer(); }
+      else { this.openDrawer(); }
+      console.log(state)
+    },
+    openDrawer() { this.$store.dispatch('navDrawer','open') },
+    closeDrawer() { this.$store.dispatch('navDrawer','close') }
+  }
 }
 </script>
 

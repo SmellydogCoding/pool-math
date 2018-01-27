@@ -3,8 +3,10 @@
     v-container.d-inline-flex
       v-layout(align-center)
         v-flex
-          p.display-1 Welcome to Pool Math
-          p.title Practice math problems that you need to master in order to pass the Certified Pool Operator Exam.
+          p.headline.hidden-lg-and-up Welcome to Pool Math
+          p.display-1.hidden-md-and-down Welcome to Pool Math
+          p.subheading.hidden-lg-and-up Practice math problems that you need to master in order to pass the Certified Pool Operator Exam.
+          p.title.hidden-md-and-down Practice math problems that you need to master in order to pass the Certified Pool Operator Exam.
           v-btn(color="success" dark @click="letsGo") Let's Get Started!
 </template>
 
@@ -26,13 +28,5 @@ export default {
     background-color: rgba(200,200,200,0.8);
     width: inherit;
     margin: auto;
-  }
-  @media screen and (max-width: 960px) {
-    .display-1 {
-      font-size: 2.0rem !important;
-    }
-    .title {
-      font-size: 1.25rem !important;
-    }
   }
 </style>
