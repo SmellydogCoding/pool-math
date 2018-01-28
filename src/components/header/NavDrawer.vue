@@ -21,7 +21,7 @@
             div(slot="header") Section 1 - Conversions
             router-link(to="/s1p0" tag="v-list-tile" active-class="active")
               v-list-tile-content
-                v-list-tile-title 1.0 - Useful Conversions
+                v-list-tile-title 1.0 - About This Section
             router-link(to="/s1p1" tag="v-list-tile" active-class="active")
               v-list-tile-content
                 v-list-tile-title 1.1 - Convert ounces to pounds
@@ -33,7 +33,10 @@
                 v-list-tile-title 1.3 - Convert fluid ounces to cups
             router-link(to="/s1p4" tag="v-list-tile" active-class="active")
               v-list-tile-content
-                v-list-tile-title 1.4 - Convert inches to feet
+                v-list-tile-title 1.4 - Convert yards to feet
+            router-link(to="/s1p4" tag="v-list-tile" active-class="active")
+              v-list-tile-content
+                v-list-tile-title 1.5 - Convert inches to feet
           v-expansion-panel-content
             div(slot="header") Section 2 - Area and Volume
             router-link(to="/s2p0" tag="v-list-tile" active-class="active")
