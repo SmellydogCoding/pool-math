@@ -12,19 +12,21 @@
               v-stepper-step(step="3")
             v-stepper-items
               v-stepper-content(step="1")
-                v-card(height="400px")
+                v-card(height="425px")
                   v-card-media.center-image(src="../../../public/ruler.jpg" height="200px")
                   v-card-title
-                    p.title.ma-a Conversions
+                    p.subheading.hidden-lg-and-up.ma-a Conversions
+                    p.title.hidden-md-and-down.ma-a Conversions
                   v-card-text
                     div
                       p In this section we will practice conversions that you will need as a Certified Pool Operator.
                   v-card-actions
-                    v-btn(color="primary" @click.native="e1 = 2") Continue
+                    v-btn.align-stepper-bottom.mb-2(color="primary" @click.native="e1 = 2") Continue
               v-stepper-content(step="2")
-                v-card(height="400px")
+                v-card(height="425px")
                   v-card-title
-                    p.title.ma-a In this section we will practice converting:
+                    p.subheading.hidden-lg-and-up.ma-a In this section we will practice converting:
+                    p.title.hidden-md-and-down.ma-a In this section we will practice converting:
                   v-card-text
                     ul.ml-4
                       li Ounces to Pounds
@@ -36,9 +38,10 @@
                   v-card-actions.align-stepper-bottom.mb-1
                     v-btn(color="primary" @click.native="e1 = 3") Continue
               v-stepper-content(step="3")
-                v-card(height="400px")
+                v-card(height="425px")
                   v-card-title
-                    p.title.ma-a In this section we will use these formulas:
+                    p.subheading.hidden-lg-and-up.ma-a In this section we will use these formulas:
+                    p.title.hidden-md-and-down.ma-a In this section we will use these formulas:
                   v-card-text
                     table.ma-a
                       tr
@@ -57,9 +60,9 @@
                         td Convert Inches to Feet:
                         td Inches / 12 = Feet
                     tfoot.ml-4 Key:&nbsp;&nbsp;* - means Multiply&nbsp;&nbsp;&nbsp;&nbsp;/ - means Divide
-                    p.mt-4 These formulas are also on page 00 of your Pool and Spa Operator Handbook.
+                    p.mt-2 These formulas are also on page 00 of your Pool and Spa Operator Handbook.
                   v-card-actions.align-stepper-bottom.mb-1
-                    v-btn(color="success" dark @click="nextProblem()") Go to Problem 1 - Convert Ounces to Pounds
+                    v-btn(color="success" dark @click="nextProblem()") Problem 1 - Convert Ounces to Pounds
                       v-icon.ml-2 arrow_forward
 </template>
 
@@ -91,9 +94,16 @@
     background-color: rgba(0,0,0,0.17);
   }
   td {
-    padding: 0.5rem 1.0rem;
+    padding: 0.5rem;
+    font-size: 0.95rem;
   }
   tfoot {
     font-size: 0.85rem;
+  }
+   @media screen and (min-width: 600px) {
+    td {
+      padding: 0.5rem 1.0rem;
+      font-size: 1.0rem;
+    }
   }
 </style>
