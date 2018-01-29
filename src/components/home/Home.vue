@@ -17,22 +17,12 @@ export default {
 </script>
 
 <style scoped>
-  .content--wrap {
-    background-image: url('../../../public/pool.png');
-    background-size: cover;
-    align-items: center;
-  }
+  .content--wrap { background-image: url('../../../public/pool.png'); }
+  
   .container {
     background-color: rgba(200,200,200,0.8);
     width: inherit;
     margin: auto;
   }
-  @media screen and (max-width: 960px) {
-    .display-1 {
-      font-size: 2.0rem !important;
-    }
-    .title {
-      font-size: 1.25rem !important;
-    }
-  }
+  
 </style>

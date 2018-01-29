@@ -15,18 +15,16 @@
                 v-card(height="425px")
                   v-card-media.center-image(src="../../../public/ruler.jpg" height="200px")
                   v-card-title
-                    p.subheading.hidden-lg-and-up.ma-a Conversions
-                    p.title.hidden-md-and-down.ma-a Conversions
+                    p.title.ma-a Conversions
                   v-card-text
                     div
                       p In this section we will practice conversions that you will need as a Certified Pool Operator.
                   v-card-actions
-                    v-btn.align-stepper-bottom.mb-2(color="primary" @click.native="e1 = 2") Continue
+                    v-btn.align-stepper-bottom.mb-3(color="primary" @click.native="e1 = 2") Continue
               v-stepper-content(step="2")
                 v-card(height="425px")
                   v-card-title
-                    p.subheading.hidden-lg-and-up.ma-a In this section we will practice converting:
-                    p.title.hidden-md-and-down.ma-a In this section we will practice converting:
+                    p.title.ma-a In this section we will practice converting:
                   v-card-text
                     ul.ml-4
                       li Ounces to Pounds
@@ -40,8 +38,7 @@
               v-stepper-content(step="3")
                 v-card(height="425px")
                   v-card-title
-                    p.subheading.hidden-lg-and-up.ma-a In this section we will use these formulas:
-                    p.title.hidden-md-and-down.ma-a In this section we will use these formulas:
+                    p.title.ma-a In this section we will use these formulas:
                   v-card-text
                     table.ma-a
                       tr
@@ -76,15 +73,8 @@
 </script>
 
 <style scoped>
-  .content--wrap {
-    background-image: url('../../../public/water.jpg');
-    background-size: cover;
-    align-items: center;
-  }
-  .align-stepper-bottom {
-    position: absolute;
-    bottom: 0;
-  }
+  .content--wrap { background-image: url('../../../public/water.jpg'); }
+  
   table {
     border-collapse: collapse;
     border: 1px solid #ccc;

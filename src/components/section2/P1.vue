@@ -1,33 +1,35 @@
 <template lang="pug">
-  v-container
-    v-layout(text-xs-center row wrap justify-center)
-      v-flex(xs12)
-        p.subheading.hidden-lg-and-up 1. You have a rectangular pool that is {{length}} feet long and {{width}} feet wide.  What is the area of this pool?
-        p.title.hidden-md-and-down 1. You have a rectangular pool that is {{length}} feet long and {{width}} feet wide.  What is the area of this pool?
-      v-flex(xs12)
-        img(src="public/pool-rec.png")
-      v-flex(xs12 lg4)
-        v-select.mt-2(:items="answers" label="Select Answer" v-model.number="answer" required)
-        v-btn(v-if="!showCorrect" color="info" light @click="answerQuestion()" :disabled="answer === 0") Answer
-    v-layout(text-xs-center row wrap justify-center)
-      v-flex(xs12 lg5)
-        v-btn(v-if="showCorrect" color="success" dark @click="nextProblem()") Next Problem: Area of a Hot Tub
-          v-icon.ml-2 arrow_forward
-        v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") Create a New Pool Area Problem
-          v-icon.ml-2 refresh
-    v-layout(text-xs-center row wrap justify-center)
-      v-flex(xs12 lg6)
-        v-alert(v-if="showCorrect" color="success" icon="check_circle" value="true") Correct!&nbsp;&nbsp;{{length}}ft x {{width}}ft = {{correct}}ft#[sup 2]
-        v-alert(v-if="showIncorrect" color="error" icon="close" value="true") Bummer!&nbsp;&nbsp;That answer is not correct.&nbsp;&nbsp;Please try again.
-      v-flex.hint(xs12 lg5 v-if="showHint")
-        v-alert(color="info" icon="info" value="true") Hint:&nbsp;&nbsp;Area = Length x Width
-        
+  v-content
+    v-container
+      v-layout(text-xs-center row wrap justify-center)
+        v-flex(xs12).my-2
+          p.title {{ title }}
+      v-layout(text-xs-center row wrap justify-center)
+        v-flex(xs12 lg4)
+          img.problem-image(:src="img")
+      v-layout(text-xs-center row wrap justify-center)
+        v-flex.select-background.px-2(xs12 lg4)
+          v-select.mt-2(v-if="!showCorrect" :items="answers" label="Select Answer" v-model.number="answer" required)
+          v-btn.color--white(v-if="!showCorrect" color="info" light @click="answerQuestion()" :disabled="answer === 0") Answer
+          app-HintModal(:hintTitle="hintTitle" :hintText="hintText" :width="hintWidth" v-if="showHintButton")
+      v-layout(text-xs-center row wrap justify-center)
+        v-flex(xs12 lg6)
+          v-alert.title(v-if="showCorrect" color="success" icon="check_circle" value="true") {{ correctMessage }}
+          v-alert.title(v-if="showIncorrect" color="error" icon="close" value="true") {{ incorrectMessage }}
+      v-layout.mt-3(text-xs-center row wrap justify-center)
+        v-flex(xs12 lg5)
+          v-btn(v-if="showCorrect" color="success" dark @click="nextProblem()") {{ next }}
+            v-icon.ml-2 arrow_forward
+          v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") {{ redo }}
+            v-icon.ml-2 refresh
 </template>
 
 <script>
+import HintModal from '../hints/TextHint.vue'
 export default {
   data() {
     return {
+      img: 'public/pool-rec.png',
       length: 25,
       width: 10,
       answer: 0,
@@ -37,26 +39,39 @@ export default {
       noAnswer: true,
       showCorrect: false,
       showIncorrect: false,
-      showHint: false
+      showHintButton: false,
+      hintTitle: 'Hint for Problem 1',
+      hintText: 'Area = Length * Width',
+      hintWidth: '500px',
+      next: 'Problem 2: Area of a Hot Tub',
+      redo: 'New Pool Area Problem'
     }
+  },
+  components: {
+    appHintModal: HintModal
+  },
+  computed: {
+    title() { return `1. You have a rectangular pool that is ${this.length} feet long and ${this.width} feet wide.\u00A0\u00A0What is the area of this pool?` },
+    correctMessage() { return `Correct!\u00A0\u00A0${this.length} ft * ${this.width} ft = ${this.correct} ft\u00B2` },
+    incorrectMessage() { return `Bummer!\u00A0\u00A0That answer is not correct.\u00A0\u00A0Please try again.` }
   },
   methods: {
     answerQuestion() {
       if (this.answer === this.correct) {
-        this.showHint = false;
+        this.showHintButton = false;
         this.showCorrect = true;
         this.showIncorrect = false;
       } else {
         this.showIncorrect = true;
         this.attempts ++;
-        if (this.attempts >= 2) { this.showHint = true; }
+        if (this.attempts >= 2) { this.showHintButton = true; }
       }
     },
     nextProblem() {
       this.$router.push('/s2p2');
     },
     newProblem() {
-      // state reset
+      // state reset - reusable
       this.noAnswer= true;
       this.showCorrect = false;
       this.showIncorrect = false;
@@ -64,15 +79,16 @@ export default {
       this.showNextButton = false;
       this.attempts = 0;
       this.answer = 0;
-      // generate random numbers needed for a new problem
+      let answerPositions = []
+      let newAnswerSet = [];
+      
+      // generate random numbers and create new answer set - change as needed per problem
       this.length = Math.floor(Math.random() * 50 + 1);
       this.width = Math.floor(Math.random() * 30 + 1);
       this.correct = this.length * this.width;
-      //create new answer set
-      let answerPositions = []
       let newAnswers = [this.length + this.width, this.correct, this.correct * 0.75, this.correct * 1.5];
-      let newAnswerSet = [];
-      // create an array with numbers 0-3 in random order. eg: [1,3,0,2]  These are the index positions for the new answers above
+      
+      // create an array with numbers 0-3 in random order. eg: [1,3,0,2]  These are the index positions for the new answers above - reusable
       const getAnswerPosition = () => { 
         return Math.floor(Math.random() * 4);
       }
@@ -98,31 +114,6 @@ export default {
 </script>
 
 <style scoped>
-  .title, .subheading {
-    margin: 0 0 1.5rem 0;
-  }
-  
-  img { width: 80%; }
-  
-  .alert {
-    font-size: 1.0rem;
-    margin-top: 1.0rem;
-  }
-  /* disabled dark theme button disappears on light background. */
-  /* fix is to use light theme button and change button color */
-  .btn {
-    color: #fff !important;
-  }
-
-  /*Changes for Large and Up*/
-  @media screen and (min-width: 960px) {
-    img { width: 35%; }
-    
-    .alert {
-      font-size: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    
-    .hint { margin-left: 0.5rem; }
-  }
+  .content--wrap { align-items: start; }
+  .select-background { background-color: rgba(256,256,256,0.8); }
 </style>
