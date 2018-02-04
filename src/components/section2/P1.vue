@@ -5,23 +5,25 @@
         v-flex(xs12).my-2
           p.title {{ title }}
       v-layout(text-xs-center row wrap justify-center)
-        v-flex(xs12 lg4)
-          img.problem-image(:src="img")
-      v-layout(text-xs-center row wrap justify-center)
-        v-flex.select-background.px-2(xs12 lg4)
-          v-select.mt-2(v-if="!showCorrect" :items="answers" label="Select Answer" v-model.number="answer" required)
-          v-btn.color--white(v-if="!showCorrect" color="info" light @click="answerQuestion()" :disabled="answer === 0") Answer
-          app-HintModal(:hintTitle="hintTitle" :hintText="hintText" :width="hintWidth" v-if="showHintButton")
-      v-layout(text-xs-center row wrap justify-center)
         v-flex(xs12 lg6)
-          v-alert.title(v-if="showCorrect" color="success" icon="check_circle" value="true") {{ correctMessage }}
-          v-alert.title(v-if="showIncorrect" color="error" icon="close" value="true") {{ incorrectMessage }}
-      v-layout.mt-3(text-xs-center row wrap justify-center)
-        v-flex(xs12 lg5)
-          v-btn(v-if="showCorrect" color="success" dark @click="nextProblem()") {{ next }}
-            v-icon.ml-2 arrow_forward
-          v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") {{ redo }}
-            v-icon.ml-2 refresh
+          img.problem-image(:src="img")
+        v-flex.select-background.px-2(xs12 lg6)
+          v-select.mt-2(:items="answers" label="Select Answer" v-model.number="answer" :disabled="showCorrect")
+          v-btn.color--white(color="info" light @click="answerQuestion()" :disabled="answer === 0 || showCorrect") Answer
+          transition(name="fade")
+            app-HintModal(:hintTitle="hintTitle" :hintText="hintText" :width="hintWidth" v-if="showHintButton")
+          v-layout(text-xs-center row wrap justify-center)
+            v-flex(xs12)
+              transition(name="fade" mode="out-in")
+                v-alert.title(v-if="showCorrect" color="success" icon="check_circle" value="true") {{ correctMessage }}
+                v-alert.title(v-if="showIncorrect" color="error" icon="close" value="true") {{ incorrectMessage }}
+          v-layout.mt-3(text-xs-center row wrap justify-center)
+            transition(name="fade")
+              v-flex(xs12)
+                v-btn(v-if="showCorrect" color="success" dark @click="nextProblem()") {{ next }}
+                  v-icon.ml-2 arrow_forward
+                v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") {{ redo }}
+                  v-icon.ml-2 refresh
 </template>
 
 <script>
@@ -116,4 +118,6 @@ export default {
 <style scoped>
   .content--wrap { align-items: start; }
   .select-background { background-color: rgba(256,256,256,0.8); }
+  .fade-enter-active, .fade-leave-active { transition: opacity .5s; }
+  .fade-enter, .fade-leave-to { opacity: 0; }
 </style>
