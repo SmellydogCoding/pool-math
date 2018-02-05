@@ -35,11 +35,23 @@
   /* for route transitions - page slides under the nav bar */
   nav { z-index: 6; }
   
-  .content--wrap {
+  .content--wrap { align-items: center; }
+  
+  /*background image opacity*/
+  .content--wrap::before {
+    content: "";
     background-image: url('../public/water.jpg');
     background-size: cover;
-    align-items: center;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;   
   }
+  
+  .content, footer { z-index: 1; }
   
   .active { background-color: rgba(0,0,0,0.17) !important; }
   

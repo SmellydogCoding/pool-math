@@ -55,7 +55,7 @@ export default {
             {link: '/s2p5', title: '2.5 - Volume of Water in a Hot Tub'},
             {link: '/s2p6', title: '2.6 - Volume of Water in a Hot Tub With Seats'},
             {link: '/s2p7', title: '2.7 - Volume of Water Loss in a Swimming Pool'},
-            {link: '/s2p7', title: '2.8 - Volume of Water Loss in a Hot Tub'}
+            {link: '/s2p8', title: '2.8 - Volume of Water Loss in a Hot Tub'}
           ]
         },
         {

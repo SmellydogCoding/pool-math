@@ -57,7 +57,7 @@
                         td Convert Inches to Feet:
                         td Inches / 12 = Feet
                     tfoot.ml-4 Key:&nbsp;&nbsp;* - means Multiply&nbsp;&nbsp;&nbsp;&nbsp;/ - means Divide
-                    p.mt-2 These formulas are also on page 00 of your Pool and Spa Operator Handbook.
+                    p.mt-2 These formulas are also on page 26 of your Pool and Spa Operator Handbook.
                   v-card-actions.align-stepper-bottom.mb-1
                     v-btn(color="success" dark @click="nextProblem()") Problem 1 - Convert Ounces to Pounds
                       v-icon.ml-2 arrow_forward
@@ -73,8 +73,6 @@
 </script>
 
 <style scoped>
-  .content--wrap { background-image: url('../../../public/water.jpg'); }
-  
   table {
     border-collapse: collapse;
     border: 1px solid #ccc;
