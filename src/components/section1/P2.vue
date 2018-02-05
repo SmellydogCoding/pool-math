@@ -31,29 +31,29 @@ import HintModal from '../hints/TextHint.vue'
 export default {
   data() {
     return {
-      img: 'public/pool-image1.jpg',
-      amount: 24,
+      img: 'public/pool-image2.jpg',
+      amount: 260,
       answer: 0,
       attempts: 0,
-      correct: 1.5,
-      answers: [12,6,1.5,3],
+      correct: 2.03,
+      answers: [2.03,16.25,4.06,8.13],
       noAnswer: true,
       showCorrect: false,
       showIncorrect: false,
       showHintButton: false,
-      hintTitle: 'Hint for Problem 1',
-      hintText: 'Ounces / 16 = Pounds',
+      hintTitle: 'Hint for Problem 2',
+      hintText: 'Fluid Ounces / 128 = Gallons',
       hintWidth: '500px',
-      next: 'Problem 2: Fluid Ounces to Gallons',
-      redo: 'New Ounces to Pounds Problem'
+      next: 'Problem 3: Fluid Ounces to Cups',
+      redo: 'New Fluid Ounces to Gallons Problem'
     }
   },
   components: {
     appHintModal: HintModal
   },
   computed: {
-    title() { return `1. You need to add ${this.amount} Ounces of Calcium Hypochlorite to your pool to raise the free chlorine level.\u00A0\u00A0How many Pounds is this?` },
-    correctMessage() { return `Correct!\u00A0\u00A0${this.amount} Ounces / 16 = ${this.correct} Pounds.` },
+    title() { return `1. You need to add ${this.amount} Fluid Ounces of Sodium Hypochlorite to do breakpoint chlorination for your pool.\u00A0\u00A0How many Gallons is this?` },
+    correctMessage() { return `Correct!\u00A0\u00A0${this.amount} Fluid Ounces / 128 = ${this.correct} Gallons.` },
     incorrectMessage() { return `Bummer!\u00A0\u00A0That answer is not correct.\u00A0\u00A0Please try again.` }
   },
   methods: {
@@ -69,7 +69,7 @@ export default {
       }
     },
     nextProblem() {
-      this.$router.push('/s1p2');
+      this.$router.push('/s1p3');
     },
     newProblem() {
       // state reset - reusable
@@ -84,9 +84,9 @@ export default {
       let newAnswerSet = [];
       
       // generate random numbers and create new answer set - change as needed per problem
-      this.amount = Math.floor(Math.random() * 60 + 1);
-      this.correct = (this.amount / 16).toFixed(2);
-      let newAnswers = [(this.amount / 2).toFixed(2) , this.correct, (this.correct / 4).toFixed(2), (this.correct / 8).toFixed(2)];
+      this.amount = Math.floor(Math.random() * 500 + 1);
+      this.correct = (this.amount / 128).toFixed(2);
+      let newAnswers = [(this.correct * 8).toFixed(2) , this.correct, (this.correct * 4).toFixed(2), (this.correct * 0.75).toFixed(2)];
       
       // create an array with numbers 0-3 in random order. eg: [1,3,0,2]  These are the index positions for the new answers above - reusable
       const getAnswerPosition = () => { 
