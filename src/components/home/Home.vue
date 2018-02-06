@@ -4,7 +4,7 @@
       v-layout(align-center)
         v-flex
           p.display-1 Welcome to Pool Math
-          p.title Practice math problems that you need to master in order to be a Certified Pool Operator.
+          p.title Practice math problems that you need to master in order to become a Certified Pool Operator.
           v-btn(color="success" dark @click="letsGo") Let's Get Started!
 </template>
 
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-  .content--wrap { background-image: url('../../../public/pool.png'); }
+  .content--wrap { background-image: url('../../../public/img/home/home.png'); }
   .content--wrap::before { background: none; }
   
   .container {

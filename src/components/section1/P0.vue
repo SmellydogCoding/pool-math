@@ -13,7 +13,7 @@
             v-stepper-items
               v-stepper-content(step="1")
                 v-card(height="425px")
-                  v-card-media.center-image(src="../../../public/ruler.jpg" height="200px")
+                  v-card-media.center-image(src="../../../public/img/section1/overview.jpg" height="200px" alt="ruler")
                   v-card-title
                     p.title.ma-a Conversions
                   v-card-text

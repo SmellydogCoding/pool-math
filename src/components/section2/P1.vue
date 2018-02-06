@@ -6,7 +6,7 @@
           p.title {{ title }}
       v-layout(text-xs-center row wrap justify-center)
         v-flex(xs12 lg6)
-          img.problem-image(:src="img")
+          img.problem-image(:src="img" :alt="alt")
         v-flex.select-background.px-2(xs12 lg6)
           v-select.mt-2(:items="answers" label="Select Answer" v-model.number="answer" :disabled="showCorrect")
           v-btn.color--white(color="info" light @click="answerQuestion()" :disabled="answer === 0 || showCorrect") Answer
@@ -31,7 +31,8 @@ import HintModal from '../hints/TextHint.vue'
 export default {
   data() {
     return {
-      img: 'public/pool-rec.png',
+      img: 'public/img/section2/problem1.png',
+      alt: 'illustration for problem 1',
       length: 25,
       width: 10,
       answer: 0,

@@ -40,7 +40,7 @@
   /*background image opacity*/
   .content--wrap::before {
     content: "";
-    background-image: url('../public/water.jpg');
+    background-image: url('../public/img/water.jpg');
     background-size: cover;
     opacity: 0.5;
     top: 0;

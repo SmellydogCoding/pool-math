@@ -5,7 +5,7 @@
       v-list.pa-1
         v-list-tile(avatar tag="div")
           v-list-tile-avatar
-            img(:src="avatar")
+            img(:src="avatar" alt="buoy")
           v-list-tile-content
             v-list-tile-title {{ title }}
           v-list-tile-action
@@ -30,7 +30,7 @@ export default {
     return {
       drawer: false,
       width: '350',
-      avatar: '../../../public/buoy.jpg',
+      avatar: '../../../public/img/buoy.jpg',
       title: 'Menu',
       menu: [
         {

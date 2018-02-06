@@ -6,7 +6,7 @@
           p.title {{ title }}
       v-layout(text-xs-center row wrap justify-center)
         v-flex(xs12 lg6)
-          img.problem-image(:src="img")
+          img.problem-image(:src="img" :alt="alt")
         v-flex.select-background.px-2(xs12 lg6)
           v-select.mt-2(:items="answers" label="Select Answer" v-model="answer" :disabled="showCorrect")
           v-btn.color--white(color="info" light @click="answerQuestion()" :disabled="answer === 0 || showCorrect") Answer
@@ -31,7 +31,8 @@ import HintModal from '../hints/TextHint.vue'
 export default {
   data() {
     return {
-      img: 'public/pool-image5.jpg',
+      img: 'public/img/section1/problem5.jpg',
+      alt: 'pool image for problem 5',
       amount: 5,
       answer: 0,
       attempts: 0,
@@ -69,7 +70,7 @@ export default {
       }
     },
     nextProblem() {
-      this.$router.push('/s1p5');
+      this.$router.push('/s2p0');
     },
     newProblem() {
       // state reset - reusable
