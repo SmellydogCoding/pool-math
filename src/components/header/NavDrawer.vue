@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     v-toolbar-side-icon(@click="drawer = !drawer")
-    v-navigation-drawer(v-model="drawer" dark fixed temporary :width="width")
+    v-navigation-drawer.pb-0(v-model="drawer" dark fixed temporary :width="width" :height="height")
       v-list.pa-1
         v-list-tile(avatar tag="div")
           v-list-tile-avatar
@@ -30,8 +30,9 @@ export default {
     return {
       drawer: false,
       width: '350',
+      height: '1',
       avatar: '../../../public/img/buoy.jpg',
-      title: 'Menu',
+      title: 'Pool Math Problems Menu',
       menu: [
         {
           title: 'Section 1 - Conversions',
@@ -64,6 +65,44 @@ export default {
             {link: '/s3p0', title: '3.0 - About This Section'},
             {link: '/s3p1', title: '3.1 - Calculate Saturation Index'},
             {link: '/s3p2', title: '3.2 - Calculate Saturation Index - With CA'}
+          ]
+        },
+        {
+          title: 'Section 4 - Chemical Adjustments',
+          subsections: [
+            {link: '/s4p0', title: '4.0 - About This Section'},
+            {link: '/s4p1', title: '4.1 - Adding an algaecide'},
+            {link: '/s4p2', title: '4.2 - Chemical Adjustment - Raise Chlorine'},
+            {link: '/s4p3', title: '4.3 - Chemical Adjustment - Raise Alkalinity'},
+            {link: '/s4p4', title: '4.4 - Chemical Adjustment - Lower Chlorine'}
+          ]
+        },
+        {
+          title: 'Section 5 - Breakpoint Chlorination',
+          subsections: [
+            {link: '/s5p0', title: '5.0 - About This Section'},
+            {link: '/s5p1', title: '5.1 - Calculate Breakpoint'},
+            {link: '/s5p2', title: '5.2 - Breakpoint Chemical Adjustment'}
+          ]
+        },
+        {
+          title: 'Section 6 - Flow Rate and Turnover Rate',
+          subsections: [
+            {link: '/s6p0', title: '6.0 - About This Section'},
+            {link: '/s6p1', title: '6.1 - Calculate Turnover Rate - Pool'},
+            {link: '/s6p2', title: '6.2 - Calculate Turnover Rate - Hot Tub'},
+            {link: '/s6p3', title: '6.3 - Calculate Flow Rate - Pool'},
+            {link: '/s6p4', title: '6.4 - Calculate Flow Rate - Hot Tub'}
+          ]
+        },
+        {
+          title: 'Section 7 - Filter Sizing',
+          subsections: [
+            {link: '/s7p0', title: '7.0 - About This Section'},
+            {link: '/s7p1', title: '7.1 - Diatomaceous Earth - Filter Size'},
+            {link: '/s7p2', title: '7.2 - Diatomaceous Earth - Max Flow'},
+            {link: '/s7p3', title: '7.3 - Sand Filter - Filter Size'},
+            {link: '/s7p4', title: '7.4 - Sand Filter - Max Flow'}
           ]
         }
       ]

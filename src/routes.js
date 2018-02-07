@@ -6,6 +6,7 @@ import S1P2 from './components/section1/P2.vue'
 import S1P3 from './components/section1/P3.vue'
 import S1P4 from './components/section1/P4.vue'
 import S1P5 from './components/section1/P5.vue'
+import S2P0 from './components/section2/P0.vue'
 import S2P1 from './components/section2/P1.vue'
 
 export const routes = [
@@ -17,5 +18,6 @@ export const routes = [
   { path: '/s1p3', component: S1P3 },
   { path: '/s1p4', component: S1P4 },
   { path: '/s1p5', component: S1P5 },
+  { path: '/s2p0', component: S2P0 },
   { path: '/s2p1', component: S2P1 }
 ]
