@@ -9,10 +9,14 @@
               v-divider
               v-stepper-step(step="2" :complete="e1 > 2")
               v-divider
-              v-stepper-step(step="3")
+              v-stepper-step(step="3" :complete="e1 > 3")
+              v-divider
+              v-stepper-step(step="4" :complete="e1 > 4")
+              v-divider
+              v-stepper-step(step="5")
             v-stepper-items
               v-stepper-content(step="1")
-                v-card(height="425px")
+                v-card(height="475px")
                   v-card-media.center-image(src="../../../public/img/section2/overview.jpg" height="200px" alt="depth marker")
                   v-card-title
                     p.title.ma-a Area and Volume
@@ -22,7 +26,7 @@
                   v-card-actions
                     v-btn.align-stepper-bottom.mb-3.ml-2(color="primary" @click.native="e1 = 2") Continue
               v-stepper-content(step="2")
-                v-card(height="425px")
+                v-card(height="475px")
                   v-card-title
                     p.title.ma-a In this section we will use these formulas:
                   v-card-text
@@ -47,7 +51,7 @@
                   v-card-actions.align-stepper-bottom.mb-1
                     v-btn.ml-2(color="primary" @click.native="e1 = 3") Continue
               v-stepper-content(step="3")
-                v-card(height="425px")
+                v-card(height="475px")
                   v-card-text
                     v-layout(row wrap justify-center text-xs-center)
                       v-flex(xs12 md6)
@@ -58,6 +62,24 @@
                         img.problem-image(src="public/img/section2/problem2.jpg" alt="area of a hot tub")
                         p.subheading.ma-a.mt-4 Area of a Hot Tub:
                         p.body-2.ma-a Radius * Radius * 3.14
+                  v-card-actions.align-stepper-bottom.mb-1
+                    v-btn.ml-2(color="primary" @click.native="e1 = 4") Continue
+              v-stepper-content(step="4")
+                v-card(height="475px")
+                  v-card-text
+                    v-layout(row wrap justify-center text-xs-center)
+                      v-flex(xs10)
+                        img.problem-image(src="public/img/section2/problem3.jpg" alt="volume of a pool")
+                        p.body-2.ma-a Calculate the average depth first, then use it to complete the formula.
+                  v-card-actions.align-stepper-bottom.mb-1
+                     v-btn.ml-2(color="primary" @click.native="e1 = 5") Continue
+              v-stepper-content(step="5")
+                v-card(height="475px")
+                  v-card-text
+                    v-layout(row wrap justify-center text-xs-center)
+                      v-flex(xs10)
+                        img.problem-image(src="public/img/section2/problem4.jpg" alt="volume of a multi depth pool")
+                        p.body-2.ma-a If you have a pool with multiple depths, you can seperate the pool into individual sections and calculate the volume for each section.
                   v-card-actions.align-stepper-bottom.mb-1
                     v-btn.ml-2(color="success" dark @click="nextProblem()") Problem 1 - Area of Swimming Pool
                       v-icon.ml-2 arrow_forward

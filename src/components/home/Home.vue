@@ -5,14 +5,32 @@
         v-flex
           p.display-1 Welcome to Pool Math
           p.title Practice math problems that you need to master in order to become a Certified Pool Operator.
-          v-btn(color="success" dark @click="letsGo") Let's Get Started!
+          v-btn(color="success" dark @click="smallScreen") Let's Get Started!
+    v-layout(row justify-center)
+      v-dialog(v-model="small" persistent max-width="50%")
+        v-card
+          v-card-text This website is optimized for laptops and tablets with a screen resolution 960px or wider.&nbsp;&nbsp;The website will still work on smaller devices but some items may be hard to see or not render properly.
+          v-card-actions
+            v-spacer
+            v-btn(color="primary" @click.native="small = false") OK
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      small: false
+    }
+  },
   methods: {
-    letsGo() { this.$router.push('/howto'); }
-  }
+    letsGo() { this.$router.push('/howto'); },
+    smallScreen() {
+      if(window.innerWidth < 960) { 
+        this.small = true;
+      }
+    }
+  },
+  mounted: function() { this.smallScreen() }
 }
 </script>
 
