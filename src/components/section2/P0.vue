@@ -13,7 +13,11 @@
               v-divider
               v-stepper-step(step="4" :complete="e1 > 4")
               v-divider
-              v-stepper-step(step="5")
+              v-stepper-step(step="5" :complete="e1 > 5")
+              v-divider
+              v-stepper-step(step="6" :complete="e1 > 6")
+              v-divider
+              v-stepper-step(step="7")
             v-stepper-items
               v-stepper-content(step="1")
                 v-card(height="475px")
@@ -56,11 +60,11 @@
                     v-layout(row wrap justify-center text-xs-center)
                       v-flex(xs12 md6)
                         img.problem-image(src="public/img/section2/problem1.png" alt="area of a pool")
-                        p.subheading.ma-a.mt-4 Area of a Pool:
+                        p.subheading.ma-a.mt-4 Surface Area of a Pool:
                         p.body-2.ma-a Length * Width
                       v-flex(xs12 md6)
                         img.problem-image(src="public/img/section2/problem2.jpg" alt="area of a hot tub")
-                        p.subheading.ma-a.mt-4 Area of a Hot Tub:
+                        p.subheading.ma-a.mt-4 Surface Area of a Hot Tub:
                         p.body-2.ma-a Radius * Radius * 3.14
                   v-card-actions.align-stepper-bottom.mb-1
                     v-btn.ml-2(color="primary" @click.native="e1 = 4") Continue
@@ -70,7 +74,7 @@
                     v-layout(row wrap justify-center text-xs-center)
                       v-flex(xs10)
                         img.problem-image(src="public/img/section2/problem3.jpg" alt="volume of a pool")
-                        p.body-2.ma-a Calculate the average depth first, then use it to complete the formula.
+                        p.body-2.ma-a Volume is Surface Area * Average Depth.&nbsp;&nbsp;Calculate the average depth first, then use that to complete the formula.
                   v-card-actions.align-stepper-bottom.mb-1
                      v-btn.ml-2(color="primary" @click.native="e1 = 5") Continue
               v-stepper-content(step="5")
@@ -79,7 +83,25 @@
                     v-layout(row wrap justify-center text-xs-center)
                       v-flex(xs10)
                         img.problem-image(src="public/img/section2/problem4.jpg" alt="volume of a multi depth pool")
-                        p.body-2.ma-a If you have a pool with multiple depths, you can seperate the pool into individual sections and calculate the volume for each section.
+                        p.body-2.ma-a If you have a pool with multiple depths, you can seperate the pool into individual sections and calculate the volume for each section.&nbsp;&nbsp;You can add the volumes of the different sections together to get the total volume for the pool.
+                  v-card-actions.align-stepper-bottom.mb-1
+                    v-btn.ml-2(color="primary" @click.native="e1 = 6") Continue
+              v-stepper-content(step="6")
+                v-card(height="475px")
+                  v-card-text
+                    v-layout(row wrap justify-center text-xs-center)
+                      v-flex(xs10)
+                        img.problem-image(src="public/img/section2/problem5.jpg" alt="volume of a hot tub")
+                        p.body-2.ma-a Like a pool, volume of a hot tub is Surface Area * Depth.
+                  v-card-actions.align-stepper-bottom.mb-1
+                    v-btn.ml-2(color="primary" @click.native="e1 = 7") Continue
+              v-stepper-content(step="7")
+                v-card(height="475px")
+                  v-card-text
+                    v-layout(row wrap justify-center text-xs-center)
+                      v-flex(xs10)
+                        img.problem-image(src="public/img/section2/problem6.jpg" alt="volume of a hot tub with seats")
+                        p.body-2.ma-a Like a multi-depth pool, you can seperate the hot tub into 2 sections, the section above the seats and the section below the seats.&nbsp;&nbsp;You can add the volumes of the 2 sections together to get the total volume for the hot tub.
                   v-card-actions.align-stepper-bottom.mb-1
                     v-btn.ml-2(color="success" dark @click="nextProblem()") Problem 1 - Area of Swimming Pool
                       v-icon.ml-2 arrow_forward
