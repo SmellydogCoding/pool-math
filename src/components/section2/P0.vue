@@ -2,7 +2,7 @@
   v-content
     v-container.pt-0
       v-layout(row wrap justify-center)
-        v-flex(xs12 lg6)
+        v-flex(xs12 lg8)
           v-stepper.mt-3(v-model="e1" dark)
             v-stepper-header
               template(v-for="index in steps")
@@ -27,13 +27,15 @@
   import Step5 from './P0_Partials/Step5.vue';
   import Step6 from './P0_Partials/Step6.vue';
   import Step7 from './P0_Partials/Step7.vue';
+  import Step8 from './P0_Partials/Step8.vue';
+  import Step9 from './P0_Partials/Step9.vue';
   export default {
     data() { 
       return { 
         e1: 0,
         index: 0,
         height: '475px',
-        steps: 7,
+        steps: 9,
         button: 'next',
         next: {
           buttonText: 'Problem 1 - Area of a Pool',
@@ -52,7 +54,9 @@
       appStep4: Step4,
       appStep5: Step5,
       appStep6: Step6,
-      appStep7: Step7
+      appStep7: Step7,
+      appStep8: Step8,
+      appStep9: Step9
     }
   }
 </script>

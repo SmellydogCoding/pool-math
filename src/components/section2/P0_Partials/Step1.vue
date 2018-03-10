@@ -5,5 +5,5 @@
       p.title.ma-a Area and Volume
     v-card-text
       div
-        p In this section we will practice calculating the area and volume of a pool and hot tub.
+        p In this section we will practice calculating the area and volume of a pool and hot tub, as well as water loss in a pool and hot tub.
 </template>
