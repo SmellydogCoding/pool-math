@@ -1,13 +1,13 @@
-import Home from './components/home/Home.vue'
-import HowTo from './components/section0/HowTo.vue'
-import S1P0 from './components/section1/P0.vue'
-import S1P1 from './components/section1/P1.vue'
-import S1P2 from './components/section1/P2.vue'
-import S1P3 from './components/section1/P3.vue'
-import S1P4 from './components/section1/P4.vue'
-import S1P5 from './components/section1/P5.vue'
-import S2P0 from './components/section2/P0.vue'
-import S2P1 from './components/section2/P1.vue'
+const Home = () => import('./components/home/Home.vue');
+const HowTo = () => import('./components/section0/HowTo.vue');
+const S1P0 = () => import('./components/section1/P0.vue')
+const S1P1 = () => import('./components/section1/P1.vue')
+const S1P2 = () => import('./components/section1/P2.vue')
+const S1P3 = () => import('./components/section1/P3.vue')
+const S1P4 = () => import('./components/section1/P4.vue')
+const S1P5 = () => import('./components/section1/P5.vue')
+const S2P0 = () => import('./components/section2/P0.vue')
+const S2P1 = () => import('./components/section2/P1.vue')
 
 export const routes = [
   { path: '/', component: Home },

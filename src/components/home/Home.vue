@@ -5,7 +5,7 @@
         v-flex
           p.display-1 Welcome to Pool Math
           p.title Practice math problems that you need to master in order to become a Certified Pool Operator.
-          v-btn(color="success" dark @click="smallScreen") Let's Get Started!
+          v-btn(color="success" dark @click="letsGo") Let's Get Started!
     v-layout(row justify-center)
       v-dialog(v-model="small" persistent max-width="50%")
         v-card
