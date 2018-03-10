@@ -9,7 +9,7 @@
                 v-stepper-step(:step="index" v-if="index < steps" :complete="e1 > index")
                 v-divider(v-if="index < steps")
                 v-stepper-step(v-else :step="index")
-            v-stepper-items(v-for="index in steps")
+            v-stepper-items(v-for="index in steps" :key="index")
               v-stepper-content(:step="index")
                 v-card(:height="height")
                   component(:is="stepName(index)")
@@ -37,12 +37,12 @@
         button: 'next',
         next: {
           buttonText: 'Problem 1 - Area of a Pool',
-          link: '/s1p1'
+          link: '/s2p1'
         }
       } 
     },
     methods: {
-      nextProblem() { this.$router.push('/s2p1'); },
+      nextProblem() { this.$router.push(this.next.link); },
       stepName(index) { return `appStep${index}`; }
     },
     components: {

@@ -19,9 +19,9 @@
 </script>
 
 <style>
-  /*Global Styles*/
+  /* --- Global Styles --- */
   
-  html { overflow-y: auto; }
+  /* html { overflow-y: auto; } */
   
   /*Change text color for light themed button*/
   .color--white {
@@ -61,10 +61,36 @@
     position: absolute;
     bottom: 0;
   }
+
+  table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.17);
+  }
+
+  td {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  tfoot {
+    font-size: 0.85rem;
+  }
   
   footer { color: white; }
   
   .problem-image { width: 80%; }
+   
+  @media screen and (min-width: 600px) {
+    td {
+      padding: 0.5rem 1.0rem;
+      font-size: 1.0rem;
+    }
+  }
   
   @media screen and (max-width: 600px) {
     .display-1 { font-size: 2.125rem !important; }
