@@ -28,6 +28,10 @@
 
 <script>
 import HintModal from '../hints/TextHint.vue'
+import answerQuestion from '../../mixins/answerQuestion'
+import getNewAnswerSet from '../../mixins/getNewAnswerSet'
+import resetProblemState from '../../mixins/resetProblemState'
+
 export default {
   data() {
     return {
@@ -53,64 +57,26 @@ export default {
   components: {
     appHintModal: HintModal
   },
+  mixins: [answerQuestion, getNewAnswerSet, resetProblemState],
   computed: {
     title() { return `1. You have a hot tub that is ${this.diameter} ft in diameter.\u00A0\u00A0What is the surface area of this hot tub?` },
     correctMessage() { return `Correct!\u00A0\u00A0${this.radius} ft * ${this.radius} ft * 3.14 = ${this.correct} ft\u00B2` },
     incorrectMessage() { return `Bummer!\u00A0\u00A0That answer is not correct.\u00A0\u00A0Please try again.` }
   },
   methods: {
-    answerQuestion() {
-      if (this.answer === this.correct) {
-        this.showHintButton = false;
-        this.showCorrect = true;
-        this.showIncorrect = false;
-      } else {
-        this.showIncorrect = true;
-        this.attempts ++;
-        if (this.attempts >= 2) { this.showHintButton = true; }
-      }
-    },
     nextProblem() {
       this.$router.push('/s2p3');
     },
     newProblem() {
-      // state reset - reusable
-      this.noAnswer= true;
-      this.showCorrect = false;
-      this.showIncorrect = false;
-      this.showAnswerButton = true;
-      this.showNextButton = false;
-      this.attempts = 0;
-      this.answer = 0;
-      let answerPositions = []
-      let newAnswerSet = [];
+      this.resetProblemState();
       
       // generate random numbers and create new answer set - change as needed per problem
       this.diameter = Math.floor(Math.random() * 20 + 1);
       this.radius = parseFloat((this.diameter / 2).toFixed(2));
       this.correct = (this.radius * this.radius * 3.14);
-      let newAnswers = [this.diameter * this.diameter * 3.14, this.correct, this.correct * 2, this.correct * 1.5];
+      let newAnswers = [this.correct * .75, this.correct, this.correct * 1.5, this.correct / 1.5];
       
-      // create an array with numbers 0-3 in random order. eg: [1,3,0,2]  These are the index positions for the new answers above - reusable
-      const getAnswerPosition = () => { 
-        return Math.floor(Math.random() * 4);
-      }
-      for (let i = 1; i < 5; i++) {
-        let number;
-        // make sure no number is used twice in the answerPositions array
-        do {
-          number = getAnswerPosition();
-        } while (answerPositions.includes(number));
-        answerPositions.push(number);
-      }
-      // using the values in the answerPositions array as index positions and the values in the newAnswers array as values
-      // create the newAnswerSet array using newAnswerSet[answerPositions] = newAnswers
-      answerPositions.forEach((index, value) => {
-        newAnswerSet[value] = newAnswers[index];
-      });
-      // the result is the values in the newAnswers array are pushed into a new array in random positions
-      // this creates a new answer set for the new problem
-      this.answers = newAnswerSet;
+      this.answers = this.getNewAnswerSet(newAnswers);
     }
   }
 }
