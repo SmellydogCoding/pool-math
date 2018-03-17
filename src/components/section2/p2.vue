@@ -31,31 +31,31 @@ import HintModal from '../hints/TextHint.vue'
 export default {
   data() {
     return {
-      img: 'public/img/section2/problem1.png',
-      alt: 'illustration for problem 1',
-      length: 25,
-      width: 10,
+      img: 'public/img/section2/problem2.jpg',
+      alt: 'illustration for problem 2',
+      diameter: 12,
+      radius: 6,
       answer: 0,
       attempts: 0,
-      correct: 250,
-      answers: [15,250,125,150],
+      correct: 113,
+      answers: [113,36,170,150],
       noAnswer: true,
       showCorrect: false,
       showIncorrect: false,
       showHintButton: false,
-      hintTitle: 'Hint for Problem 1',
-      hintText: 'Surface Area = Length * Width',
+      hintTitle: 'Hint for Problem 2',
+      hintText: `Surface Area = Radius * Radius * 3.14<br><br>Radius = Diameter / 2`,
       hintWidth: '500px',
-      next: 'Problem 2: Area of a Hot Tub',
-      redo: 'New Pool Area Problem'
+      next: 'Problem 3: Volume of a Swimming Pool',
+      redo: 'New Hot Tub Area Problem'
     }
   },
   components: {
     appHintModal: HintModal
   },
   computed: {
-    title() { return `1. You have a rectangular pool that is ${this.length} feet long and ${this.width} feet wide.\u00A0\u00A0What is the surface area of this pool?` },
-    correctMessage() { return `Correct!\u00A0\u00A0${this.length} ft * ${this.width} ft = ${this.correct} ft\u00B2` },
+    title() { return `1. You have a hot tub that is ${this.diameter} ft in diameter.\u00A0\u00A0What is the surface area of this hot tub?` },
+    correctMessage() { return `Correct!\u00A0\u00A0${this.radius} ft * ${this.radius} ft * 3.14 = ${this.correct} ft\u00B2` },
     incorrectMessage() { return `Bummer!\u00A0\u00A0That answer is not correct.\u00A0\u00A0Please try again.` }
   },
   methods: {
@@ -71,7 +71,7 @@ export default {
       }
     },
     nextProblem() {
-      this.$router.push('/s2p2');
+      this.$router.push('/s2p3');
     },
     newProblem() {
       // state reset - reusable
@@ -86,10 +86,10 @@ export default {
       let newAnswerSet = [];
       
       // generate random numbers and create new answer set - change as needed per problem
-      this.length = Math.floor(Math.random() * 50 + 1);
-      this.width = Math.floor(Math.random() * 30 + 1);
-      this.correct = this.length * this.width;
-      let newAnswers = [this.length + this.width, this.correct, this.correct * 0.75, this.correct * 1.5];
+      this.diameter = Math.floor(Math.random() * 20 + 1);
+      this.radius = parseFloat((this.diameter / 2).toFixed(2));
+      this.correct = (this.radius * this.radius * 3.14);
+      let newAnswers = [this.diameter * this.diameter * 3.14, this.correct, this.correct * 2, this.correct * 1.5];
       
       // create an array with numbers 0-3 in random order. eg: [1,3,0,2]  These are the index positions for the new answers above - reusable
       const getAnswerPosition = () => { 

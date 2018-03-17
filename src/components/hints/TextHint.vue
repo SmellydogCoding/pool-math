@@ -4,7 +4,7 @@
     v-dialog(v-model="dialog" :width="width")
       v-card
         v-card-title.headline {{hintTitle}}
-        v-card-text {{hintText}}
+        v-card-text(v-html="hintText")
         v-card-actions
           v-spacer
           v-btn(color="primary" @click.native="dialog = !dialog") Close
