@@ -20,7 +20,7 @@
           v-layout.mt-3(text-xs-center row wrap justify-center)
             transition(name="fade")
               v-flex(xs12)
-                v-btn(v-if="showCorrect" color="success" dark @click="nextProblem()") {{ next }}
+                v-btn(v-if="showCorrect" color="success" dark @click="$router.push(nextRoute)") {{ next }}
                   v-icon.ml-2 arrow_forward
                 v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") {{ redo }}
                   v-icon.ml-2 refresh
@@ -28,9 +28,7 @@
 
 <script>
 import HintModal from '../hints/TextHint.vue'
-import answerQuestion from '../../mixins/answerQuestion'
-import getNewAnswerSet from '../../mixins/getNewAnswerSet'
-import resetProblemState from '../../mixins/resetProblemState'
+import problems from '../../mixins/problems'
 
 export default {
   data() {
@@ -41,8 +39,8 @@ export default {
       radius: 6,
       answer: 0,
       attempts: 0,
-      correct: 113,
-      answers: [113,36,170,150],
+      correct: 113.04,
+      answers: [113.04,84.78,169.56,96.08],
       noAnswer: true,
       showCorrect: false,
       showIncorrect: false,
@@ -51,31 +49,25 @@ export default {
       hintText: `Surface Area = Radius * Radius * 3.14<br><br>Radius = Diameter / 2`,
       hintWidth: '500px',
       next: 'Problem 3: Volume of a Swimming Pool',
+      nextRoute: '/s2p3',
       redo: 'New Hot Tub Area Problem'
     }
   },
-  components: {
-    appHintModal: HintModal
-  },
-  mixins: [answerQuestion, getNewAnswerSet, resetProblemState],
+  components: { appHintModal: HintModal },
+  mixins: [problems],
   computed: {
     title() { return `1. You have a hot tub that is ${this.diameter} ft in diameter.\u00A0\u00A0What is the surface area of this hot tub?` },
     correctMessage() { return `Correct!\u00A0\u00A0${this.radius} ft * ${this.radius} ft * 3.14 = ${this.correct} ft\u00B2` },
   },
   methods: {
-    nextProblem() {
-      this.$router.push('/s2p3');
-    },
     newProblem() {
       this.resetProblemState();
-      
-      // generate random numbers and create new answer set - change as needed per problem
+      // variables specific to this problem
       this.diameter = Math.floor(Math.random() * 20 + 1);
-      this.radius = parseFloat((this.diameter / 2).toFixed(2));
-      this.correct = (this.radius * this.radius * 3.14);
-      let newAnswers = [this.correct * .75, this.correct, this.correct * 1.5, this.correct / 1.5];
-
-      this.answers = this.getNewAnswerSet(newAnswers);
+      this.radius = this.diameter / 2;
+      this.correct = parseFloat((this.radius * this.radius * 3.14).toFixed(2));
+      //
+      this.answers = this.getNewAnswerSet(this.correct);
     }
   }
 }
