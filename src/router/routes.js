@@ -1,14 +1,14 @@
-const Home = () => import('./components/home/Home.vue');
-const HowTo = () => import('./components/section0/HowTo.vue');
-const S1P0 = () => import('./components/section1/P0.vue')
-const S1P1 = () => import('./components/section1/P1.vue')
-const S1P2 = () => import('./components/section1/P2.vue')
-const S1P3 = () => import('./components/section1/P3.vue')
-const S1P4 = () => import('./components/section1/P4.vue')
-const S1P5 = () => import('./components/section1/P5.vue')
-const S2P0 = () => import('./components/section2/P0.vue')
-const S2P1 = () => import('./components/section2/P1.vue')
-const S2P2 = () => import('./components/section2/P2.vue')
+const Home = () => import('../components/home/Home.vue');
+const HowTo = () => import('../components/section0/HowTo.vue');
+const S1P0 = () => import('../components/section1/P0.vue')
+const S1P1 = () => import('../components/section1/P1.vue')
+const S1P2 = () => import('../components/section1/P2.vue')
+const S1P3 = () => import('../components/section1/P3.vue')
+const S1P4 = () => import('../components/section1/P4.vue')
+const S1P5 = () => import('../components/section1/P5.vue')
+const S2P0 = () => import('../components/section2/P0.vue')
+const S2P1 = () => import('../components/section2/P1.vue')
+const S2P2 = () => import('../components/section2/P2.vue')
 
 export const routes = [
   { path: '/', component: Home, meta: { title: 'Welcome to Pool Math' } },
