@@ -74,8 +74,8 @@ export default {
 </script>
 
 <style scoped>
-  .content--wrap { align-items: start; }
+  /* .content--wrap { align-items: start; }
   .select-background { background-color: rgba(256,256,256,0.8); }
   .fade-enter-active, .fade-leave-active { transition: opacity .5s; }
-  .fade-enter, .fade-leave-to { opacity: 0; }
+  .fade-enter, .fade-leave-to { opacity: 0; } */
 </style>

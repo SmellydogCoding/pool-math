@@ -1,0 +1,87 @@
+
+/* Change text color for light themed button */
+.color--white { color: #fff !important; }
+
+/* helpers */
+.ma-a { margin: auto; }
+a { text-decoration: none; }
+
+/* route transitions */
+nav { z-index: 6; } /* page slides under nav bar */
+.content, footer { z-index: 1; }
+
+/* page transitions */
+.slide-enter-active, .slide-leave-active { transition: all 1s; }
+.slide-enter { opacity: 0; }
+.slide-leave-to { transform: translateY(-100%); }
+
+/* fade */
+.fade-enter-active, .fade-leave-active { transition: opacity .5s; }
+.fade-enter, .fade-leave-to { opacity: 0; }
+
+/* route active classes */
+.active { background-color: rgba(0,0,0,0.17) !important; }
+li.active > a { color: #1976d2 !important; }
+
+/* problems */
+
+/* page background */
+.content--wrap::before {
+  content: "";
+  background-image: url('../public/img/water.jpg');
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;   
+}
+.content--wrap { align-items: start; }
+.problem-image { width: 80%; }
+.select-background { background-color: rgba(256,256,256,0.8); }
+
+/* section intros (stepper) */
+
+.align-stepper-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0,0,0,0.17);
+}
+
+td {
+  padding: 0.5rem;
+  font-size: 0.95rem;
+}
+
+tfoot {
+  font-size: 0.85rem;
+}
+
+/* footer */
+footer { color: white; }
+
+/* responsive */
+@media screen and (min-width: 600px) {
+  td {
+    padding: 0.5rem 1.0rem;
+    font-size: 1.0rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .display-1 { font-size: 2.125rem !important; }
+  .title { font-size: 1.25rem !important; }
+  .subheading { font-size: 0.875rem !important; }
+  .dialog--active { width: 60%; }
+}

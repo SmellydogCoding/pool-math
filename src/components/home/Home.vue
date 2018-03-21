@@ -37,6 +37,7 @@ export default {
 <style scoped>
   .content--wrap { background-image: url('../../../public/img/home/home.png'); }
   .content--wrap::before { background: none; }
+  .content--wrap { align-items: center; }
   
   .container {
     background-color: rgba(200,200,200,0.8);

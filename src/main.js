@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.css'
+import './global.css'
 import router from './router/router'
 
 Vue.use(Vuetify)
