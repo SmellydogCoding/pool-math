@@ -61,7 +61,6 @@ export default {
   computed: {
     title() { return `1. You have a hot tub that is ${this.diameter} ft in diameter.\u00A0\u00A0What is the surface area of this hot tub?` },
     correctMessage() { return `Correct!\u00A0\u00A0${this.radius} ft * ${this.radius} ft * 3.14 = ${this.correct} ft\u00B2` },
-    incorrectMessage() { return `Bummer!\u00A0\u00A0That answer is not correct.\u00A0\u00A0Please try again.` }
   },
   methods: {
     nextProblem() {
@@ -75,7 +74,7 @@ export default {
       this.radius = parseFloat((this.diameter / 2).toFixed(2));
       this.correct = (this.radius * this.radius * 3.14);
       let newAnswers = [this.correct * .75, this.correct, this.correct * 1.5, this.correct / 1.5];
-      
+
       this.answers = this.getNewAnswerSet(newAnswers);
     }
   }
