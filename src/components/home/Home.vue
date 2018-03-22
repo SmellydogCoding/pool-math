@@ -5,7 +5,7 @@
         v-flex
           p.display-1 Welcome to Pool Math
           p.title Practice math problems that you need to master in order to become a Certified Pool Operator.
-          v-btn(color="success" dark @click="letsGo") Let's Get Started!
+          v-btn(color="success" dark @click="$router.push(nextRoute)") Let's Get Started!
     v-layout(row justify-center)
       v-dialog(v-model="small" persistent max-width="50%")
         v-card
@@ -19,18 +19,18 @@
 export default {
   data() {
     return {
-      small: false
+      small: false,
+      nextRoute: '/howto'
     }
   },
   methods: {
-    letsGo() { this.$router.push('/howto'); },
     smallScreen() {
       if(window.innerWidth < 960) { 
         this.small = true;
       }
     }
   },
-  mounted: function() { this.smallScreen() }
+  mounted: function() { this.smallScreen() } // show warning that the app does not fuction as well on small screens less than 960px
 }
 </script>
 

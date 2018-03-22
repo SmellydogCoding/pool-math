@@ -20,9 +20,9 @@
           v-layout.mt-3(text-xs-center row wrap justify-center)
             transition(name="fade")
               v-flex(xs12)
-                v-btn(v-if="showCorrect" color="success" dark @click="$router.push(nextRoute)") {{ next }}
+                v-btn(v-if="showCorrect" color="success" dark @click="$router.push(nextRoute)") {{ nextText }}
                   v-icon.ml-2 arrow_forward
-                v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") {{ redo }}
+                v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") {{ newProblemText }}
                   v-icon.ml-2 refresh
 </template>
 
@@ -48,9 +48,9 @@ export default {
       hintTitle: 'Hint for Problem 2',
       hintText: `Surface Area = Radius * Radius * 3.14<br><br>Radius = Diameter / 2`,
       hintWidth: '500px',
-      next: 'Problem 3: Volume of a Swimming Pool',
+      nextText: 'Problem 3: Volume of a Swimming Pool',
       nextRoute: '/s2p3',
-      redo: 'New Hot Tub Area Problem'
+      newProblemText: 'New Hot Tub Area Problem'
     }
   },
   components: { appHintModal: HintModal },
@@ -72,10 +72,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  /* .content--wrap { align-items: start; }
-  .select-background { background-color: rgba(256,256,256,0.8); }
-  .fade-enter-active, .fade-leave-active { transition: opacity .5s; }
-  .fade-enter, .fade-leave-to { opacity: 0; } */
-</style>
