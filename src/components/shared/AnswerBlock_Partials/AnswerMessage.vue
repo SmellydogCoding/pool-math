@@ -1,12 +1,12 @@
 <template lang="pug">
   v-flex(xs12)
     transition(name="fade" mode="out-in")
-      v-alert.title(v-if="showCorrect" color="success" icon="check_circle" value="true") {{ correctMessage }}
-      v-alert.title(v-if="showIncorrect" color="error" icon="close" value="true") {{ incorrectMessage }}
+      v-alert.title(v-if="data.showCorrect" color="success" icon="check_circle" value="true") {{ data.correctMessage }}
+      v-alert.title(v-if="data.showIncorrect" color="error" icon="close" value="true") {{ data.incorrectMessage }}
 </template>
 
 <script>
 export default {
-  props: ['correctMessage', 'incorrectMessage', 'showCorrect', 'showIncorrect']
+  computed: { data() { return this.$store.getters.answerMessage } }
 }
 </script>

@@ -13,8 +13,8 @@ export default {
     }
   },
   methods: {
-    answerQuestion() {
-      if (this.answer === this.correct) {
+    answerQuestion(correct) {
+      if (this.answer === correct) {
         this.showHintButton = false;
         this.showCorrect = true;
         this.showIncorrect = false;
