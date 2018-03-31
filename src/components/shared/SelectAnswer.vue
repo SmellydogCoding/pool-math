@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import HintModal from '../../hints/TextHint'
+import HintModal from '../hints/TextHint'
 export default {
    data () {
     return { answer: 0 }

@@ -105,6 +105,7 @@ export default new Vuex.Store({
       commit('resetProblem');
       state.units = formulas[state.problem].newValues();
       state.correct = formulas[state.problem].correct(state.units);
+      state.correctMessage = formulas[state.problem].correctMessage(state.units, state.correct);
       let answerSet = getNewAnswerSet(state.correct);
       commit('setAnswerSet', answerSet);
     }

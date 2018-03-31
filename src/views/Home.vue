@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-  .content--wrap { background-image: url('../../../public/img/home/home.png'); }
+  .content--wrap { background-image: url('../assets/home.png'); }
   .content--wrap::before { background: none; }
   .content--wrap { align-items: center; }
   

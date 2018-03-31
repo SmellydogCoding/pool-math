@@ -28,7 +28,7 @@ li.active > a { color: #1976d2 !important; }
 /* page background */
 .content--wrap::before {
   content: "";
-  background-image: url('../public/img/water.jpg');
+  background-image: url('./assets/water.jpg');
   background-size: cover;
   opacity: 0.5;
   top: 0;

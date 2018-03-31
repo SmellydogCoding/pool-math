@@ -5,7 +5,7 @@
       v-list.pa-1
         v-list-tile(avatar tag="div")
           v-list-tile-avatar
-            img(:src="avatar" alt="buoy")
+            img(:src="src" :alt="alt")
           v-list-tile-content
             v-list-tile-title {{ title }}
           v-list-tile-action
@@ -31,7 +31,8 @@ export default {
       drawer: false,
       width: '350',
       height: '1',
-      avatar: '../../../public/img/buoy.jpg',
+      src: 'src/assets/buoy.jpg',
+      alt: 'buoy',
       title: 'Pool Math Problems Menu',
       menu: [
         {

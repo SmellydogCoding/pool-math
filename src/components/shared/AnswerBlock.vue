@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import NextOrNew from '../shared/AnswerBlock_Partials/NextOrNew'
-import AnswerMessage from '../shared/AnswerBlock_Partials/AnswerMessage'
-import SelectAnswer from '../shared/AnswerBlock_Partials/SelectAnswer'
+import NextOrNew from './NextOrNew'
+import AnswerMessage from './AnswerMessage'
+import SelectAnswer from './SelectAnswer'
 
 export default {
   components: { appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },

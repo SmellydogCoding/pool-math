@@ -20,9 +20,9 @@
 </template>
 
 <script>
-  import Step1 from './P0_Partials/Step1.vue';
-  import Step2 from './P0_Partials/Step2.vue';
-  import Step3 from './P0_Partials/Step3.vue';
+  import Step1 from '../../components/section1/Step1.vue';
+  import Step2 from '../../components/section1/Step2.vue';
+  import Step3 from '../../components/section1/Step3.vue';
   export default {
     data() {
       return {

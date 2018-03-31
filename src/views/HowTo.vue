@@ -20,10 +20,10 @@
 </template>
 
 <script>
-  import Step1 from './HowTo_Partials/Step1.vue';
-  import Step2 from './HowTo_Partials/Step2.vue';
-  import Step3 from './HowTo_Partials/Step3.vue';
-  import Step4 from './HowTo_Partials/Step4.vue';
+  import Step1 from '../components/HowTo/Step1.vue';
+  import Step2 from '../components/HowTo/Step2.vue';
+  import Step3 from '../components/HowTo/Step3.vue';
+  import Step4 from '../components/HowTo/Step4.vue';
   export default {
     data() {
       return {

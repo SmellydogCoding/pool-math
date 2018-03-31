@@ -10,15 +10,14 @@
 </template>
 
 <script>
-import AnswerBlock from '../shared/AnswerBlock'
-import IllustrationBlock from '../shared/IllustrationBlock'
+import AnswerBlock from '../../components/shared/AnswerBlock'
+import IllustrationBlock from '../../components/shared/IllustrationBlock'
 
 export default {
   data() {
     return {
-      // units: {ounces: 24},
       problem: 's1p1',
-      image: {src: 'public/img/section1/problem1.jpg', alt: 'pool image for problem 1'},
+      image: {src: 'src/assets/section1/problem1.jpg', alt: 'pool image for problem 1'},
       hint: {title: 'Hint for Problem 1', text: 'Ounces / 16 = Pounds'},
       next: {text: 'Problem 2: Fluid Ounces to Gallons', route: '/s1p2'},
       newButton: 'New Ounces to Pounds Problem'
