@@ -8,7 +8,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     units: {},
-    formula: '',
+    problem: '',
     correct: 0,
     answers: [],
     image: {},
@@ -28,6 +28,7 @@ export default new Vuex.Store({
     hintWidth: '500px',
   },
   getters: {  // send state to a component
+    units: state => { return state.units },
     correct: state => { return state.correct },
     image: state => { return state.image },
     select: state => {
@@ -46,8 +47,9 @@ export default new Vuex.Store({
   mutations: { // modify state synchronously
     setCurrentProblem: (state, payload) => {
       state.units = payload.units;
-      state.formula = payload.formula;
-      state.correct = formulas[state.formula].correct(state.units);
+      state.problem = payload.problem;
+      state.correct = formulas[state.problem].correct(state.units);
+      state.correctMessage = formulas[state.problem].correctMessage(state.units, state.correct);
       state.image = payload.image;
       state.hint = payload.hint;
       state.next = payload.next;
@@ -87,8 +89,9 @@ export default new Vuex.Store({
     },
   },
   actions: { // modify state aschronously
-    init: ({commit},payload) => {
+    init: ({state,commit},payload) => {
       commit('resetProblem');
+      payload.units = formulas[payload.problem].initial();
       commit('setCurrentProblem', payload);
       commit('setAnswerSet');
     },
@@ -98,11 +101,11 @@ export default new Vuex.Store({
     answerQuestion: ({commit},payload) => {
      commit('answerQuestion', payload);
     },
-    newProblem: (state) => {
-      state.units = formulas[state.formula].newValues();
-      state.correct = formulas[state.formula].correct(state.units);
+    newProblem: ({commit, state}) => {
       commit('resetProblem');
-      let answerSet = newAnswerSet(state.correct);
+      state.units = formulas[state.problem].newValues();
+      state.correct = formulas[state.problem].correct(state.units);
+      let answerSet = getNewAnswerSet(state.correct);
       commit('setAnswerSet', answerSet);
     }
   }

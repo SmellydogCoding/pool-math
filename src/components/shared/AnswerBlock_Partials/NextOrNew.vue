@@ -3,7 +3,7 @@
     v-flex(xs12)
       v-btn(v-if="data.showCorrect" color="success" dark @click="$router.push(data.next.route)") {{ data.next.text }}
         v-icon.ml-2 arrow_forward
-      v-btn(v-if="data.showCorrect" color="info" dark @click="makeNew()") {{ data.newButton.text }}
+      v-btn(v-if="data.showCorrect" color="info" dark @click="makeNew()") {{ data.newButton }}
         v-icon.ml-2 refresh
 </template>
 
