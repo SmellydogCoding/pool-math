@@ -30,7 +30,7 @@ export default {
   },
   created() {
     let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
-      this.$store.dispatch('init', data);
-    }
+    this.$store.dispatch('init', data);
+  }
 }
 </script>

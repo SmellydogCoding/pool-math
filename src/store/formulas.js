@@ -44,4 +44,24 @@ export default {
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.inches} Inches / 12 = ${correct} Feet.`}
   },
+  s2p1: {
+    initial: () => { return { length: 25, width: 10 } },
+    correct: (units) => { return parseFloat((units.length * units.width).toFixed(2)); },
+    newValues: () => { 
+      let length = Math.floor(Math.random() * 50 + 1);
+      let width = Math.floor(Math.random() * 30 + 1);
+      return {length: length, width: width}
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} Feet * ${units.width} Feet = ${correct} Ft\u00B2.`}
+  },
+  s2p2: {
+    initial: () => { return { diameter: 12, radius: 6 } },
+    correct: (units) => { return parseFloat((units.radius * units.radius * 3.14).toFixed(2)); },
+    newValues: () => { 
+      let diameter = Math.floor(Math.random() * 20 + 1);
+      let radius = parseFloat((diameter / 2).toFixed(2));
+      return {diameter: diameter, radius: radius}
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} Feet * ${units.radius} Feet * 3.14 = ${correct} Ft\u00B2.`}
+  },
 }

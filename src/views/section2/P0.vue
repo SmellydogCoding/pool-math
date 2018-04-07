@@ -20,15 +20,15 @@
 </template>
 
 <script>
-  import Step1 from './P0_Partials/Step1.vue';
-  import Step2 from './P0_Partials/Step2.vue';
-  import Step3 from './P0_Partials/Step3.vue';
-  import Step4 from './P0_Partials/Step4.vue';
-  import Step5 from './P0_Partials/Step5.vue';
-  import Step6 from './P0_Partials/Step6.vue';
-  import Step7 from './P0_Partials/Step7.vue';
-  import Step8 from './P0_Partials/Step8.vue';
-  import Step9 from './P0_Partials/Step9.vue';
+  import Step1 from '../../components/section2/Step1.vue';
+  import Step2 from '../../components/section2/Step2.vue';
+  import Step3 from '../../components/section2/Step3.vue';
+  import Step4 from '../../components/section2/Step4.vue';
+  import Step5 from '../../components/section2/Step5.vue';
+  import Step6 from '../../components/section2/Step6.vue';
+  import Step7 from '../../components/section2/Step7.vue';
+  import Step8 from '../../components/section2/Step8.vue';
+  import Step9 from '../../components/section2/Step9.vue';
   export default {
     data() { 
       return { 

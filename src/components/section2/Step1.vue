@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    v-card-media.center-image(src="../../../public/img/section2/overview.jpg" height="200px" alt="depth marker")
+    v-card-media.center-image(src="src/assets/section2/overview.jpg" height="200px" alt="depth marker")
     v-card-title
       p.title.ma-a Area and Volume
     v-card-text

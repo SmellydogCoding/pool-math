@@ -5,70 +5,32 @@
         v-flex(xs12).my-2
           p.title {{ title }}
       v-layout(text-xs-center row wrap justify-center)
-        v-flex(xs12 lg6)
-          img.problem-image(:src="img" :alt="alt")
-        v-flex.select-background.px-2(xs12 lg6)
-          v-select.mt-2(:items="answers" label="Select Answer" v-model.number="answer" :disabled="showCorrect")
-          v-btn.color--white(color="info" light @click="answerQuestion()" :disabled="answer === 0 || showCorrect") Answer
-          transition(name="fade")
-            app-HintModal(:hintTitle="hintTitle" :hintText="hintText" :width="hintWidth" v-if="showHintButton")
-          v-layout(text-xs-center row wrap justify-center)
-            v-flex(xs12)
-              transition(name="fade" mode="out-in")
-                v-alert.title(v-if="showCorrect" color="success" icon="check_circle" value="true") {{ correctMessage }}
-                v-alert.title(v-if="showIncorrect" color="error" icon="close" value="true") {{ incorrectMessage }}
-          v-layout.mt-3(text-xs-center row wrap justify-center)
-            transition(name="fade")
-              v-flex(xs12)
-                v-btn(v-if="showCorrect" color="success" dark @click="$router.push(nextRoute)") {{ nextText }}
-                  v-icon.ml-2 arrow_forward
-                v-btn(v-if="showCorrect" color="info" dark @click="newProblem()") {{ newProblemText }}
-                  v-icon.ml-2 refresh
+        app-IllustrationBlock
+        app-AnswerBlock
 </template>
 
 <script>
-import HintModal from '../hints/TextHint.vue'
-import problems from '../../mixins/problems'
+import AnswerBlock from '../../components/shared/AnswerBlock'
+import IllustrationBlock from '../../components/shared/IllustrationBlock'
 
 export default {
   data() {
     return {
-      img: 'public/img/section2/problem2.jpg',
-      alt: 'illustration for problem 2',
-      diameter: 12,
-      radius: 6,
-      answer: 0,
-      attempts: 0,
-      correct: 113.04,
-      answers: [113.04,84.78,169.56,96.08],
-      noAnswer: true,
-      showCorrect: false,
-      showIncorrect: false,
-      showHintButton: false,
-      hintTitle: 'Hint for Problem 2',
-      hintText: `Surface Area = Radius * Radius * 3.14<br><br>Radius = Diameter / 2`,
-      hintWidth: '500px',
-      nextText: 'Problem 3: Volume of a Swimming Pool',
-      nextRoute: '/s2p3',
-      newProblemText: 'New Hot Tub Area Problem'
+      problem: 's2p2',
+      image: {src: 'src/assets/section2/problem2.jpg', alt: 'illustration for problem 2'},
+      hint: {title: 'Hint for Problem 2', text: 'Surface Area = Radius * Radius * 3.14<br><br>Radius = Diameter / 2'},
+      next: {text: 'Problem 3: Volume of a Swimming Pool', route: '/s2p3'},
+      newButton: 'New Hot Tub Area Problem'
     }
   },
-  components: { appHintModal: HintModal },
-  mixins: [problems],
+  components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
   computed: {
-    title() { return `1. You have a hot tub that is ${this.diameter} ft in diameter.\u00A0\u00A0What is the surface area of this hot tub?` },
-    correctMessage() { return `Correct!\u00A0\u00A0${this.radius} ft * ${this.radius} ft * 3.14 = ${this.correct} ft\u00B2` },
+    title() { return `1. You have a hot tub that is ${this.units.diameter} ft in diameter.\u00A0\u00A0What is the surface area of this hot tub?` },
+    units() { return this.$store.getters.units }
   },
-  methods: {
-    newProblem() {
-      this.resetProblemState();
-      // variables specific to this problem
-      this.diameter = Math.floor(Math.random() * 20 + 1);
-      this.radius = this.diameter / 2;
-      this.correct = parseFloat((this.radius * this.radius * 3.14).toFixed(2));
-      //
-      this.answers = this.getNewAnswerSet(this.correct);
-    }
+  created() {
+    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
+    this.$store.dispatch('init', data);
   }
 }
 </script>
