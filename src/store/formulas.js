@@ -64,4 +64,17 @@ export default {
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} Feet * ${units.radius} Feet * 3.14 = ${correct} Ft\u00B2.`}
   },
+  s2p3: {
+    initial: () => { return { length: 25, width: 10, shallow: 3, deep: 8, average: 5.5 } },
+    correct: (units) => { return parseFloat((units.length * units.width * units.average * 7.5).toFixed(2)); },
+    newValues: () => { 
+      let length = Math.floor(Math.random() * 50 + 1);
+      let width = Math.floor(Math.random() * 30 + 1);
+      let shallow = Math.floor(Math.random() * 5 + 1);
+      let deep = Math.floor(Math.random() * 15 + shallow);
+      let average = (deep + shallow) / 2;
+      return {length, width, shallow, deep, average}
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} Feet * ${units.width} Feet * ${units.average} Feet * 7.5 = ${correct} Ft\u00B2.`}
+  },
 }
