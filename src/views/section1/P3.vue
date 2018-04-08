@@ -25,7 +25,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
   computed: {
-    title() { return `1. You need to add ${this.units.flOunces} Fluid Ounces of Muriatic Acid to lower the total alkalinity in your hot tub.\u00A0\u00A0How many cups is this?` },
+    title() { return `You need to add ${this.units.flOunces} Fluid Ounces of Muriatic Acid to lower the total alkalinity in your hot tub.\u00A0\u00A0How many cups is this?` },
     units() { return this.$store.getters.units }
   },
   created() {

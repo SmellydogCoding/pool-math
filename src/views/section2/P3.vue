@@ -25,7 +25,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
   computed: {
-    title() { return `1. You have a rectangular pool that is ${this.units.length} feet long and ${this.units.width} feet wide.\u00A0\u00A0The Depth of the pool ranges from ${this.units.shallow} feet in the shallow end to ${this.units.deep} feet in the deep end.\u00A0\u00A0What is the volume of water in this pool?` },
+    title() { return `You have a rectangular pool that is ${this.units.length} feet long and ${this.units.width} feet wide.\u00A0\u00A0The Depth of the pool ranges from ${this.units.shallow} feet in the shallow end to ${this.units.deep} feet in the deep end.\u00A0\u00A0What is the volume of water in this pool?` },
     units() { return this.$store.getters.units }
   },
   created() {

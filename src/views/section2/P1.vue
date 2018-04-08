@@ -25,7 +25,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
   computed: {
-    title() { return `1. You have a rectangular pool that is ${this.units.length} feet long and ${this.units.width} feet wide.\u00A0\u00A0What is the surface area of this pool?` },
+    title() { return `You have a rectangular pool that is ${this.units.length} feet long and ${this.units.width} feet wide.\u00A0\u00A0What is the surface area of this pool?` },
     units() { return this.$store.getters.units }
   },
   created() {

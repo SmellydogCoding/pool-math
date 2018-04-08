@@ -25,7 +25,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
   computed: {
-    title() { return `1. You need to add ${this.units.ounces} Ounces of Calcium Hypochlorite to your pool to raise the free chlorine level.\u00A0\u00A0How many Pounds is this?` },
+    title() { return `You need to add ${this.units.ounces} Ounces of Calcium Hypochlorite to your pool to raise the free chlorine level.\u00A0\u00A0How many Pounds is this?` },
     units() { return this.$store.getters.units }
   },
   created() {

@@ -25,7 +25,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
   computed: {
-    title() { return `1. You need to add ${this.units.flOunces} Fluid Ounces of Sodium Hypochlorite to do breakpoint chlorination for your pool.\u00A0\u00A0How many Gallons is this?` },
+    title() { return `You need to add ${this.units.flOunces} Fluid Ounces of Sodium Hypochlorite to do breakpoint chlorination for your pool.\u00A0\u00A0How many Gallons is this?` },
     units() { return this.$store.getters.units },
   },
   created() {

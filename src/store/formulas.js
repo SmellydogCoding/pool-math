@@ -48,8 +48,8 @@ export default {
     initial: () => { return { length: 25, width: 10 } },
     correct: (units) => { return parseFloat((units.length * units.width).toFixed(2)); },
     newValues: () => { 
-      let length = Math.floor(Math.random() * 50 + 1);
       let width = Math.floor(Math.random() * 30 + 1);
+      let length = Math.floor(Math.random() * 30 + width);
       return {length: length, width: width}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} Feet * ${units.width} Feet = ${correct} Ft\u00B2.`}
@@ -68,13 +68,31 @@ export default {
     initial: () => { return { length: 25, width: 10, shallow: 3, deep: 8, average: 5.5 } },
     correct: (units) => { return parseFloat((units.length * units.width * units.average * 7.5).toFixed(2)); },
     newValues: () => { 
-      let length = Math.floor(Math.random() * 50 + 1);
       let width = Math.floor(Math.random() * 30 + 1);
+      let length = Math.floor(Math.random() * 30 + width);
       let shallow = Math.floor(Math.random() * 5 + 1);
       let deep = Math.floor(Math.random() * 15 + shallow);
       let average = (deep + shallow) / 2;
       return {length, width, shallow, deep, average}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} Feet * ${units.width} Feet * ${units.average} Feet * 7.5 = ${correct} Ft\u00B2.`}
+  },
+  s2p4: {
+    initial: () => { return { length: 25, width: 10, slength: 18, dlength: 7, sshallow: 3, sdeep: 5, saverage: 4, dshallow: 5, ddeep: 12, daverage: 8.5 } },
+    correct: (units) => { return parseFloat(((units.slength * units.width * units.saverage * 7.5) + (units.dlength * units.width * units.daverage * 7.5)).toFixed(2)); },
+    newValues: () => { 
+      let width = Math.floor(Math.random() * 30 + 1);
+      let length = Math.floor(Math.random() * 30 + width);
+      let slength = Math.floor(length * .75);
+      let dlength = length - slength;
+      let sshallow = Math.floor(Math.random() * 4 + 1);
+      let sdeep = Math.floor(Math.random() * 5 + sshallow);
+      let saverage = (sdeep + sshallow) / 2;
+      let dshallow = sdeep;
+      let ddeep = Math.floor(Math.random() * 15 + dshallow);
+      let daverage = (ddeep + dshallow) / 2;
+      return {length, width, slength, dlength, sshallow, sdeep, saverage, dshallow, ddeep, daverage}
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0(${units.slength} Feet * ${units.width} Feet * ${units.saverage} Feet * 7.5) + (${units.dlength} Feet * ${units.width} Feet * ${units.daverage} Feet * 7.5) = ${correct} Ft\u00B2.`}
   },
 }

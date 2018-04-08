@@ -25,7 +25,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
   computed: {
-    title() { return `1. Your pool is ${this.units.yards} Yards long.\u00A0\u00A0How many feet is this?` },
+    title() { return `Your pool is ${this.units.yards} Yards long.\u00A0\u00A0How many feet is this?` },
     units() { return this.$store.getters.units }
   },
   created() {

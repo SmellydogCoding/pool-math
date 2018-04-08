@@ -25,7 +25,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
   computed: {
-    title() { return `1. You have a hot tub that is ${this.units.diameter} ft in diameter.\u00A0\u00A0What is the surface area of this hot tub?` },
+    title() { return `You have a hot tub that is ${this.units.diameter} ft in diameter.\u00A0\u00A0What is the surface area of this hot tub?` },
     units() { return this.$store.getters.units }
   },
   created() {
