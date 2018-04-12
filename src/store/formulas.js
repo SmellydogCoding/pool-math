@@ -106,4 +106,18 @@ export default {
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} Feet * ${units.radius} Feet * 3.14 * ${units.depth} feet * 7.5 = ${correct} gallons.`}
   },
+  s2p6: {
+    initial: () => { return { tdiameter: 12, tradius: 6, tdepth: 3, sdiameter: 9, sradius: 4.5, sdepth: 2 } },
+    correct: (units) => { return parseFloat(((units.tradius * units.tradius * 3.14 * units.tdepth * 7.5)+(units.sradius * units.sradius * 3.14 * units.sdepth * 7.5)).toFixed(2)); },
+    newValues: () => { 
+      let tdiameter = Math.floor(Math.random() * 20 + 1);
+      let tradius = parseFloat((tdiameter / 2).toFixed(2));
+      let tdepth = Math.floor(Math.random() * 4 + 1);
+      let sdiameter = tdiameter - 3;
+      let sradius = parseFloat((sdiameter / 2).toFixed(2));
+      let sdepth = Math.floor(Math.random() * 3 + 1);
+      return {tdiameter, tradius, tdepth, sdiameter, sradius, sdepth}
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0(${units.tradius} Feet * ${units.tradius} Feet * 3.14 * ${units.tdepth} feet * 7.5) + (${units.sradius} Feet * ${units.sradius} Feet * 3.14 * ${units.sdepth} feet * 7.5) = ${correct} gallons.`}
+  },
 }
