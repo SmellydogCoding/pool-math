@@ -5,6 +5,7 @@
 /* helpers */
 .ma-a { margin: auto; }
 a { text-decoration: none; }
+html { overflow-y: auto; }
 
 /* route transitions */
 nav { z-index: 6; } /* page slides under nav bar */

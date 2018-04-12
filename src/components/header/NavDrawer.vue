@@ -13,7 +13,7 @@
               v-icon close
       v-list.pt-0(dense)
         v-divider(light)
-        router-link.how-to.py-2(to="/howto" tag="v-list-tile" active-class="active")
+        router-link.list-item--link-bottom-border.py-2(to="/howto" tag="v-list-tile" active-class="active")
           v-list-tile-content
             v-list-tile-title.subheading.text-xs-center How to Use This Website
         v-expansion-panel
@@ -30,7 +30,7 @@ export default {
     return {
       drawer: false,
       width: '350',
-      height: '1',
+      height: '900',
       src: 'src/assets/buoy.jpg',
       alt: 'buoy',
       title: 'Pool Math Problems Menu',
@@ -115,9 +115,15 @@ export default {
 <style scoped>
   aside {
     overflow-y: auto;
+    height: 100%;
+    background: none !important;
+  }
+
+  aside ul {
+    background-color: #424242 !important;
   }
  
-  .how-to {
+  .list-item--link-bottom-border {
     border-bottom: 1px solid rgba(255,255,255,0.12);
   }
   

@@ -25,7 +25,7 @@ export default new Vuex.Store({
     showNextButton: false,
     correctMessage: '',
     incorrectMessage: `Bummer!\u00A0\u00A0That answer is not correct.\u00A0\u00A0Please try again.`,
-    hintWidth: '525px',
+    hintWidth: '525px'
   },
   getters: {  // send state to a component
     units: state => { return state.units },
