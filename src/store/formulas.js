@@ -120,4 +120,16 @@ export default {
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0(${units.tradius} Feet * ${units.tradius} Feet * 3.14 * ${units.tdepth} feet * 7.5) + (${units.sradius} Feet * ${units.sradius} Feet * 3.14 * ${units.sdepth} feet * 7.5) = ${correct} gallons.`}
   },
+  s2p7: {
+    initial: () => { return { length: 25, width: 10, inches: 3, feet: 0.25 } },
+    correct: (units) => { return parseFloat((units.length * units.width * (units.inches / 12) * 7.5).toFixed(2)); },
+    newValues: () => { 
+      let width = Math.floor(Math.random() * 30 + 1);
+      let length = Math.floor(Math.random() * 30 + width);
+      let inches = Math.floor(Math.random() * 12 + 1);
+      let feet = (inches / 12).toFixed(2);
+      return {length, width, inches, feet}
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} Feet * ${units.width} Feet * ${units.feet} Feet * 7.5 = ${correct} Ft\u00B2.`}
+  },
 }

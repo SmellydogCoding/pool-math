@@ -13,6 +13,7 @@ const S2P3 = () => import('../views/section2/P3.vue')
 const S2P4 = () => import('../views/section2/P4.vue')
 const S2P5 = () => import('../views/section2/P5.vue')
 const S2P6 = () => import('../views/section2/P6.vue')
+const S2P7 = () => import('../views/section2/P7.vue')
 
 export const routes = [
   { path: '/', component: Home, meta: { title: 'Welcome to Pool Math' } },
@@ -30,4 +31,5 @@ export const routes = [
   { path: '/s2p4', component: S2P4, meta: { title: 'Section 2 Problem 4' }  },
   { path: '/s2p5', component: S2P5, meta: { title: 'Section 2 Problem 5' }  },
   { path: '/s2p6', component: S2P6, meta: { title: 'Section 2 Problem 6' }  },
+  { path: '/s2p7', component: S2P7, meta: { title: 'Section 2 Problem 7' }  },
 ]
