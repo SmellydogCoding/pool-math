@@ -122,7 +122,7 @@ export default {
   },
   s2p7: {
     initial: () => { return { length: 25, width: 10, inches: 3, feet: 0.25 } },
-    correct: (units) => { return parseFloat((units.length * units.width * (units.inches / 12) * 7.5).toFixed(2)); },
+    correct: (units) => { return parseFloat((units.length * units.width * units.feet * 7.5).toFixed(2)); },
     newValues: () => { 
       let width = Math.floor(Math.random() * 30 + 1);
       let length = Math.floor(Math.random() * 30 + width);
@@ -131,5 +131,17 @@ export default {
       return {length, width, inches, feet}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} Feet * ${units.width} Feet * ${units.feet} Feet * 7.5 = ${correct} Ft\u00B2.`}
+  },
+  s2p8: {
+    initial: () => { return { diameter: 12, radius: 6, inches: 3, feet: 0.25 } },
+    correct: (units) => { return parseFloat((units.radius * units.radius * 3.14 * units.feet * 7.5).toFixed(2)); },
+    newValues: () => { 
+      let diameter = Math.floor(Math.random() * 20 + 1);
+      let radius = parseFloat((diameter / 2).toFixed(2));
+      let inches = Math.floor(Math.random() * 12 + 1);
+      let feet = (inches / 12).toFixed(2);
+      return {diameter, radius, inches, feet}
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} Feet * ${units.radius} Feet * 3.14 * ${units.feet} feet * 7.5 = ${correct} gallons.`}
   },
 }
