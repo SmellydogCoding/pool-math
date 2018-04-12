@@ -95,4 +95,15 @@ export default {
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0(${units.slength} Feet * ${units.width} Feet * ${units.saverage} Feet * 7.5) + (${units.dlength} Feet * ${units.width} Feet * ${units.daverage} Feet * 7.5) = ${correct} Ft\u00B2.`}
   },
+  s2p5: {
+    initial: () => { return { diameter: 12, radius: 6, depth: 3 } },
+    correct: (units) => { return parseFloat((units.radius * units.radius * 3.14 * units.depth * 7.5).toFixed(2)); },
+    newValues: () => { 
+      let diameter = Math.floor(Math.random() * 20 + 1);
+      let radius = parseFloat((diameter / 2).toFixed(2));
+      let depth = Math.floor(Math.random() * 5 + 1);
+      return {diameter, radius, depth}
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} Feet * ${units.radius} Feet * 3.14 * ${units.depth} feet * 7.5 = ${correct} gallons.`}
+  },
 }
