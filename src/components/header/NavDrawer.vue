@@ -38,7 +38,7 @@ export default {
         {
           title: 'Section 1 - Conversions',
           subsections: [
-            {link: '/s1p0', title: '1.0 - About This Section'},
+            {link: '/s1Intro', title: '1.0 - About This Section'},
             {link: '/s1p1', title: '1.1 - Convert Ounces to Pounds'},
             {link: '/s1p2', title: '1.2 - Convert Fluid Ounces to Gallons'},
             {link: '/s1p3', title: '1.3 - Convert Fluid Ounces to Cups'},
@@ -49,7 +49,7 @@ export default {
         {
           title: 'Section 2 - Area and Volume',
           subsections: [
-            {link: '/s2p0', title: '2.0 - About This Section'},
+            {link: '/s2Intro', title: '2.0 - About This Section'},
             {link: '/s2p1', title: '2.1 - Area of a Swimming Pool'},
             {link: '/s2p2', title: '2.2 - Area of a Hot Tub'},
             {link: '/s2p3', title: '2.3 - Volume of Water in a Swimming Pool'},
@@ -63,7 +63,7 @@ export default {
         {
           title: 'Section 3 - Water Balance',
           subsections: [
-            {link: '/s3p0', title: '3.0 - About This Section'},
+            {link: '/s3Intro', title: '3.0 - About This Section'},
             {link: '/s3p1', title: '3.1 - Calculate Saturation Index'},
             {link: '/s3p2', title: '3.2 - Calculate Saturation Index - With CA'}
           ]
@@ -71,7 +71,7 @@ export default {
         {
           title: 'Section 4 - Chemical Adjustments',
           subsections: [
-            {link: '/s4p0', title: '4.0 - About This Section'},
+            {link: '/s4Intro', title: '4.0 - About This Section'},
             {link: '/s4p1', title: '4.1 - Adding an algaecide'},
             {link: '/s4p2', title: '4.2 - Chemical Adjustment - Raise Chlorine'},
             {link: '/s4p3', title: '4.3 - Chemical Adjustment - Raise Alkalinity'},
@@ -81,7 +81,7 @@ export default {
         {
           title: 'Section 5 - Breakpoint Chlorination',
           subsections: [
-            {link: '/s5p0', title: '5.0 - About This Section'},
+            {link: '/s5Intro', title: '5.0 - About This Section'},
             {link: '/s5p1', title: '5.1 - Calculate Breakpoint'},
             {link: '/s5p2', title: '5.2 - Breakpoint Chemical Adjustment'}
           ]
@@ -89,7 +89,7 @@ export default {
         {
           title: 'Section 6 - Flow Rate and Turnover Rate',
           subsections: [
-            {link: '/s6p0', title: '6.0 - About This Section'},
+            {link: '/s6Intro', title: '6.0 - About This Section'},
             {link: '/s6p1', title: '6.1 - Calculate Turnover Rate - Pool'},
             {link: '/s6p2', title: '6.2 - Calculate Turnover Rate - Hot Tub'},
             {link: '/s6p3', title: '6.3 - Calculate Flow Rate - Pool'},
@@ -99,11 +99,13 @@ export default {
         {
           title: 'Section 7 - Filter Sizing',
           subsections: [
-            {link: '/s7p0', title: '7.0 - About This Section'},
+            {link: '/s7Intro', title: '7.0 - About This Section'},
             {link: '/s7p1', title: '7.1 - Diatomaceous Earth - Filter Size'},
             {link: '/s7p2', title: '7.2 - Diatomaceous Earth - Max Flow'},
             {link: '/s7p3', title: '7.3 - Sand Filter - Filter Size'},
-            {link: '/s7p4', title: '7.4 - Sand Filter - Max Flow'}
+            {link: '/s7p4', title: '7.4 - Sand Filter - Max Flow'},
+            {link: '/s7p5', title: '7.5 - Cartridge Filter - Filter Size'},
+            {link: '/s7p6', title: '7.6 - Cartridge Filter - Max Flow'}
           ]
         }
       ]

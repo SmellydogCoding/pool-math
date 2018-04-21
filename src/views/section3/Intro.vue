@@ -1,8 +1,8 @@
 <template lang="pug">
- v-content
+  v-content
     v-container.pt-0
       v-layout(row wrap justify-center)
-        v-flex(xs12 lg6)
+        v-flex(xs12 lg8)
           v-stepper.mt-3(v-model="e1" dark)
             v-stepper-header
               template(v-for="index in steps")
@@ -15,33 +15,37 @@
                   component(:is="stepName(index)")
                   v-card-actions.align-stepper-bottom.mb-3
                     v-btn.ml-2(v-if="index < steps" color="primary" @click.native="e1 = index + 1") {{ button }}
-                    v-btn.ml-2(v-else color="success" dark @click="$router.push(nextRoute)") {{ nextText }}
+                    v-btn.ml-2(v-else color="success" dark @click="nextProblem()") {{ next.buttonText }}
                       v-icon.ml-2 arrow_forward
 </template>
 
 <script>
-  import Step1 from '../components/HowTo/Step1.vue';
-  import Step2 from '../components/HowTo/Step2.vue';
-  import Step3 from '../components/HowTo/Step3.vue';
-  import Step4 from '../components/HowTo/Step4.vue';
+  import Step1 from '../../components/section3/Step1.vue';
+  import Step2 from '../../components/section3/Step2.vue';
+  import Step3 from '../../components/section3/Step3.vue';
+  
   export default {
-    data() {
-      return {
+    data() { 
+      return { 
         e1: 0,
         index: 0,
-        height: '475px',
-        steps: 4,
+        height: '600px',
+        steps: 3,
         button: 'next',
-        nextText: 'Section 1 - Conversions',
-        nextRoute: '/s1Intro'
-      }
+        next: {
+          buttonText: 'Problem 1 - Calculate Saturation Index',
+          link: '/s3p1'
+        }
+      } 
     },
-    methods: { stepName(index) { return `appStep${index}`; } },
+    methods: {
+      nextProblem() { this.$router.push(this.next.link); },
+      stepName(index) { return `appStep${index}`; }
+    },
     components: {
       appStep1: Step1,
       appStep2: Step2,
       appStep3: Step3,
-      appStep4: Step4,
     }
   }
 </script>
