@@ -11,11 +11,12 @@ export default new Vuex.Store({
     problem: '',
     correct: 0,
     answers: [],
+    answersetType: '',
     image: {},
     hint: {},
     next: {},
     newButton: '',
-    answer: 0,
+    answer: null,
     attempts: 0,
     noAnswer: true,
     showCorrect: false,
@@ -31,8 +32,13 @@ export default new Vuex.Store({
     units: state => { return state.units },
     correct: state => { return state.correct },
     image: state => { return state.image },
+    attempts: state => { return state.attempts },
     select: state => {
-      let data = {answers: state.answers, hint: state.hint, width: state.hintWidth, showCorrect: state.showCorrect, showHintButton: state.showHintButton}
+      let data = { answer: state.answer, answers: state.answers, showCorrect: state.showCorrect }
+      return data;
+    },
+    hint: state => {
+      let data = { title: state.hint.title, type: state.hint.type, component: state.hint.component, width: state.hintWidth, showHintButton: state.showHintButton }
       return data;
     },
     newOrNext: state => {
@@ -54,16 +60,16 @@ export default new Vuex.Store({
       state.hint = payload.hint;
       state.next = payload.next;
       state.newButton = payload.newButton;
+      state.answersetType = payload.answersetType
     },
-    setAnswerSet: (state) => {
-      let answerSet = getNewAnswerSet(state.correct);
+    setAnswerSet: (state, payload) => {
+      let answerSet = getNewAnswerSet(state.correct, state.answersetType);
       state.answers = answerSet;
     },
     setCorrectMessage: (state,message) => {
       state.correctMessage = message;
     },
-    answerQuestion: (state, answer) => {
-      state.answer = answer;
+    answerQuestion: (state) => {
       if (state.answer === state.correct) {
         state.showHintButton = false;
         state.showCorrect = true;
@@ -78,7 +84,7 @@ export default new Vuex.Store({
       state.units = {};
       state.correct = 0;
       state.answers = [];
-      state.answer = 0;
+      state.answer = null;
       state.attempts = 0;
       state.noAnswer = true;
       state.showCorrect = false;
@@ -87,6 +93,9 @@ export default new Vuex.Store({
       state.showAnswerButton = true;
       state.showNextButton = false;
     },
+    selection: (state, payload) => {
+      state.answer = payload;
+    }
   },
   actions: { // modify state aschronously
     init: ({state,commit},payload) => {
@@ -98,8 +107,8 @@ export default new Vuex.Store({
     setCorrectMessage: ({commit},payload) => {
       commit('setCorrectMessage',payload);
     },
-    answerQuestion: ({commit},payload) => {
-     commit('answerQuestion', payload);
+    answerQuestion: ({commit}) => {
+     commit('answerQuestion');
     },
     newProblem: ({commit, state}) => {
       commit('resetProblem');
@@ -107,7 +116,10 @@ export default new Vuex.Store({
       state.correct = formulas[state.problem].correct(state.units);
       state.correctMessage = formulas[state.problem].correctMessage(state.units, state.correct);
       let answerSet = getNewAnswerSet(state.correct);
-      commit('setAnswerSet', answerSet);
+      commit('setAnswerSet');
+    },
+    selection: ({commit}, payload) => {
+      commit('selection', payload);
     }
   }
 });

@@ -29,7 +29,7 @@
       return { 
         e1: 0,
         index: 0,
-        height: '600px',
+        height: '625px',
         steps: 3,
         button: 'next',
         next: {

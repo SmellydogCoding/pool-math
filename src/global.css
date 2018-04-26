@@ -86,3 +86,8 @@ footer { color: white; }
   .subheading { font-size: 0.875rem !important; }
   .dialog--active { width: 60%; }
 }
+
+.dialog { width: 90%; }
+@media screen and (min-width:961px) {
+  .dialog { width: 75%; }
+}

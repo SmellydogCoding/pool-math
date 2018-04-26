@@ -1,3 +1,5 @@
+import {getFactors} from './factors'
+import {getRandom} from './random'
 export default {
   s1p1: {
     initial: () => { return {ounces: 24} },
@@ -143,5 +145,20 @@ export default {
       return {diameter, radius, inches, feet}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} Feet * ${units.radius} Feet * 3.14 * ${units.feet} feet * 7.5 = ${correct} gallons.`}
+  },
+  s3p1: {
+    initial: () => { return { pH: 7.6, temperature: 76, calcium: 200, alkalinity: 100, TDS: 1200, temperaturef: 0.6, calciumf: 1.9, alkalinityf: 2.0, TDSf: 12.2, sub: 12.1, SI: -0.1 } },
+    correct: (units) => { return parseFloat((units.pH + units.temperaturef + units.calciumf + units.alkalinityf - units.TDSf).toFixed(2)) },
+    newValues: () => { 
+      let pH = getRandom(7.2, 8.0);
+      let temperature = getRandom(32, 105);
+      let calcium = getRandom(25, 400, 5);
+      let alkalinity = getRandom(25, 180, 5);
+      let TDS = getRandom(200, 2000, 10);
+      let newFactors = getFactors(temperature, calcium, alkalinity, TDS)
+      let sub = parseFloat(newFactors[0] + newFactors[1] + newFactors[2] + pH).toFixed(1);
+      return {pH, temperature, calcium, alkalinity, TDS, sub, temperaturef: newFactors[0], calciumf: newFactors[1], alkalinityf: newFactors[2], TDSf: newFactors[3] }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0Saturation Index is ${correct}.`}
   },
 }
