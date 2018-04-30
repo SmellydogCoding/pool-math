@@ -3,9 +3,9 @@ import {getRandom} from './random'
 export default {
   s1p1: {
     initial: () => { return {ounces: 24} },
-    correct: (units) => { return parseFloat((units.ounces / 16).toFixed(2)); },
+    correct: (units) => { return parseFloat((units.ounces / 16).toFixed(1)); },
     newValues: () => { 
-      let ounces = Math.floor(Math.random() * 60 + 1);
+      let ounces = getRandom(1, 60);
       return {ounces: ounces}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.ounces} Ounces / 16 = ${correct} Pounds.`}
@@ -150,7 +150,7 @@ export default {
     initial: () => { return { pH: 7.6, temperature: 76, calcium: 200, alkalinity: 100, TDS: 1200, temperaturef: 0.6, calciumf: 1.9, alkalinityf: 2.0, TDSf: 12.2, sub: 12.1, SI: -0.1 } },
     correct: (units) => { return parseFloat((units.pH + units.temperaturef + units.calciumf + units.alkalinityf - units.TDSf).toFixed(2)) },
     newValues: () => { 
-      let pH = getRandom(7.2, 8.0);
+      let pH = getRandom(7.2, 8.0, 0, 1);
       let temperature = getRandom(32, 105);
       let calcium = getRandom(25, 400, 5);
       let alkalinity = getRandom(25, 180, 5);

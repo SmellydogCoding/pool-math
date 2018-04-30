@@ -87,7 +87,8 @@ footer { color: white; }
   .dialog--active { width: 60%; }
 }
 
-.dialog { width: 90%; }
-@media screen and (min-width:961px) {
-  .dialog { width: 75%; }
+.hint--dialog-component { width: 90%; }
+.hint--dialog-text { width: 40%; }
+@media screen and (max-width:960px) {
+  .hint--dialog-component, .hint--dialog-text { width: 75%; }
 }

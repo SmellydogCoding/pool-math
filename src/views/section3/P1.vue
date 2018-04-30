@@ -17,10 +17,10 @@ export default {
   data() {
     return {
       problem: 's3p1',
-      hint: {title: 'Hint for Problem 1', type: 'componentHint', component: 'SaturationIndexTable'},
+      hint: {title: 'Hint for Problem 1', type: 'componentHint', text: '', component: 'SaturationIndexTable'},
       next: {text: 'Problem 2: Saturation Index with Cyanuric Acid', route: '/s3p2'},
       newButton: 'New Saturation Index Problem',
-      answersetType: 'SI'
+      answerSet: {type: 'SI', decimals: 1}
     }
   },
   components: { appAnswerBlock: AnswerBlock, appSaturationIndexBlock: SaturationIndexBlock },
@@ -29,7 +29,7 @@ export default {
     units() { return this.$store.getters.units }
   },
   created() {
-    let data = {problem: this.problem, hint: this.hint, next: this.next, newButton: this.newButton, answersetType: this.answersetType};
+    let data = {problem: this.problem, hint: this.hint, next: this.next, newButton: this.newButton, answerSet: this.answerSet};
     this.$store.dispatch('init', data);
   }
 }

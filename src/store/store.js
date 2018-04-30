@@ -11,7 +11,7 @@ export default new Vuex.Store({
     problem: '',
     correct: 0,
     answers: [],
-    answersetType: '',
+    answerSet: {},
     image: {},
     hint: {},
     next: {},
@@ -38,7 +38,7 @@ export default new Vuex.Store({
       return data;
     },
     hint: state => {
-      let data = { title: state.hint.title, type: state.hint.type, component: state.hint.component, width: state.hintWidth, showHintButton: state.showHintButton }
+      let data = { title: state.hint.title, type: state.hint.type, component: state.hint.component, text: state.hint.text, width: state.hintWidth, showHintButton: state.showHintButton }
       return data;
     },
     newOrNext: state => {
@@ -60,10 +60,10 @@ export default new Vuex.Store({
       state.hint = payload.hint;
       state.next = payload.next;
       state.newButton = payload.newButton;
-      state.answersetType = payload.answersetType
+      state.answerSet = payload.answerSet
     },
     setAnswerSet: (state, payload) => {
-      let answerSet = getNewAnswerSet(state.correct, state.answersetType);
+      let answerSet = getNewAnswerSet(state.correct, state.answerSet.type, state.answerSet.decimals);
       state.answers = answerSet;
     },
     setCorrectMessage: (state,message) => {
@@ -115,7 +115,7 @@ export default new Vuex.Store({
       state.units = formulas[state.problem].newValues();
       state.correct = formulas[state.problem].correct(state.units);
       state.correctMessage = formulas[state.problem].correctMessage(state.units, state.correct);
-      let answerSet = getNewAnswerSet(state.correct);
+      let answerSet = getNewAnswerSet(state.correct, state.answerSet.type, state.answerSet.decimals);
       commit('setAnswerSet');
     },
     selection: ({commit}, payload) => {

@@ -1,7 +1,7 @@
 <template lang="pug">
   span
     v-btn(color="orange darken-1" dark @click.native.stop="dialog = !dialog") Hint
-    v-dialog(v-model="dialog" width="width")
+    v-dialog(v-model="dialog" content-class="hint--dialog-component")
       v-card
         v-card-title.headline {{ title }}
         v-card-text.pt-0

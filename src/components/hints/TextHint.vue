@@ -1,10 +1,10 @@
 <template lang="pug">
   span
     v-btn(color="orange darken-1" dark @click.native.stop="dialog = !dialog") Hint
-    v-dialog(v-model="dialog" :width="width")
+    v-dialog(v-model="dialog" content-class="hint--dialog-text")
       v-card
-        v-card-title.headline {{hints.title}}
-        v-card-text(v-html="hints.text")
+        v-card-title.headline {{title}}
+        v-card-text(v-html="text")
         v-card-actions
           v-spacer
           v-btn(color="primary" @click.native="dialog = !dialog") Close
@@ -13,8 +13,8 @@
 <script>
   export default {
     data () {
-      return { dialog: false }
+      return { dialog: false, textHint: true }
     },
-    props: ['hints', 'width']
+    props: ['title', 'text']
   }
 </script>
