@@ -30,9 +30,9 @@ export default {
   },
   s1p4: {
     initial: () => { return { yards: 10 } },
-    correct: (units) => { return parseFloat((units.yards * 3).toFixed(2)); },
+    correct: (units) => { return units.yards * 3; },
     newValues: () => { 
-      let yards = Math.floor(Math.random() * 50 + 1);
+      let yards = getRandom(1, 50);
       return {yards: yards}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.yards} Yards * 3 = ${correct} Feet.`}

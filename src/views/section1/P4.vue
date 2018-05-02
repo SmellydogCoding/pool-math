@@ -18,9 +18,10 @@ export default {
     return {
       problem: 's1p4',
       image: {src: 'src/assets/section1/problem4.jpg', alt: 'pool image for problem 4'},
-      hint: {title: 'Hint for Problem 4', text: 'Yards * 3 = Feet'},
+      hint: {title: 'Hint for Problem 4', type: 'textHint', text: 'Yards * 3 = Feet'},
       next: {text: 'Problem 5: Inches to Feet', route: '/s1p5'},
       newButton: 'New Yards to Feet Problem',
+      answerSet: {type: 'conversion', decimals: 0}
     }
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
@@ -29,7 +30,7 @@ export default {
     units() { return this.$store.getters.units }
   },
   created() {
-    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
+    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton, answerSet: this.answerSet};
     this.$store.dispatch('init', data);
   }
 }
