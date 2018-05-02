@@ -60,7 +60,7 @@ export default {
     initial: () => { return { diameter: 12, radius: 6 } },
     correct: (units) => { return parseFloat((units.radius * units.radius * 3.14).toFixed(2)); },
     newValues: () => { 
-      let diameter = Math.floor(Math.random() * 20 + 1);
+      let diameter = getRandom(6, 30);
       let radius = parseFloat((diameter / 2).toFixed(2));
       return {diameter: diameter, radius: radius}
     },
