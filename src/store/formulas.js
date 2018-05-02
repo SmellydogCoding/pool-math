@@ -81,17 +81,17 @@ export default {
   },
   s2p4: {
     initial: () => { return { length: 25, width: 10, slength: 18, dlength: 7, sshallow: 3, sdeep: 5, saverage: 4, dshallow: 5, ddeep: 12, daverage: 8.5 } },
-    correct: (units) => { return parseFloat(((units.slength * units.width * units.saverage * 7.5) + (units.dlength * units.width * units.daverage * 7.5)).toFixed(2)); },
+    correct: (units) => { return parseFloat(((units.slength * units.width * units.saverage * 7.5) + (units.dlength * units.width * units.daverage * 7.5)).toFixed(1)); },
     newValues: () => { 
-      let width = Math.floor(Math.random() * 30 + 1);
-      let length = Math.floor(Math.random() * 30 + width);
+      let width = getRandom(3, 30);
+      let length = getRandom(3, 30);
       let slength = Math.floor(length * .75);
       let dlength = length - slength;
-      let sshallow = Math.floor(Math.random() * 4 + 1);
-      let sdeep = Math.floor(Math.random() * 5 + sshallow);
+      let sshallow = getRandom(1, 4);
+      let sdeep = getRandom(5, 6);
       let saverage = (sdeep + sshallow) / 2;
       let dshallow = sdeep;
-      let ddeep = Math.floor(Math.random() * 15 + dshallow);
+      let ddeep = getRandom(dshallow, 15);
       let daverage = (ddeep + dshallow) / 2;
       return {length, width, slength, dlength, sshallow, sdeep, saverage, dshallow, ddeep, daverage}
     },

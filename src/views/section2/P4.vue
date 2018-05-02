@@ -18,9 +18,10 @@ export default {
     return {
       problem: 's2p4',
       image: {src: 'src/assets/section2/problem4.jpg', alt: 'illustration for problem 4'},
-      hint: {title: 'Hint for Problem 4', text: 'Volume = Length * Width * Average Depth * 7.5<br></br>Average Depth = (Depth in the Deepest Part + Depth in the Shallowest Part) / 2<br><br>Find the volume for each section and then add the 2 sections togeather to get the total.'},
+      hint: {title: 'Hint for Problem 4', type: 'textHint', text: 'Volume = Length * Width * Average Depth * 7.5<br></br>Average Depth = (Depth in the Deepest Part + Depth in the Shallowest Part) / 2<br><br>Find the volume for each section and then add the 2 sections togeather to get the total.'},
       next: {text: 'Problem 5: Volume of Water in a Hot Tub', route: '/s2p5'},
-      newButton: 'New Multi-Depth Pool Volume Problem'
+      newButton: 'New Multi-Depth Pool Volume Problem',
+      answerSet: {type: 'volume', decimals: 1}
     }
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
@@ -29,7 +30,7 @@ export default {
     units() { return this.$store.getters.units }
   },
   created() {
-    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
+    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton, answerSet: this.answerSet};
     this.$store.dispatch('init', data);
   }
 }
