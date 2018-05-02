@@ -101,9 +101,9 @@ export default {
     initial: () => { return { diameter: 12, radius: 6, depth: 3 } },
     correct: (units) => { return parseFloat((units.radius * units.radius * 3.14 * units.depth * 7.5).toFixed(2)); },
     newValues: () => { 
-      let diameter = Math.floor(Math.random() * 20 + 1);
+      let diameter = getRandom(6, 30);
       let radius = parseFloat((diameter / 2).toFixed(2));
-      let depth = Math.floor(Math.random() * 5 + 1);
+      let depth = getRandom(3, 6);
       return {diameter, radius, depth}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} Feet * ${units.radius} Feet * 3.14 * ${units.depth} feet * 7.5 = ${correct} gallons.`}

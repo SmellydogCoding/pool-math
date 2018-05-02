@@ -18,9 +18,10 @@ export default {
     return {
       problem: 's2p5',
       image: {src: 'src/assets/section2/problem5.jpg', alt: 'illustration for problem 5'},
-      hint: {title: 'Hint for Problem 5', text: 'Volume = Radius * Radius * 3.14 * Depth * 7.5<br><br>Radius = Diameter / 2'},
+      hint: {title: 'Hint for Problem 5', type: 'textHint', text: 'Volume = Radius * Radius * 3.14 * Depth * 7.5<br><br>Radius = Diameter / 2'},
       next: {text: 'Problem 6: Volume of a Hot Tub with Seats', route: '/s2p6'},
-      newButton: 'New Hot Tub Volume Problem'
+      newButton: 'New Hot Tub Volume Problem',
+      answerSet: {type: 'volume', decimals: 2}
     }
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
@@ -29,7 +30,7 @@ export default {
     units() { return this.$store.getters.units }
   },
   created() {
-    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
+    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton, answerSet: this.answerSet};
     this.$store.dispatch('init', data);
   }
 }
