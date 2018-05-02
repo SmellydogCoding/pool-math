@@ -5,7 +5,7 @@ export default {
     initial: () => { return {ounces: 24} },
     correct: (units) => { return parseFloat((units.ounces / 16).toFixed(1)); },
     newValues: () => { 
-      let ounces = getRandom(1, 60);
+      let ounces = getRandom(8, 60);
       return {ounces: ounces}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.ounces} Ounces / 16 = ${correct} Pounds.`}
@@ -14,7 +14,7 @@ export default {
     initial: () => { return { flOunces: 260 } },
     correct: (units) => { return parseFloat((units.flOunces / 128).toFixed(2)); },
     newValues: () => { 
-      let flOunces = Math.floor(Math.random() * 500 + 1);
+      let flOunces = getRandom(32, 500);
       return {flOunces: flOunces}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.flOunces} Fluid Ounces / 128 = ${correct} Gallons.`}

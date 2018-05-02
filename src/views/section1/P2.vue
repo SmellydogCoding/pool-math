@@ -18,9 +18,10 @@ export default {
     return {
       problem: 's1p2',
       image: {src: 'src/assets/section1/problem2.jpg', alt: 'pool image for problem 2'},
-      hint: {title: 'Hint for Problem 2', text: 'Fluid Ounces / 128 = Gallons'},
+      hint: {title: 'Hint for Problem 2', type: 'textHint', text: 'Fluid Ounces / 128 = Gallons', component: ''},
       next: {text: 'Problem 3: Fluid Ounces to Cups', route: '/s1p3'},
       newButton: 'New Fluid Ounces to Gallons Problem',
+      answerSet: {type: 'conversion', decimals: 2}
     }
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
@@ -29,7 +30,7 @@ export default {
     units() { return this.$store.getters.units },
   },
   created() {
-    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
+    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton, answerSet: this.answerSet};
     this.$store.dispatch('init', data);
   }
 }
