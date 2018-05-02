@@ -18,9 +18,10 @@ export default {
     return {
       problem: 's2p1',
       image: {src: 'src/assets/section2/problem1.png', alt: 'illustration for problem 1'},
-      hint: {title: 'Hint for Problem 1', text: 'Surface Area = Length * Width'},
+      hint: {title: 'Hint for Problem 1', type: 'textHint', text: 'Surface Area = Length * Width'},
       next: {text: 'Problem 2: Area of a Hot Tub', route: '/s2p2'},
-      newButton: 'New Pool Area Problem'
+      newButton: 'New Pool Area Problem',
+      answerSet: {type: 'area', decimals: 0}
     }
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
@@ -29,7 +30,7 @@ export default {
     units() { return this.$store.getters.units }
   },
   created() {
-    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
+    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton, answerSet: this.answerSet};
     this.$store.dispatch('init', data);
   }
 }

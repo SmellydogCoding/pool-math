@@ -48,10 +48,10 @@ export default {
   },
   s2p1: {
     initial: () => { return { length: 25, width: 10 } },
-    correct: (units) => { return parseFloat((units.length * units.width).toFixed(2)); },
+    correct: (units) => { return units.length * units.width; },
     newValues: () => { 
-      let width = Math.floor(Math.random() * 30 + 1);
-      let length = Math.floor(Math.random() * 30 + width);
+      let width = getRandom(3, 30);
+      let length = getRandom(3, 30);
       return {length: length, width: width}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} Feet * ${units.width} Feet = ${correct} Ft\u00B2.`}
