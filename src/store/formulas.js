@@ -41,7 +41,7 @@ export default {
     initial: () => { return { inches: 5 } },
     correct: (units) => { return parseFloat((units.inches / 12).toFixed(2)); },
     newValues: () => { 
-      let inches = Math.floor(Math.random() * 18 + 1);
+      let inches = getRandom(1, 18);
       return {inches: inches}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.inches} Inches / 12 = ${correct} Feet.`}
