@@ -60,7 +60,7 @@ export default {
     initial: () => { return { diameter: 12, radius: 6 } },
     correct: (units) => { return parseFloat((units.radius * units.radius * 3.14).toFixed(2)); },
     newValues: () => { 
-      let diameter = getRandom(6, 30);
+      let diameter = getRandom(3, 30);
       let radius = parseFloat((diameter / 2).toFixed(2));
       return {diameter: diameter, radius: radius}
     },
@@ -101,7 +101,7 @@ export default {
     initial: () => { return { diameter: 12, radius: 6, depth: 3 } },
     correct: (units) => { return parseFloat((units.radius * units.radius * 3.14 * units.depth * 7.5).toFixed(2)); },
     newValues: () => { 
-      let diameter = getRandom(6, 30);
+      let diameter = getRandom(3, 30);
       let radius = parseFloat((diameter / 2).toFixed(2));
       let depth = getRandom(3, 6);
       return {diameter, radius, depth}
@@ -112,7 +112,7 @@ export default {
     initial: () => { return { tdiameter: 12, tradius: 6, tdepth: 3, sdiameter: 9, sradius: 4.5, sdepth: 2 } },
     correct: (units) => { return parseFloat(((units.tradius * units.tradius * 3.14 * units.tdepth * 7.5)+(units.sradius * units.sradius * 3.14 * units.sdepth * 7.5)).toFixed(2)); },
     newValues: () => { 
-      let tdiameter = getRandom(6, 30);
+      let tdiameter = getRandom(5, 30);
       let tradius = parseFloat((tdiameter / 2).toFixed(2));
       let tdepth = getRandom(2, 4);
       let sdiameter = tdiameter - 3;
@@ -138,9 +138,9 @@ export default {
     initial: () => { return { diameter: 12, radius: 6, inches: 3, feet: 0.25 } },
     correct: (units) => { return parseFloat((units.radius * units.radius * 3.14 * units.feet * 7.5).toFixed(2)); },
     newValues: () => { 
-      let diameter = Math.floor(Math.random() * 20 + 1);
+      let diameter = getRandom(3, 30);
       let radius = parseFloat((diameter / 2).toFixed(2));
-      let inches = Math.floor(Math.random() * 12 + 1);
+      let inches = getRandom(1, 12);
       let feet = (inches / 12).toFixed(2);
       return {diameter, radius, inches, feet}
     },
