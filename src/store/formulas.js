@@ -21,9 +21,9 @@ export default {
   },
   s1p3: {
     initial: () => { return { flOunces: 26 } },
-    correct: (units) => { return parseFloat((units.flOunces / 8).toFixed(2)); },
+    correct: (units) => { return parseFloat((units.flOunces / 8).toFixed(1)); },
     newValues: () => { 
-      let flOunces = Math.floor(Math.random() * 64 + 1);
+      let flOunces = getRandom(2, 64);
       return {flOunces: flOunces}
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.flOunces} Fluid Ounces / 8 = ${correct} Cups.`}
