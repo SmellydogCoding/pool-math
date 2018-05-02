@@ -18,9 +18,10 @@ export default {
     return {
       problem: 's2p7',
       image: {src: 'src/assets/section2/problem7.jpg', alt: 'illustration for problem 7'},
-      hint: {title: 'Hint for Problem 7', text: 'Volume = Length * Width * Depth of Water Lost (in Feet) * 7.5<br><br>Feet = Inches / 12'},
+      hint: {title: 'Hint for Problem 7', type: 'textHint', text: 'Volume = Length * Width * Depth of Water Lost (in Feet) * 7.5<br><br>Feet = Inches / 12'},
       next: {text: 'Problem 8: Volume of Water Lost in a Hot Tub', route: '/s2p8'},
-      newButton: 'New Pool Water Loss Problem'
+      newButton: 'New Pool Water Loss Problem',
+      answerSet: {type: 'water loss', decimals: 2}
     }
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
@@ -29,7 +30,7 @@ export default {
     units() { return this.$store.getters.units }
   },
   created() {
-    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
+    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton, answerSet: this.answerSet};
     this.$store.dispatch('init', data);
   }
 }

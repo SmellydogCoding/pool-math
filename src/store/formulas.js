@@ -126,9 +126,9 @@ export default {
     initial: () => { return { length: 25, width: 10, inches: 3, feet: 0.25 } },
     correct: (units) => { return parseFloat((units.length * units.width * units.feet * 7.5).toFixed(2)); },
     newValues: () => { 
-      let width = Math.floor(Math.random() * 30 + 1);
-      let length = Math.floor(Math.random() * 30 + width);
-      let inches = Math.floor(Math.random() * 12 + 1);
+      let width = getRandom(3, 30);
+      let length = getRandom(3, 30);
+      let inches = getRandom(1, 16);
       let feet = (inches / 12).toFixed(2);
       return {length, width, inches, feet}
     },
