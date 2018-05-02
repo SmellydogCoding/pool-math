@@ -18,9 +18,10 @@ export default {
     return {
       problem: 's2p3',
       image: {src: 'src/assets/section2/problem3.jpg', alt: 'illustration for problem 3'},
-      hint: {title: 'Hint for Problem 3', text: 'Volume = Length * Width * Average Depth * 7.5<br></br>Average Depth = (Depth in the Deep End + Depth in the Shallow End) / 2'},
+      hint: {title: 'Hint for Problem 3', type: 'textHint', text: 'Volume = Length * Width * Average Depth * 7.5<br></br>Average Depth = (Depth in the Deep End + Depth in the Shallow End) / 2'},
       next: {text: 'Problem 4: Volume of Water in a Multi-Depth Pool', route: '/s2p4'},
-      newButton: 'New Pool Volume Problem'
+      newButton: 'New Pool Volume Problem',
+      answerSet: {type: 'volume', decimals: 1}
     }
   },
   components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
@@ -29,7 +30,7 @@ export default {
     units() { return this.$store.getters.units }
   },
   created() {
-    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton};
+    let data = {problem: this.problem, image: this.image, hint: this.hint, next: this.next, newButton: this.newButton, answerSet: this.answerSet};
     this.$store.dispatch('init', data);
   }
 }

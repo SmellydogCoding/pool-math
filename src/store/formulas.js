@@ -68,12 +68,12 @@ export default {
   },
   s2p3: {
     initial: () => { return { length: 25, width: 10, shallow: 3, deep: 8, average: 5.5 } },
-    correct: (units) => { return parseFloat((units.length * units.width * units.average * 7.5).toFixed(2)); },
+    correct: (units) => { return parseFloat((units.length * units.width * units.average * 7.5).toFixed(1)); },
     newValues: () => { 
-      let width = Math.floor(Math.random() * 30 + 1);
-      let length = Math.floor(Math.random() * 30 + width);
-      let shallow = Math.floor(Math.random() * 5 + 1);
-      let deep = Math.floor(Math.random() * 15 + shallow);
+      let width = getRandom(3, 30);
+      let length = getRandom(3, 30);
+      let shallow = getRandom(1, 6);
+      let deep = getRandom(6, 18);
       let average = (deep + shallow) / 2;
       return {length, width, shallow, deep, average}
     },
