@@ -38,7 +38,7 @@ export default new Vuex.Store({
       return data;
     },
     hint: state => {
-      let data = { title: state.hint.title, type: state.hint.type, component: state.hint.component, text: state.hint.text, width: state.hintWidth, showHintButton: state.showHintButton }
+      let data = { title: state.hint.title, type: state.hint.type, component: state.hint.component, text: state.hint.text, width: state.hintWidth, showHintButton: state.showHintButton, cyanuric: state.hint.cyanuric }
       return data;
     },
     newOrNext: state => {

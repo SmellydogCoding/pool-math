@@ -161,4 +161,20 @@ export default {
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0Saturation Index is ${correct}.`}
   },
+  s3p2: {
+    initial: () => { return { pH: 7.6, temperature: 76, calcium: 200, alkalinity: 100, cyanuric: 60, TDS: 1200, temperaturef: 0.6, calciumf: 1.9, alkalinityf: 1.6, TDSf: 12.2, sub: 11.7, SI: -0.5 } },
+    correct: (units) => { return parseFloat((units.pH + units.temperaturef + units.calciumf + units.alkalinityf - units.TDSf).toFixed(2)) },
+    newValues: () => { 
+      let pH = getRandom(7.2, 8.0, 0, 1);
+      let temperature = getRandom(32, 105);
+      let calcium = getRandom(25, 400, 5);
+      let cyanuric = getRandom(10, 100, 5);
+      let alkalinity = Math.round(getRandom(25, 180, 5) - (cyanuric / 3));
+      let TDS = getRandom(200, 2000, 10);
+      let newFactors = getFactors(temperature, calcium, alkalinity, TDS)
+      let sub = parseFloat(newFactors[0] + newFactors[1] + newFactors[2] + pH).toFixed(1);
+      return {pH, temperature, calcium, alkalinity, cyanuric, TDS, sub, temperaturef: newFactors[0], calciumf: newFactors[1], alkalinityf: newFactors[2], TDSf: newFactors[3] }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0Saturation Index is ${correct}.`}
+  },
 }

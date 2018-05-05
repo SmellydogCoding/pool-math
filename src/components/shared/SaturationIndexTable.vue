@@ -60,6 +60,7 @@
         td 1.7
         td 125
         td 2.1
+        td
       tr
         td 66
         td 18.9
@@ -109,12 +110,27 @@
         td 800
         td 2.9
     tfoot.ml-4 Key:&nbsp;&nbsp;Tf - Temperature Factor&nbsp;&nbsp;&nbsp;&nbsp;Cf - Calcuim Factor&nbsp;&nbsp;&nbsp;&nbsp;Af - Alkalinity Factor&nbsp;&nbsp;&nbsp;&nbsp;TDSf - Total Dissolved Solids Factor
-    p.mt-2 This chart is also on page 69 of your Pool and Spa Operator Handbook.&nbsp;&nbsp;Use the chart to find the factor for each chemistry value.&nbsp;&nbsp;I your value is between 2 of the values on the table, then use the factor for the next highest value.&nbsp;&nbsp;For example, if the temperature is 79F, use the factor for 84F.&nbsp;&nbsp;use the factors to find Saturation Index using the following formula:
-    p.body-2 Saturation Index = pH + Tf + Cf + Af - TDSf&nbsp;&nbsp;#[span.body-1 You can also use a #[a(href="#") Saturation Index WorkSheet.]]
+    p.mt-2 This chart is also on page 69 of your Pool and Spa Operator Handbook.&nbsp;&nbsp;Use the chart to find the factor for each chemistry value.&nbsp;&nbsp;I your value is between 2 of the values on the table, then use the factor for the next highest value.&nbsp;&nbsp;For example, if the temperature is 79F, use the factor for 84F.&nbsp;&nbsp;use the factors to find Saturation Index using the following formula: #[br]
+      span.light-blue--text Saturation Index = pH + Tf + Cf + Af - TDSf
+    p.body-2 Download #[a(:href="siT" target="new") this table (as a PDF).] #[span.right Download a #[a(:href="siW" target="new") Saturation Index WorkSheet.]]
+    p(v-if="cyanuric") Remember that if your pool has Cyanuric Acid you have to use the Adjusted Total Alkalinity to find the Alkalinity Factor. #[br]
+      span.light-blue--text(v-if="cyanuric") Adjusted Total Alkalinity = Total Alkalinity - (Cyanuric Adid / 3).
 </template>
+
+<script>
+import siT from '../../assets/section3/Saturation Index Table.pdf'
+import siW from '../../assets/section3/Saturation Index Worksheets.pdf'
+export default {
+  data() {
+    return { siT, siW }
+  },
+  props: [ 'cyanuric' ]
+}
+</script>
+
 
 <style scoped>
   td { padding: 0.25rem 1.0rem; }
   th, td:nth-of-type(3), td:nth-of-type(5), td:nth-of-type(7) { border-right: 1px solid #ccc; }
-  span { float: right; }
+  span.right { float: right; }
 </style>

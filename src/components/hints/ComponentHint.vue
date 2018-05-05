@@ -5,7 +5,7 @@
       v-card
         v-card-title.headline {{ title }}
         v-card-text.pt-0
-          component(:is="componentToUse")
+          component(:is="componentToUse" :cyanuric="cyanuric")
         v-card-actions
           v-spacer
           v-btn(color="primary" @click.native="dialog = !dialog") Close
@@ -18,7 +18,7 @@
     data () {
       return { dialog: false, width: '' }
     },
-    props: ['title','component'],
+    props: ['title','component', 'cyanuric'],
     components: { appSaturationIndexTable: SaturationIndexTable },
     computed: {
       data() { return this.$store.getters.select },
