@@ -13,10 +13,10 @@
               v-stepper-content(:step="index")
                 v-card(:height="height")
                   component(:is="stepName(index)")
-                  v-card-actions.align-stepper-bottom.mb-3
-                    v-btn.ml-2(v-if="index < steps" color="primary" @click.native="e1 = index + 1") {{ button }}
-                    v-btn.ml-2(v-else color="success" dark @click="$router.push(nextRoute)") {{ nextText }}
-                      v-icon.ml-2 arrow_forward
+                v-card-actions.pb-0
+                  v-btn(v-if="index < steps" color="primary" @click.native="e1 = index + 1") {{ button }}
+                  v-btn(v-else color="success" dark @click="$router.push(nextRoute)") {{ nextText }}
+                    v-icon.ml-2 arrow_forward
 </template>
 
 <script>
@@ -28,14 +28,18 @@
       return {
         e1: 0,
         index: 0,
-        height: '475px',
         steps: 3,
         button: 'next',
         nextText: 'Problem 1 - Convert Ounces to Pounds',
         nextRoute: '/s1p1'
       }
     },
-    methods: { stepName(index) { return `appStep${index}`; } },
+    methods: {
+      stepName(index) { return `appStep${index}`; }
+    },
+    computed: {
+      height() { return `${window.innerHeight - 280}px` }
+    },
     components: {
       appStep1: Step1,
       appStep2: Step2,

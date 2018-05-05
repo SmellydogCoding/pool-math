@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    v-card-media.center-image(:src="src" :height="height" :alt="alt")
+    v-card-media.center-image(:src="src" :alt="alt")
     v-card-title
       p.title.ma-a Saturation Index and Water Balance
     v-card-text
@@ -13,9 +13,11 @@ export default {
   data() {
     return {
       src: 'src/assets/section3/step1.jpg',
-      alt: 'balance',
-      height: '200px'
+      alt: 'balance'
     }
+  },
+  computed: {
+    height() { return window.innerHeight < 700 ? '150px' : '200px' }
   }
 }
 </script>

@@ -45,9 +45,11 @@ li.active > a { color: #1976d2 !important; }
 
 /* section intros (stepper) */
 
-.align-stepper-bottom {
-  position: absolute;
-  bottom: 0;
+.card__media { height: 150px !important; }
+.card { overflow-y: auto; }
+
+@media screen and (min-height: 700px) {
+  .card__media { height: 200px !important; }
 }
 
 table {
