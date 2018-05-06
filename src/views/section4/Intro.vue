@@ -23,13 +23,15 @@
   import Step1 from '../../components/section4/Step1.vue';
   import Step2 from '../../components/section4/Step2.vue';
   import Step3 from '../../components/section4/Step3.vue';
+  import Step4 from '../../components/section4/Step4.vue';
+  import Step5 from '../../components/section4/Step5.vue';
   
   export default {
     data() { 
       return { 
         e1: 0,
         index: 0,
-        steps: 3,
+        steps: 5,
         button: 'next',
         next: {
           buttonText: 'Problem 1 - Adding an Algaecide',
@@ -48,6 +50,8 @@
       appStep1: Step1,
       appStep2: Step2,
       appStep3: Step3,
+      appStep4: Step4,
+      appStep5: Step5
     }
   }
 </script>
