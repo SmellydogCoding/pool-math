@@ -9,15 +9,10 @@
 </template>
 
 <script>
+import src from '../../assets/section3/overview.jpg'
 export default {
   data() {
-    return {
-      src: 'src/assets/section3/step1.jpg',
-      alt: 'balance'
-    }
-  },
-  computed: {
-    height() { return window.innerHeight < 700 ? '150px' : '200px' }
+    return { src, alt: 'balance' }
   }
 }
 </script>

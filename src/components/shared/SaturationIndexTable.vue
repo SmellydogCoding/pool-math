@@ -128,7 +128,6 @@ export default {
 }
 </script>
 
-
 <style scoped>
   td { padding: 0.25rem 1.0rem; }
   th, td:nth-of-type(3), td:nth-of-type(5), td:nth-of-type(7) { border-right: 1px solid #ccc; }
