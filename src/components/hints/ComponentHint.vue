@@ -13,13 +13,14 @@
 
 <script>
   const SaturationIndexTable = () => import('../shared/SaturationIndexTable.vue');
+  const ChemicalAdjustmentTable = () => import('../shared/ChemicalAdjustmentTable.vue');
 
   export default {
     data () {
       return { dialog: false, width: '' }
     },
     props: ['title','component', 'cyanuric'],
-    components: { appSaturationIndexTable: SaturationIndexTable },
+    components: { appSaturationIndexTable: SaturationIndexTable, appChemicalAdjustmentTable: ChemicalAdjustmentTable },
     computed: {
       data() { return this.$store.getters.select },
       componentToUse() { return `app-${this.component}` }

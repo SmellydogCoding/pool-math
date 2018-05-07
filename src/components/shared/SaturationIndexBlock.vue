@@ -1,40 +1,42 @@
 <template lang="pug">
-  v-flex.mr-5(xs12 lg4)
-    table
-      thead
-        tr
-          th Item
-          th Value
-          th Factor
-      tbody
-        tr
-          td pH
-          td {{ units.pH }}
-          td(v-if="attempts >=2 || correctState") {{ units.pH }}
-        tr
-          td Temperature
-          td {{ units.temperature }}
-          td(v-if="attempts >=2 || correctState") {{ units.temperaturef }}
-        tr
-          td Calcium Hardness
-          td {{ units.calcium }}
-          td(v-if="attempts >=2 || correctState") {{ units.calciumf }}
-        tr
-          td Total Alkalinity
-          td {{ units.alkalinity }}
-          td(v-if="attempts >=2 || correctState") {{ units.alkalinityf }}
-        tr
-          td Sub-Total 
-          td 
-          td(v-if="attempts >=3 || correctState") {{ units.sub }}
-        tr
-          td Total Dissolved Solids
-          td {{ units.TDS }}
-          td(v-if="attempts >=2 || correctState") {{ units.TDSf }}
-        tr
-          td Saturation Index
-          td 
-          td(v-if="correctState") {{ correct }}
+ v-container(grid-list text-xs-center)
+    v-layout(row wrap)
+      v-flex
+        table
+          thead
+            tr
+              th Item
+              th Value
+              th Factor
+          tbody
+            tr
+              td pH
+              td {{ units.pH }}
+              td(v-if="attempts >=2 || correctState") {{ units.pH }}
+            tr
+              td Temperature
+              td {{ units.temperature }}
+              td(v-if="attempts >=2 || correctState") {{ units.temperaturef }}
+            tr
+              td Calcium Hardness
+              td {{ units.calcium }}
+              td(v-if="attempts >=2 || correctState") {{ units.calciumf }}
+            tr
+              td Total Alkalinity
+              td {{ units.alkalinity }}
+              td(v-if="attempts >=2 || correctState") {{ units.alkalinityf }}
+            tr
+              td Sub-Total 
+              td 
+              td(v-if="attempts >=3 || correctState") {{ units.sub }}
+            tr
+              td Total Dissolved Solids
+              td {{ units.TDS }}
+              td(v-if="attempts >=2 || correctState") {{ units.TDSf }}
+            tr
+              td Saturation Index
+              td 
+              td(v-if="correctState") {{ correct }}
 </template>
 
 <script>
