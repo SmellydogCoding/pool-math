@@ -5,7 +5,7 @@
       v-card
         v-card-title.headline {{ title }}
         v-card-text.pt-0
-          component(:is="componentToUse" :cyanuric="cyanuric")
+          component(:is="componentToUse" :cyanuric="cyanuric" :poolVolume="poolVolume" :desiredChange="desiredChange" :unitVolume="unitVolume" :changeProvided="changeProvided" :chemicalAmount="chemicalAmount" :waterFactor="waterFactor" :chemicalFactor="chemicalFactor" :total="total" :algae="algae", :modal="modal")
         v-card-actions
           v-spacer
           v-btn(color="primary" @click.native="dialog = !dialog") Close
@@ -14,16 +14,30 @@
 <script>
   const SaturationIndexTable = () => import('../shared/SaturationIndexTable.vue');
   const ChemicalAdjustmentTable = () => import('../shared/ChemicalAdjustmentTable.vue');
+  const ChemicalAdjustmentWorksheet = () => import('../shared/ChemicalAdjustmentWorksheet.vue');
 
   export default {
     data () {
-      return { dialog: false, width: '' }
+      return {
+        dialog: false, 
+        width: '',
+        poolVolume: 'Pool Volume', 
+        desiredChange: 'Desired Change', 
+        unitVolume: 'Unit Volume of Water', 
+        changeProvided: 'Change Provided by the Chemical', 
+        chemicalAmount: 'Amount of the Chemical', 
+        waterFactor: 'Water Factor', 
+        chemicalFactor: 'Chemical Factor', 
+        total: 'Total',
+        algae: true,
+        modal: true
+      }
     },
     props: ['title','component', 'cyanuric'],
-    components: { appSaturationIndexTable: SaturationIndexTable, appChemicalAdjustmentTable: ChemicalAdjustmentTable },
+    components: { appSaturationIndexTable: SaturationIndexTable, appChemicalAdjustmentTable: ChemicalAdjustmentTable, appChemicalAdjustmentWorksheet: ChemicalAdjustmentWorksheet },
     computed: {
       data() { return this.$store.getters.select },
-      componentToUse() { return `app-${this.component}` }
+      componentToUse() { return `app-${this.component}` },
     },
   }
 </script>

@@ -178,7 +178,7 @@ export default {
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0Saturation Index is ${correct}.`}
   },
   s4p1: {
-    initial: () => { return { poolVolume: 75000, unitVolume: 10000, chemicalAmount: 10.0, chemicalType: 'fl.oz.', waterFactor: 7.5, total: 75, conversionFactor: 128, conversionTotal: 0.59, conversionType: 'gallons', conversion: '75 / 128 = 0.59 gallons.' } },
+    initial: () => { return { poolVolume: 75000, unitVolume: 10000, chemicalAmount: 10.0, chemicalType: 'fl.oz.', waterFactor: 7.5, total: 75, conversionFactor: 128, conversionTotal: 0.59, conversionType: 'gallons', conversion: '75 fl.oz. / 128 = 0.59 gallons.' } },
     correct: (units) => { return parseFloat((units.conversionTotal).toFixed(2)) },
     newValues: () => { 
       let poolVolume = getRandom(40000, 150000, 5000);
@@ -190,7 +190,7 @@ export default {
       let conversionFactor = 128
       let conversionTotal = parseFloat((total / conversionFactor).toFixed(2))
       let conversionType = 'gallons'
-      return { poolVolume, unitVolume, chemicalAmount, chemicalType, waterFactor, total, conversion: `${total} / ${conversionFactor} = ${conversionTotal} ${conversionType}` }
+      return { poolVolume, unitVolume, chemicalAmount, chemicalType, waterFactor, total, conversion: `${total} ${chemicalType} / ${conversionFactor} = ${conversionTotal} ${conversionType}`, conversionTotal }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.`}
   },

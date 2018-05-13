@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       problem: 's4p1',
-      hint: {title: 'Hint for Problem 1', type: 'componentHint', text: '', component: 'ChemicalAdjustmentTable'},
+      hint: {title: 'Hint for Problem 1', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
       next: {text: 'Problem 2: Chemical Adjustment - Raise Chlorine', route: '/s4p2'},
       newButton: 'New Add Algaecide Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
@@ -28,7 +28,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appChemicalAdjustmentWorksheet: ChemicalAdjustmentWorksheet },
   computed: {
-    title() { return `You need to add algaecide to your cloudy green pool.\u00A0\u00A0The label on the algaecide says that it takes ${this.units.chemicalAmount} ${this.units.chemicalType} of algaecide per ${this.units.unitVolume} gallons to kill the algae.\u00A0\u00A0How may gallons is this?` },
+    title() { return `You need to add algaecide to your cloudy green ${this.units.poolVolume} gallon pool.\u00A0\u00A0The label on the algaecide says that it takes ${this.units.chemicalAmount} ${this.units.chemicalType} of algaecide per ${this.units.unitVolume} gallons to kill the algae.\u00A0\u00A0How may gallons is this?` },
     units() { return this.$store.getters.units }
   },
   created() {
