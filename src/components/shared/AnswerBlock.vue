@@ -1,10 +1,8 @@
 <template lang="pug">
-  v-container(grid-list text-xs-center)
-    v-layout(row wrap)
-      v-flex.select-background.px-2
-        app-SelectAnswer
-        app-AnswerMessage
-        app-NextOrNew
+  div.px-3.pt-2
+    app-SelectAnswer
+    app-AnswerMessage
+    app-NextOrNew
 </template>
 
 <script>

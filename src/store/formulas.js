@@ -190,7 +190,7 @@ export default {
       let conversionFactor = 128
       let conversionTotal = parseFloat((total / conversionFactor).toFixed(2))
       let conversionType = 'gallons'
-      return { poolVolume, unitVolume, chemicalAmount, chemicalType, waterFactor, total, conversion: `${total} ${chemicalType} / ${conversionFactor} = ${conversionTotal} ${conversionType}`, conversionTotal }
+      return { poolVolume, unitVolume, chemicalAmount, chemicalType, waterFactor, total, conversion: `${total} ${chemicalType} / ${conversionFactor} = ${conversionTotal} ${conversionType}`, conversionTotal, conversionType }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
   }

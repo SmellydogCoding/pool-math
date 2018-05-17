@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-flex(xs12)
+  div.pb-2.pt-1
     transition(name="fade" mode="out-in")
       v-alert.title(v-if="data.showCorrect" color="success" icon="check_circle" value="true") {{ data.correctMessage }}
       v-alert.title(v-if="data.showIncorrect" color="error" icon="close" value="true") {{ data.incorrectMessage }}

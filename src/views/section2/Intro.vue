@@ -62,3 +62,7 @@
     }
   }
 </script>
+
+<style scoped>
+  img { width: 80%; }
+</style>

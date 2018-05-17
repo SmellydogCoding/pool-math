@@ -1,6 +1,5 @@
 <template lang="pug">
-  v-flex(xs12 lg6)
-    img.problem-image(:src="src" :alt="alt")
+  img(:src="src" :alt="alt")
 </template>
 
 <script>
@@ -11,3 +10,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  img { width: 80%; }
+</style>

@@ -1,6 +1,6 @@
 <template lang="pug">
   transition(name="fade")
-    v-flex(xs12)
+    div.pb-2
       v-btn(v-if="data.showCorrect" color="success" dark @click="$router.push(data.next.route)") {{ data.next.text }}
         v-icon.ml-2 arrow_forward
       v-btn(v-if="data.showCorrect" color="info" dark @click="makeNew()") {{ data.newButton }}
