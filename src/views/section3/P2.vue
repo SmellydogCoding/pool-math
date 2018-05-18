@@ -1,12 +1,13 @@
 <template lang="pug">
-  v-content
-    v-container
-      v-layout(text-xs-center row wrap justify-center)
+   v-content
+    v-container(grid-list text-xs-center)
+      v-layout(row wrap)
         v-flex(xs12).my-2
           p.title {{ title }}
-      v-layout(text-xs-center row wrap justify-center)
-        app-SaturationIndexBlock
-        app-AnswerBlock
+        v-flex.pr-3(xs12 md6)
+          app-SaturationIndexBlock
+        v-flex.answer-block--background(xs12 md6)
+          app-AnswerBlock
 </template>
 
 <script>
