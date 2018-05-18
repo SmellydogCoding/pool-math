@@ -1,52 +1,50 @@
 <template lang="pug">
-  v-container(grid-list text-xs-center)
-    v-layout(row wrap)
-      v-flex
-        table.ma-a.text-xs-center(:class="{hintModal: modal || problemUse}")
-          tbody.black
-            tr
-              td 
-              td.border--right 
-              td(:class="{'hide--pool-volume': problemUse && attempts < 2 && !correctState}").blue.darken-4 {{ poolVolume }}
-              td(:class="{'border--right': !algae }").border--left
-              td(:class="{ black: algae, green: !algae, 'black--text': algae && modal }").darken-4 {{ desiredChange }}
-              td(:class="{'border--left': !algae }")
-              td 
-            tr.slim
-              td 
-              td.border--right 
-              td.grey.darken-2 &divide;
-              td(:class="{'border--right': !algae }").border--left
-              td(:class="{ black: algae, grey: !algae, 'black--text': algae }").darken-2 &divide;
-              td(:class="{'border--left': !algae }")
-              td 
-            tr
-              td 
-              td.border--right 
-              td(:class="{'hide--chemical-cells': problemUse && attempts < 2 && !correctState}").red.darken-4 {{ unitVolume }}
-              td(:class="{'border--right': !algae }").border--left 
-              td(:class="{ black: algae, red: !algae, 'black--text': algae && modal }").darken-4 {{ changeProvided }}
-              td(:class="{'border--left': !algae }")
-              td 
-            tr.slim
-              td.border--bottom 
-              td.border--right.border--bottom 
-              td.grey.darken-2 &#61;
-              td(:class="{'border--right': !algae }").border--left.border--bottom
-              td(:class="{ black: algae, grey: !algae, 'black--text': algae, 'border--bottom': algae, 'black--text': algae }").darken-2 &#61;
-              td(:class="{'border--left': !algae }").border--bottom
-              td.border--bottom
-            tr
-              td(:class="{'hide--chemical-cells': problemUse && attempts < 2 && !correctState}").red.darken-4 {{ chemicalAmount }} {{ chemicalType }}
-              td.grey.darken-2 X
-              td(:class="{'hide--water-factor': problemUse && attempts < 3 && !correctState}").purple.darken-4 {{ waterFactor }}
-              td(:class="{ 'hide--math-operator': algae }").grey.darken-2 X
-              td(:class="{ grey: algae, 'darken-2': algae, orange: !algae, 'darken-4': !algae, 'hide--math-operator': algae && modal }") {{ chemicalFactor }}
-              td.grey.darken-2 &#61;
-              td(:class="{'hide--total': problemUse && !correctState}").white.black--text.body-2 {{ total }} {{ chemicalType }}
-        p.text-xs-center.mt-2(v-if="!conversion")
-          a.blue--text.darken-2(:href="cW" target="new") Download the Chemical Adjustment Worksheet
-        p.text-xs-center.mt-2.subheading(v-if="conversion && correctState") {{ conversion }}
+  div
+    table.ma-a.text-xs-center(:class="{hintModal: modal || problemUse}")
+      tbody.black
+        tr
+          td 
+          td.border--right 
+          td(:class="{'hide--pool-volume': problemUse && attempts < 2 && !correctState}").blue.darken-4 {{ poolVolume }}
+          td(:class="{'border--right': !algae }").border--left
+          td(:class="{ black: algae, green: !algae, 'black--text': algae && modal }").darken-4 {{ desiredChange }}
+          td(:class="{'border--left': !algae }")
+          td 
+        tr.slim
+          td 
+          td.border--right 
+          td.grey.darken-2 &divide;
+          td(:class="{'border--right': !algae }").border--left
+          td(:class="{ black: algae, grey: !algae, 'black--text': algae }").darken-2 &divide;
+          td(:class="{'border--left': !algae }")
+          td 
+        tr
+          td 
+          td.border--right 
+          td(:class="{'hide--chemical-cells': problemUse && attempts < 2 && !correctState}").red.darken-4 {{ unitVolume }}
+          td(:class="{'border--right': !algae }").border--left 
+          td(:class="{ black: algae, red: !algae, 'black--text': algae && modal }").darken-4 {{ changeProvided }}
+          td(:class="{'border--left': !algae }")
+          td 
+        tr.slim
+          td.border--bottom 
+          td.border--right.border--bottom 
+          td.grey.darken-2 &#61;
+          td(:class="{'border--right': !algae }").border--left.border--bottom
+          td(:class="{ black: algae, grey: !algae, 'black--text': algae, 'border--bottom': algae, 'black--text': algae }").darken-2 &#61;
+          td(:class="{'border--left': !algae }").border--bottom
+          td.border--bottom
+        tr
+          td(:class="{'hide--chemical-cells': problemUse && attempts < 2 && !correctState}").red.darken-4 {{ chemicalAmount }} {{ chemicalType }}
+          td.grey.darken-2 X
+          td(:class="{'hide--water-factor': problemUse && attempts < 3 && !correctState}").purple.darken-4 {{ waterFactor }}
+          td(:class="{ 'hide--math-operator': algae }").grey.darken-2 X
+          td(:class="{ grey: algae, 'darken-2': algae, orange: !algae, 'darken-4': !algae, 'hide--math-operator': algae && modal }") {{ chemicalFactor }}
+          td.grey.darken-2 &#61;
+          td(:class="{'hide--total': problemUse && !correctState}").white.black--text.body-2 {{ total }} {{ chemicalType }}
+    p.text-xs-center.mt-2(v-if="!conversion")
+      a.blue--text.darken-2(:href="cW" target="new") Download the Chemical Adjustment Worksheet
+    p.text-xs-center.mt-2.subheading(v-if="conversion && correctState") {{ conversion }}
 </template>
 
 <script>

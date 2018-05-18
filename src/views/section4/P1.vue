@@ -1,12 +1,12 @@
 <template lang="pug">
-  v-content
+   v-content
     v-container(grid-list text-xs-center)
       v-layout(row wrap)
         v-flex(xs12).my-2
           p.title {{ title }}
-        v-flex(xs12 md6)
+        v-flex.pr-3(xs12 md6)
           appChemicalAdjustmentWorksheet(:poolVolume='units.poolVolume', :unitVolume='units.unitVolume', :chemicalAmount='units.chemicalAmount', :chemicalType='units.chemicalType', :waterFactor='units.waterFactor', :total='units.total', :conversion='units.conversion', :algae="algae", :problemUse="problemUse")
-        v-flex(xs12 md6)
+        v-flex.answer-block--background(xs12 md6)
           app-AnswerBlock
 </template>
 
