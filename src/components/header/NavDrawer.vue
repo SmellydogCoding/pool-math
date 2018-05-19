@@ -73,9 +73,10 @@ export default {
           subsections: [
             {link: '/s4Intro', title: '4.0 - About This Section'},
             {link: '/s4p1', title: '4.1 - Adding an algaecide'},
-            {link: '/s4p2', title: '4.2 - Chemical Adjustment - Raise Chlorine'},
-            {link: '/s4p3', title: '4.3 - Chemical Adjustment - Raise Alkalinity'},
-            {link: '/s4p4', title: '4.4 - Chemical Adjustment - Lower Chlorine'}
+            {link: '/s4p2', title: '4.2 - Chemical Adjustment with a Label'},
+            {link: '/s4p3', title: '4.3 - Chemical Adjustment - no label - Raise Chlorine'},
+            {link: '/s4p4', title: '4.4 - Chemical Adjustment - no label - Raise Alkalinity'},
+            {link: '/s4p5', title: '4.5 - Chemical Adjustment - no label - Lower Chlorine'}
           ]
         },
         {

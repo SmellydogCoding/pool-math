@@ -1,5 +1,6 @@
 import {getFactors} from './factors'
 import {getRandom} from './random'
+import chemical from './chemicalAdjustmentValues'
 export default {
   s1p1: {
     initial: () => { return {ounces: 24} },
@@ -195,19 +196,27 @@ export default {
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
   },
   s4p2: {
-    initial: () => { return { poolVolume: 50000, unitVolume: 10000, current: 1.0, new: 3.0, desiredChange: 2.0, chemicalName: 'Calcium Hypochlorite', chemicalAmount: 2.0, chemicalType: 'oz.', changeProvided: 1, waterFactor: 5, chemicalFactor: 2, total: 20, conversionFactor: 16, conversionTotal: 1.25, conversionType: 'pounds', conversion: '20 oz. / 16 = 1.25 pounds.' } },
+    initial: () => { return { poolVolume: 50000, unitVolume: 10000, currentValue: 1.0, newValue: 3.0, desiredChange: 2.0, chemicalName: 'Calcium Hypochlorite', chemicalAmount: 2.0, chemicalType: 'oz.', changeProvided: 1, waterFactor: 5, chemicalFactor: 2, total: 20, conversionFactor: 16, conversionTotal: 1.25, conversionType: 'pounds', conversion: '20 oz. / 16 = 1.25 pounds.' } },
     correct: (units) => { return parseFloat((units.conversionTotal).toFixed(2)) },
     newValues: () => {
-      let poolVolume = getRandom(40000, 150000, 5000)
-      let unitVolume = getRandom(10000, 15000, 1000)
-      let chemicalAmount = getRandom(8, 16)
-      let chemicalType = 'fl.oz.'
+      let poolVolume = getRandom(2000, 150000, 1000)
+      let unitVolume = getRandom(5000, 15000, 1000)
+      let currentValue = getRandom(0, 2)
+      let newValue = getRandom(3, 5)
+      let desiredChange = newValue - currentValue
+      let chlorineType = chemical.chlorineUp[getRandom(0, 7)]
+      let chemicalName = chlorineType.name
+      let chemicalAmount = getRandom(1, 15)
+      let chemicalType = chlorineType.unit
+      let changeProvided = chlorineType.amount
       let waterFactor = parseFloat((poolVolume / unitVolume).toFixed(1))
-      let total = parseFloat((chemicalAmount * waterFactor).toFixed(2))
-      let conversionFactor = 128
-      let conversionTotal = parseFloat((total / conversionFactor).toFixed(2))
-      let conversionType = 'gallons'
-      return { poolVolume, unitVolume, chemicalAmount, chemicalType, waterFactor, total, conversion: `${total} ${chemicalType} / ${conversionFactor} = ${conversionTotal} ${conversionType}`, conversionTotal, conversionType }
+      let chemicalFactor = parseFloat((desiredChange / changeProvided).toFixed(1))
+      let total = parseFloat((chemicalAmount * waterFactor * chemicalFactor).toFixed(2))
+      let conversionFactor = chlorineType.unit === 'oz.' ? 16 : 128
+      let conversionTotal = chlorineType.unit === 'pounds' ? total : parseFloat((total / conversionFactor).toFixed(2))
+      let conversionType = chlorineType.unit === 'oz.' ? 'pounds' : 'gallons'
+      let conversion = chlorineType.unit === 'pounds' ? `${total} ${chemicalType}` : `${total} ${chemicalType} / ${conversionFactor} = ${conversionTotal} ${conversionType}`
+      return { poolVolume, unitVolume, currentValue, newValue, desiredChange, chemicalName, chemicalAmount, chemicalType, changeProvided, waterFactor, chemicalFactor, total, conversion, conversionTotal, conversionType, conversionFactor }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
   }

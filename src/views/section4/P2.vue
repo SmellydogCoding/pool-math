@@ -20,7 +20,7 @@ export default {
       problem: 's4p2',
       hint: {title: 'Hint for Problem 2', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
       next: {text: 'Problem 3: Chemical Adjustment - Raise Alkalinity', route: '/s4p3'},
-      newButton: 'New Add Chlorine Problem',
+      newButton: 'New Add Chlorine with a Label Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       algae: false,
       problemUse: true
@@ -28,7 +28,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appChemicalAdjustmentWorksheet: ChemicalAdjustmentWorksheet },
   computed: {
-    title() { return `You have a ${this.units.poolVolume} gallon pool.\u00A0\u00A0The current free chlorine in your pool is ${this.units.current} ppm.\u00A0\u00A0You want to raise the free chlorine to ${this.units.new} ppm using ${this.units.chemicalName}.\u00A0\u00A0How many ${this.units.conversionType} of ${this.units.chemicalName} are needed?` },
+    title() { return `You have a ${this.units.poolVolume} gallon pool.\u00A0\u00A0The current free chlorine in your pool is ${this.units.currentValue} ppm.\u00A0\u00A0You want to raise the free chlorine to ${this.units.newValue} ppm using ${this.units.chemicalName}.\u00A0\u00A0The label on the ${this.units.chemicalName} container says that ${this.units.chemicalAmount} ${this.units.chemicalType} will raise the free chlorine ${this.units.changeProvided} ppm per ${this.units.unitVolume} gallons of water.\u00A0\u00A0How many ${this.units.conversionType} of ${this.units.chemicalName} are needed?` },
     units() { return this.$store.getters.units }
   },
   created() {
