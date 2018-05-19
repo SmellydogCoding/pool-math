@@ -5,20 +5,20 @@
         v-flex(xs12).my-2
           p.title {{ title }}
         v-flex.pr-3(xs12 md6)
-          appChemicalAdjustmentWorksheet(:poolVolume='units.poolVolume', :unitVolume='units.unitVolume', :chemicalAmount='units.chemicalAmount', :chemicalType='units.chemicalType', :waterFactor='units.waterFactor', :total='units.total', :conversion='units.conversion', :algae="algae", :problemUse="problemUse")
+          app-ChemicalAdjustmentWorksheetAlgaecide(:poolVolume='units.poolVolume' :unitVolume='units.unitVolume' :chemicalAmount='units.chemicalAmount' :chemicalType='units.chemicalType' :waterFactor='units.waterFactor' :total='units.total' :conversion='units.conversion' :problemUse="problemUse")
         v-flex.answer-block--background(xs12 md6)
           app-AnswerBlock
 </template>
 
 <script>
 import AnswerBlock from '../../components/shared/AnswerBlock'
-import ChemicalAdjustmentWorksheet from '../../components/shared/ChemicalAdjustmentWorksheet'
+import ChemicalAdjustmentWorksheetAlgaecide from '../../components/shared/ChemicalAdjustmentWorksheetAlgaecide'
 
 export default {
   data() {
     return {
       problem: 's4p1',
-      hint: {title: 'Hint for Problem 1', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
+      hint: {title: 'Hint for Problem 1', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheetAlgaecide'},
       next: {text: 'Problem 2: Chemical Adjustment - Raise Chlorine', route: '/s4p2'},
       newButton: 'New Add Algaecide Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
@@ -26,9 +26,9 @@ export default {
       problemUse: true
     }
   },
-  components: { appAnswerBlock: AnswerBlock, appChemicalAdjustmentWorksheet: ChemicalAdjustmentWorksheet },
+  components: { appAnswerBlock: AnswerBlock, appChemicalAdjustmentWorksheetAlgaecide: ChemicalAdjustmentWorksheetAlgaecide },
   computed: {
-    title() { return `You need to add algaecide to your cloudy green ${this.units.poolVolume} gallon pool.\u00A0\u00A0The label on the algaecide says that it takes ${this.units.chemicalAmount} ${this.units.chemicalType} of algaecide per ${this.units.unitVolume} gallons to kill the algae.\u00A0\u00A0How may gallons is this?` },
+    title() { return `You need to add algaecide to your cloudy green ${this.units.poolVolume} gallon pool.\u00A0\u00A0The label on the algaecide says that it takes ${this.units.chemicalAmount} ${this.units.chemicalType} of algaecide per ${this.units.unitVolume} gallons to kill the algae.\u00A0\u00A0How many gallons is this?` },
     units() { return this.$store.getters.units }
   },
   created() {

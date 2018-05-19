@@ -5,7 +5,7 @@
       v-card
         v-card-title.headline {{ title }}
         v-card-text.pt-0
-          component(:is="componentToUse" :cyanuric="cyanuric" :poolVolume="poolVolume" :desiredChange="desiredChange" :unitVolume="unitVolume" :changeProvided="changeProvided" :chemicalAmount="chemicalAmount" :waterFactor="waterFactor" :chemicalFactor="chemicalFactor" :total="total" :algae="algae", :modal="modal")
+          component(:is="componentToUse" :cyanuric="cyanuric" :poolVolume="poolVolume" :desiredChange="desiredChange" :unitVolume="unitVolume" :changeProvided="changeProvided" :chemicalAmount="chemicalAmount" :waterFactor="waterFactor" :chemicalFactor="chemicalFactor" :total="total" :hintModal="hintModal")
         v-card-actions
           v-spacer
           v-btn(color="primary" @click.native="dialog = !dialog") Close
@@ -15,6 +15,7 @@
   const SaturationIndexTable = () => import('../shared/SaturationIndexTable.vue');
   const ChemicalAdjustmentTable = () => import('../shared/ChemicalAdjustmentTable.vue');
   const ChemicalAdjustmentWorksheet = () => import('../shared/ChemicalAdjustmentWorksheet.vue');
+  const ChemicalAdjustmentWorksheetAlgaecide = () => import('../shared/ChemicalAdjustmentWorksheetAlgaecide.vue');
 
   export default {
     data () {
@@ -29,12 +30,16 @@
         waterFactor: 'Water Factor', 
         chemicalFactor: 'Chemical Factor', 
         total: 'Total',
-        algae: true,
-        modal: true
+        hintModal: true
       }
     },
     props: ['title','component', 'cyanuric'],
-    components: { appSaturationIndexTable: SaturationIndexTable, appChemicalAdjustmentTable: ChemicalAdjustmentTable, appChemicalAdjustmentWorksheet: ChemicalAdjustmentWorksheet },
+    components: {
+      appSaturationIndexTable: SaturationIndexTable,
+      appChemicalAdjustmentTable: ChemicalAdjustmentTable,
+      appChemicalAdjustmentWorksheet: ChemicalAdjustmentWorksheet,
+      appChemicalAdjustmentWorksheetAlgaecide: ChemicalAdjustmentWorksheetAlgaecide
+    },
     computed: {
       data() { return this.$store.getters.select },
       componentToUse() { return `app-${this.component}` },

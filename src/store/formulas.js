@@ -193,5 +193,22 @@ export default {
       return { poolVolume, unitVolume, chemicalAmount, chemicalType, waterFactor, total, conversion: `${total} ${chemicalType} / ${conversionFactor} = ${conversionTotal} ${conversionType}`, conversionTotal, conversionType }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
+  },
+  s4p2: {
+    initial: () => { return { poolVolume: 50000, unitVolume: 10000, current: 1.0, new: 3.0, desiredChange: 2.0, chemicalName: 'Calcium Hypochlorite', chemicalAmount: 2.0, chemicalType: 'oz.', changeProvided: 1, waterFactor: 5, chemicalFactor: 2, total: 20, conversionFactor: 16, conversionTotal: 1.25, conversionType: 'pounds', conversion: '20 oz. / 16 = 1.25 pounds.' } },
+    correct: (units) => { return parseFloat((units.conversionTotal).toFixed(2)) },
+    newValues: () => {
+      let poolVolume = getRandom(40000, 150000, 5000)
+      let unitVolume = getRandom(10000, 15000, 1000)
+      let chemicalAmount = getRandom(8, 16)
+      let chemicalType = 'fl.oz.'
+      let waterFactor = parseFloat((poolVolume / unitVolume).toFixed(1))
+      let total = parseFloat((chemicalAmount * waterFactor).toFixed(2))
+      let conversionFactor = 128
+      let conversionTotal = parseFloat((total / conversionFactor).toFixed(2))
+      let conversionType = 'gallons'
+      return { poolVolume, unitVolume, chemicalAmount, chemicalType, waterFactor, total, conversion: `${total} ${chemicalType} / ${conversionFactor} = ${conversionTotal} ${conversionType}`, conversionTotal, conversionType }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
   }
 }

@@ -5,41 +5,41 @@
         tr
           td 
           td.border--right 
-          td(:class="{'hide--pool-volume': problemUse && attempts < 2 && !correctState}").blue.darken-4 {{ poolVolume }} {{ showUnits.waterUnits }}
-          td.border--left.border--right
-          td(:class="{'hide--desired-change': problemUse && attempts < 2 && !correctState}").green.darken-4 {{ desiredChange }} {{ showUnits.chemUnits }}
+          td(:class="{'hide--pool-volume': problemUse && attempts < 2 && !correctState}").blue.darken-4 {{ poolVolume }} gallons
           td.border--left
+          td
+          td
           td 
         tr.slim
           td 
           td.border--right 
           td.grey.darken-2 &divide;
-          td.border--left.border--right
-          td.grey.darken-2 &divide;
           td.border--left
+          td
+          td
           td 
         tr
           td 
           td.border--right 
-          td(:class="{'hide--chemical-cells': problemUse && attempts < 2 && !correctState}").red.darken-4 {{ unitVolume }} {{ showUnits.waterUnits }}
-          td.border--left.border--right
-          td(:class="{'hide--chemical-cells': problemUse && attempts < 2 && !correctState}").red.darken-4 {{ changeProvided }} {{ showUnits.chemUnits }}
-          td.border--left
+          td(:class="{'hide--chemical-cells': problemUse && attempts < 2 && !correctState}").red.darken-4 {{ unitVolume }} gallons
+          td.border--left 
+          td
+          td
           td 
         tr.slim
           td.border--bottom 
           td.border--right.border--bottom 
           td.grey.darken-2 &#61;
-          td.border--left.border--right.border--bottom
-          td.grey.darken-2 &#61;
           td.border--left.border--bottom
+          td.border--bottom
+          td.border--bottom
           td.border--bottom
         tr
           td(:class="{'hide--chemical-cells': problemUse && attempts < 2 && !correctState}").red.darken-4 {{ chemicalAmount }} {{ chemicalType }}
           td.grey.darken-2 X
           td(:class="{'hide--water-factor': problemUse && attempts < 3 && !correctState}").purple.darken-4 {{ waterFactor }}
-          td.grey.darken-2 X
-          td(:class="{'hide--chemical-factor': problemUse && attempts < 3 && !correctState}").orange.darken-4 {{ chemicalFactor }}
+          td
+          td.border--bottom
           td.grey.darken-2 &#61;
           td(:class="{'hide--total': problemUse && !correctState}").white.black--text.body-2 {{ total }} {{ chemicalType }}
     p.text-xs-center.mt-2(v-if="!conversion")
@@ -53,12 +53,10 @@ export default {
   data() {
     return { cW }
   },
-  props: ['poolVolume', 'desiredChange', 'unitVolume', 'changeProvided', 'chemicalAmount', 'chemicalType', 'waterFactor', 'chemicalFactor', 'total', 'conversion', 'problemUse', 'hintModal'],
+  props: ['poolVolume', 'unitVolume', 'chemicalAmount', 'chemicalType', 'waterFactor', 'total', 'conversion', 'problemUse', 'hintModal'],
   computed: {
     attempts() { return this.$store.getters.attempts },
-    correctState() { return this.$store.getters.answerMessage.showCorrect },
-    // if the saturation index worksheet component is called from the component hint component we don't want to display gallons or ppm
-    showUnits() { return !this.hintModal ? { chemUnits: 'ppm', waterUnits: 'gallons' } : { chemUnits: '', waterUnits: '' } }
+    correctState() { return this.$store.getters.answerMessage.showCorrect }
   }
 }
 </script>
@@ -78,10 +76,8 @@ export default {
   /* using vue-show or vue-if to hide the cell was changing the apparence of the table */
   /* so I hide the contents by making the text the same color as the background */
   .hide--pool-volume { color: #0d47a1 !important; }
-  .hide--desired-change { color: #1b5e20 !important; }
   .hide--chemical-cells { color: #b71c1c !important; }
   .hide--water-factor { color: #4a148c !important; }
-  .hide--chemical-factor { color: #e65100 !important; }
   .hide--math-operator { color: #616161 !important; }
   .hide--total { color: #ffffff !important; }
   @media screen and (max-height: 700px) {

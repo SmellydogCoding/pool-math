@@ -20,5 +20,6 @@ export const routes = [
   { path: '/s3p1', component: () => import('../views/section3/P1'), meta: { title: 'Section 3 Problem 1' } },
   { path: '/s3p2', component: () => import('../views/section3/P2'), meta: { title: 'Section 3 Problem 2' } },
   { path: '/s4Intro', component: () => import('../views/section4/Intro'), meta: { title: 'Intro to Section 4' } },
-  { path: '/s4p1', component: () => import('../views/section4/P1'), meta: { title: 'Section 4 Problem 1' } }
+  { path: '/s4p1', component: () => import('../views/section4/P1'), meta: { title: 'Section 4 Problem 1' } },
+  { path: '/s4p2', component: () => import('../views/section4/P2'), meta: { title: 'Section 4 Problem 2' } }
 ]

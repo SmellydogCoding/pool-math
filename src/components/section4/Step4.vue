@@ -11,7 +11,8 @@
       p Step 5: Divide the Desired Chemical Change by the Change Provided by the Chemical and enter that number in the Chemical Factor box of the worksheet.
       p Step 6: Multiply the Amount of the Chemical, the Water Factor, and the Chemical Factor together and enter that number in the Total box of the worksheet.
       p Step 7: You're almost done!&nbsp;&nbsp;Depending on how big the total is, you may need to covert ounces into pounds or fluid ounces into gallons.&nbsp;&nbsp;You mastered that in Section 2 right?&nbsp;&nbsp;Here is the filled out worksheet for this problem:
-      appChemicalAdjustmentWorksheet(:poolVolume='poolVolume', :desiredChange='desiredChange', :unitVolume='unitVolume', :changeProvided='changeProvided', :chemicalAmount='chemicalAmount', :waterFactor='waterFactor', :chemicalFactor='chemicalFactor', :total='total', :conversion='conversion', :algae="algae")
+      appChemicalAdjustmentWorksheet(:poolVolume='poolVolume' :desiredChange='desiredChange' :unitVolume='unitVolume' :changeProvided='changeProvided' :chemicalAmount='chemicalAmount' :waterFactor='waterFactor' :chemicalFactor='chemicalFactor' :total='total' :conversion='conversion')
+      p.text-xs-center.mt-2.subheading {{ conversion }}
       p So the answer to this question would be: #[span.green--text.lighten-4 1.13 Pounds].
       p.mt-4 An alternative to using the worksheet would be to use this formula:
       p Amount of Chemical * (Pool Volume / Unit Volume of Water) * (Desired Chemical Change / Change Provided By the Chemical) = Total
@@ -33,7 +34,6 @@ export default {
       chemicalFactor: '2', 
       total: '18 oz.',
       conversion: '18 oz. / 16 = 1.13 pounds',
-      algae: false
     }
   },
   components: { appChemicalAdjustmentWorksheet: ChemicalAdjustmentWorksheet }
