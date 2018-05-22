@@ -73,10 +73,13 @@ export default {
           subsections: [
             {link: '/s4Intro', title: '4.0 - About This Section'},
             {link: '/s4p1', title: '4.1 - Adding an algaecide'},
-            {link: '/s4p2', title: '4.2 - Chemical Adjustment with a Label'},
-            {link: '/s4p3', title: '4.3 - Chemical Adjustment - no label - Raise Chlorine'},
-            {link: '/s4p4', title: '4.4 - Chemical Adjustment - no label - Raise Alkalinity'},
-            {link: '/s4p5', title: '4.5 - Chemical Adjustment - no label - Lower Chlorine'}
+            {link: '/s4p2', title: '4.2 - Adjustment with a Label'},
+            {link: '/s4p3', title: '4.3 - Adjustment Without a Label - Raise Chlorine'},
+            {link: '/s4p4', title: '4.4 - Adjustment Without a Label - Raise Alkalinity'},
+            {link: '/s4p5', title: '4.5 - Adjustment Without a Label - Lower Alkalinity'},
+            {link: '/s4p6', title: '4.6 - Adjustment Without a Label - Raise Calcium'},
+            {link: '/s4p7', title: '4.7 - Adjustment Without a Label - Raise Stabilizer'},
+            {link: '/s4p8', title: '4.8 - Adjustment Without a Label - Lower Chlorine'}
           ]
         },
         {
@@ -119,7 +122,6 @@ export default {
   aside {
     overflow-y: auto;
     height: 100%;
-    background: none !important;
   }
 
   aside ul {
