@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {getNewAnswerSet} from './methods/newAnswerSet'
-import formulas from './methods/formulasout'
+import formulas from './methods/formulas'
 
 Vue.use(Vuex)
 
