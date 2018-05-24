@@ -56,7 +56,7 @@ export default {
   ],
   chlorineDown: [
     {
-      name: 'Sodium Thiosulfate (100%)', amount: 2.6, unit: 'oz.', change: 1
+      name: 'Sodium Thiosulfate', amount: 2.6, unit: 'oz.', change: 1
     },
     {
       name: 'Sodium Sulfite', amount: 2.4, unit: 'oz.', change: 1
