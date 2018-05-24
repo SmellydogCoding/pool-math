@@ -282,5 +282,26 @@ export default {
       return { poolVolume, unitVolume, currentValue, newValue, desiredChange, chemicalName, chemicalAmount, chemicalUnit, changeProvided, waterFactor, chemicalFactor, total, conversion, conversionTotal, conversionType, conversionFactor }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
+  },
+  s4p6: {
+    initial: () => { return { poolVolume: 80000, unitVolume: 10000, currentValue: 100, newValue: 200, desiredChange: 100, chemicalName: 'Calcium Chloride (100%)', chemicalAmount: 0.9, chemicalUnit: 'pounds', changeProvided: 10, waterFactor: 8, chemicalFactor: 10, total: 72.0, conversionFactor: 1, conversionTotal: 72.0, conversionType: 'pounds', conversion: '72 pounds' } },
+    correct: (units) => { return parseFloat((units.conversionTotal).toFixed(2)) },
+    newValues: () => {
+      let poolVolume = getRandom(2000, 150000, 1000)
+      let unitVolume = 10000
+      let currentValue = getRandom(25, 175, 25)
+      let newValue = getRandom(200, 400, 25)
+      let desiredChange = Math.abs(newValue - currentValue)
+      let { name: chemicalName, amount: chemicalAmount, unit: chemicalUnit, change: changeProvided } = chemical.calciumUp[getRandom(0, 1)]
+      let waterFactor = parseFloat((poolVolume / unitVolume).toFixed(1))
+      let chemicalFactor = parseFloat((desiredChange / changeProvided).toFixed(1))
+      let total = parseFloat((chemicalAmount * waterFactor * chemicalFactor).toFixed(2))
+      let conversionFactor = chemicalUnit === 'oz.' ? 16 : 128
+      let conversionTotal = chemicalUnit === 'pounds' ? total : parseFloat((total / conversionFactor).toFixed(2))
+      let conversionType = chemicalUnit === 'oz.' ? 'pounds' : 'gallons'
+      let conversion = chemicalUnit === 'pounds' ? `${total} ${chemicalUnit}` : `${total} ${chemicalUnit} / ${conversionFactor} = ${conversionTotal} ${conversionType}`
+      return { poolVolume, unitVolume, currentValue, newValue, desiredChange, chemicalName, chemicalAmount, chemicalUnit, changeProvided, waterFactor, chemicalFactor, total, conversion, conversionTotal, conversionType, conversionFactor }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
   }
 }
