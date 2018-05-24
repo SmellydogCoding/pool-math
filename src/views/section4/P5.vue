@@ -20,10 +20,10 @@ import cT from '../../assets/section4/Chemical Adjustment Chart.pdf'
 export default {
   data() {
     return {
-      problem: 's4p4',
-      hint: {title: 'Hint for Problem 4', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
-      next: {text: 'Problem 5: Chemical Adjustment - no label - Lower Alkalinity', route: '/s4p5'},
-      newButton: 'New Raise Alkalinity without a Label Problem',
+      problem: 's4p5',
+      hint: {title: 'Hint for Problem 5', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
+      next: {text: 'Problem 6: Chemical Adjustment - no label - Raise Calcium', route: '/s4p6'},
+      newButton: 'New Lower Alkalinity without a Label Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       problemUse: true,
       cT
@@ -31,7 +31,7 @@ export default {
   },
   components: { appAnswerBlock: AnswerBlock, appChemicalAdjustmentWorksheet: ChemicalAdjustmentWorksheet },
   computed: {
-    title() { return `You have a ${this.units.poolVolume} gallon pool.\u00A0\u00A0The current total alkalinity in your pool is ${this.units.currentValue} ppm.\u00A0\u00A0You want to raise the total alkalinity to ${this.units.newValue} ppm using ${this.units.chemicalName}.\u00A0\u00A0How many ${this.units.conversionType} of ${this.units.chemicalName} are needed?` },
+    title() { return `You have a ${this.units.poolVolume} gallon pool.\u00A0\u00A0The current total alkalinity in your pool is ${this.units.currentValue} ppm.\u00A0\u00A0You want to lower the total alkalinity to ${this.units.newValue} ppm using ${this.units.chemicalName}.\u00A0\u00A0How many ${this.units.conversionType} of ${this.units.chemicalName} are needed?` },
     units() { return this.$store.getters.units }
   },
   created() {
