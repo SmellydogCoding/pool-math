@@ -51,7 +51,7 @@ export default {
   ],
   stabilizerUp: [
     {
-      name: 'Cyanuric Acid', amount: 13, unit: 'oz', change: 10
+      name: 'Cyanuric Acid', amount: 13, unit: 'oz.', change: 10
     }
   ],
   chlorineDown: [
