@@ -22,7 +22,7 @@ export default {
     return {
       problem: 's4p8',
       hint: {title: 'Hint for Problem 8', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
-      next: {text: 'Intro to Section 5', route: '/s5p0'},
+      next: {text: 'Intro to Section 5', route: '/s5Intro'},
       newButton: 'New Lower Chlorine without a Label Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       problemUse: true,
