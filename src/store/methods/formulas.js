@@ -345,5 +345,16 @@ export default {
       return { poolVolume, unitVolume, currentValue, newValue, desiredChange, chemicalName, chemicalAmount, chemicalUnit, changeProvided, waterFactor, chemicalFactor, total, conversion, conversionTotal, conversionType, conversionFactor }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
+  },
+  s5p1: {
+    initial: () => { return { freeCl: 3, totalCl: 4 } },
+    correct: (units) => { return parseFloat(((units.totalCl - units.freeCl) * 10).toFixed(1)) },
+    newValues: () => {
+      let freeCl = getRandom(1.01, 5, 0.5, 1)
+      let totalCl = freeCl + getRandom(0.5, 3, 0.5, 1)
+      let breakpoint = (totalCl - freeCl) * 10
+      return { freeCl, totalCl, breakpoint }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0The Breakpoint Value is ${correct} ppm.` }
   }
 }
