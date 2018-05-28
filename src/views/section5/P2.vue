@@ -10,7 +10,7 @@
             a.indigo--text.darken-4(:href="cT" target="new") Download the Chemical Adjustment Table
           p.mb-0.white(v-if="attempts >= 1 || correctState") {{ units.totalCl }} ppm total chlorine - {{ units.freeCl }} ppm free chlorine = {{ units.totalCl - units.freeCl }} ppm combined chlorine
           p.my-0.white(v-if="attempts >= 1 || correctState") {{ units.totalCl - units.freeCl }} ppm combined chlorine * 10 = {{ units.breakpoint }} ppm breakpoint value
-          p.mt-0.white(v-if="attempts >= 2 || correctState") {{ units.breakpoint }} ppm breakpoint value - {{ units.freeCl }} ppm free chlorine = {{ units.desiredChange }} ppm desired change
+          p.my-0.white(v-if="attempts >= 2 || correctState") {{ units.breakpoint }} ppm breakpoint value - {{ units.freeCl }} ppm free chlorine = {{ units.desiredChange }} ppm desired change
         v-flex.answer-block--background(xs12 md6)
           app-AnswerBlock
 </template>
