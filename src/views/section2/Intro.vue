@@ -2,7 +2,7 @@
   v-content
     v-container.pt-0
       v-layout(row wrap justify-center)
-        v-flex(xs12 lg8)
+        v-flex(xs12 lg10)
           v-stepper.mt-3(v-model="e1" dark)
             v-stepper-header
               template(v-for="index in steps")

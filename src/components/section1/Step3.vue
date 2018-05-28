@@ -19,6 +19,5 @@
         tr
           td Convert Inches to Feet:
           td Inches / 12 = Feet
-        tfoot.ml-4 Key:&nbsp;&nbsp;* - means Multiply&nbsp;&nbsp;&nbsp;&nbsp;/ - means Divide
-      p.mt-2 These formulas are also on page 26 of your Pool and Spa Operator Handbook.
+      p.mt-2 Key:&nbsp;&nbsp;* - means Multiply&nbsp;&nbsp;&nbsp;&nbsp;/ - means Divide
 </template>
