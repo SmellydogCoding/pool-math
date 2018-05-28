@@ -41,8 +41,7 @@ li.active > a { color: #1976d2 !important; }
 }
 .content--wrap { align-items: start; }
 .flex img { align-self: center; }
-.flex img.shrink-to-fit { width: 100%; }
-/* .flex-box--image-60 { width: 60% !important; } */
+.flex img.shrink-to-fit { max-width: 100%; }
 .answer-block--background { background-color: rgba(256,256,256,0.8); }
 
 /* section intros (stepper) */

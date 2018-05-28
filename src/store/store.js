@@ -25,7 +25,7 @@ export default new Vuex.Store({
     showAnswerButton: true,
     showNextButton: false,
     correctMessage: '',
-    incorrectMessage: `Bummer!\u00A0\u00A0That answer is not correct.\u00A0\u00A0Please try again.`,
+    incorrectMessage: `That answer is not correct.\u00A0\u00A0Please try again.`,
     hintWidth: '525px'
   },
   getters: {
