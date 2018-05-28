@@ -356,5 +356,27 @@ export default {
       return { freeCl, totalCl, breakpoint }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0The Breakpoint Value is ${correct} ppm.` }
+  },
+  s5p2: {
+    initial: () => { return { poolVolume: 30000, unitVolume: 10000, freeCl: 2, totalCl: 3, breakpoint: 10, desiredChange: 8.0, chemicalName: 'Sodium Hypochlorite', chemicalAmount: 10.7, chemicalUnit: 'fl.oz.', changeProvided: 1, waterFactor: 3, chemicalFactor: 8, total: 256.8, conversionFactor: 128, conversionTotal: 2.0, conversionType: 'gallons', conversion: '256.8 fl.oz. / 128 = 2.0 gallons.' } },
+    correct: (units) => { return parseFloat((units.conversionTotal).toFixed(2)) },
+    newValues: () => {
+      let poolVolume = getRandom(2000, 150000, 1000)
+      let unitVolume = 10000
+      let freeCl = getRandom(1.01, 5, 0.5, 1)
+      let totalCl = freeCl + getRandom(0.5, 3, 0.5, 1)
+      let breakpoint = (totalCl - freeCl) * 10
+      let desiredChange = breakpoint - freeCl
+      let { name: chemicalName, amount: chemicalAmount, unit: chemicalUnit, change: changeProvided } = chemical.chlorineUp[getRandom(0, 6)]
+      let waterFactor = parseFloat((poolVolume / unitVolume).toFixed(1))
+      let chemicalFactor = parseFloat((desiredChange / changeProvided).toFixed(1))
+      let total = parseFloat((chemicalAmount * waterFactor * chemicalFactor).toFixed(2))
+      let conversionFactor = chemicalUnit === 'oz.' ? 16 : 128
+      let conversionTotal = chemicalUnit === 'pounds' ? total : parseFloat((total / conversionFactor).toFixed(2))
+      let conversionType = chemicalUnit === 'oz.' ? 'pounds' : 'gallons'
+      let conversion = chemicalUnit === 'pounds' ? `${total} ${chemicalUnit}` : `${total} ${chemicalUnit} / ${conversionFactor} = ${conversionTotal} ${conversionType}`
+      return { poolVolume, unitVolume, freeCl, totalCl, breakpoint, desiredChange, chemicalName, chemicalAmount, chemicalUnit, changeProvided, waterFactor, chemicalFactor, total, conversion, conversionTotal, conversionType, conversionFactor }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
   }
 }

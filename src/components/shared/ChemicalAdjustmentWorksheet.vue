@@ -44,7 +44,7 @@
           td(:class="{'hide--total': problemUse && !correctState}").white.black--text.body-2 {{ total }} {{ chemicalType }}
     p.text-xs-center.mt-2(v-if="!conversion")
       a.blue--text.darken-2(:href="cW" target="new") Download the Chemical Adjustment Worksheet
-    p.text-xs-center.mt-2.subheading(v-if="conversion && correctState") {{ conversion }}
+    p.text-xs-center.mt-2.mb-0.subheading(v-if="conversion && correctState") {{ conversion }}
 </template>
 
 <script>
