@@ -6,13 +6,17 @@
           p.title {{ title }}
         v-flex(xs12 md6)
           app-IllustrationBlock
-        v-flex.answer-block--background(xs12 md6)
-          app-AnswerBlock
+        v-flex.answer-block--background.pa-2(xs12 md6)
+          app-SelectAnswer
+          app-AnswerMessage
+          app-NextOrNew
 </template>
 
 <script>
-import AnswerBlock from '../../components/shared/AnswerBlock'
 import IllustrationBlock from '../../components/shared/IllustrationBlock'
+import NextOrNew from '../../components/shared/NextOrNew'
+import AnswerMessage from '../../components/shared/AnswerMessage'
+import SelectAnswer from '../../components/shared/SelectAnswer'
 
 export default {
   data() {
@@ -25,7 +29,7 @@ export default {
       answerSet: {type: 'volume', decimals: 1}
     }
   },
-  components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
+  components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
     title() { return `You have a rectangular pool that is ${this.units.length} feet long and ${this.units.width} feet wide.\u00A0\u00A0The Depth of the pool ranges from ${this.units.shallow} feet in the shallow end to ${this.units.deep} feet in the deep end.\u00A0\u00A0What is the volume of water in this pool?` },
     units() { return this.$store.getters.units }

@@ -6,13 +6,17 @@
           p.title {{ title }}
         v-flex(xs12 md6)
           app-IllustrationBlock
-        v-flex.answer-block--background(xs12 md6)
-          app-AnswerBlock
+        v-flex.answer-block--background.pa-2(xs12 md6)
+          app-SelectAnswer
+          app-AnswerMessage
+          app-NextOrNew
 </template>
 
 <script>
-import AnswerBlock from '../../components/shared/AnswerBlock'
 import IllustrationBlock from '../../components/shared/IllustrationBlock'
+import NextOrNew from '../../components/shared/NextOrNew'
+import AnswerMessage from '../../components/shared/AnswerMessage'
+import SelectAnswer from '../../components/shared/SelectAnswer'
 
 export default {
   data() {
@@ -25,7 +29,7 @@ export default {
       answerSet: {type: 'volume', decimals: 2}
     }
   },
-  components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
+  components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
     title() { return `You have a hot tub where the top section is ${this.units.tdiameter} feet in diameter and ${this.units.tdepth} feet deep.\u00A0\u00A0The bottom section (where the seats are) is ${this.units.sdiameter} feet in diameter and ${this.units.sdepth} feet deep.\u00A0\u00A0What is the volume of this hot tub?` },
     units() { return this.$store.getters.units }

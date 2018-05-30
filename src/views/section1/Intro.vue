@@ -15,7 +15,7 @@
                   component(:is="stepName(index)")
                 v-card-actions.pb-0
                   v-btn(v-if="index < steps" color="primary" @click.native="e1 = index + 1") {{ button }}
-                  v-btn(v-else color="success" dark @click="$router.push(nextRoute)") {{ nextText }}
+                  v-btn.mobile--reduce-text-075(v-else color="success" dark @click="$router.push(nextRoute)") {{ nextText }}
                     v-icon.ml-2 arrow_forward
 </template>
 

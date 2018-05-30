@@ -6,13 +6,17 @@
           p.title {{ title }}
         v-flex(xs12 md6)
           app-IllustrationBlock
-        v-flex.answer-block--background(xs12 md6)
-          app-AnswerBlock
+        v-flex.answer-block--background.pa-2(xs12 md6)
+          app-SelectAnswer
+          app-AnswerMessage
+          app-NextOrNew
 </template>
 
 <script>
-import AnswerBlock from '../../components/shared/AnswerBlock'
 import IllustrationBlock from '../../components/shared/IllustrationBlock'
+import NextOrNew from '../../components/shared/NextOrNew'
+import AnswerMessage from '../../components/shared/AnswerMessage'
+import SelectAnswer from '../../components/shared/SelectAnswer'
 
 export default {
   data() {
@@ -25,7 +29,7 @@ export default {
       answerSet: {type: 'conversion', decimals: 2}
     }
   },
-  components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
+  components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
     title() { return `Your wading pool lost ${this.units.inches} inches of water due to a leak.\u00A0\u00A0How many feet is this?` },
     units() { return this.$store.getters.units }
