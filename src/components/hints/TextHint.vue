@@ -2,7 +2,7 @@
   span
     v-btn(color="orange darken-1" dark @click.native.stop="dialog = !dialog") Hint
     v-dialog(v-model="dialog" content-class="hint--dialog-text")
-      v-card
+      v-card.theme--dark
         v-card-title.headline {{title}}
         v-card-text(v-html="text")
         v-card-actions
