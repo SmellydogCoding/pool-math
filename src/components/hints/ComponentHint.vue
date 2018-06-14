@@ -2,9 +2,9 @@
   span
     v-btn.px-2(color="orange darken-1" dark @click.native.stop="dialog = !dialog") Hint
     v-dialog(v-model="dialog" content-class="hint--dialog-component")
-      v-card
+      v-card.theme--dark
         v-card-title.headline {{ title }}
-        v-card-text.pt-0
+        v-card-text.py-0
           component(:is="componentToUse" :cyanuric="cyanuric" :poolVolume="poolVolume" :desiredChange="desiredChange" :unitVolume="unitVolume" :changeProvided="changeProvided" :chemicalAmount="chemicalAmount" :waterFactor="waterFactor" :chemicalFactor="chemicalFactor" :total="total" :hintModal="hintModal")
         v-card-actions
           v-spacer
