@@ -4,15 +4,19 @@
       v-layout(row wrap)
         v-flex(xs12).my-2
           p.title {{ title }}
-        v-flex.pr-3(xs12 md6)
+        v-flex.px-3(xs12 md6)
           app-ChemicalAdjustmentWorksheetAlgaecide(:poolVolume='units.poolVolume' :unitVolume='units.unitVolume' :chemicalAmount='units.chemicalAmount' :chemicalType='units.chemicalType' :waterFactor='units.waterFactor' :total='units.total' :conversion='units.conversion' :problemUse="problemUse")
-        v-flex.answer-block--background(xs12 md6)
-          app-AnswerBlock
+        v-flex.answer-block--background.pa-2(xs12 md6)
+          app-SelectAnswer
+          app-AnswerMessage
+          app-NextOrNew
 </template>
 
 <script>
-import AnswerBlock from '../../components/shared/AnswerBlock'
 import ChemicalAdjustmentWorksheetAlgaecide from '../../components/shared/ChemicalAdjustmentWorksheetAlgaecide'
+import NextOrNew from '../../components/shared/NextOrNew'
+import AnswerMessage from '../../components/shared/AnswerMessage'
+import SelectAnswer from '../../components/shared/SelectAnswer'
 
 export default {
   data() {
@@ -25,7 +29,7 @@ export default {
       problemUse: true
     }
   },
-  components: { appAnswerBlock: AnswerBlock, appChemicalAdjustmentWorksheetAlgaecide: ChemicalAdjustmentWorksheetAlgaecide },
+  components: { appChemicalAdjustmentWorksheetAlgaecide: ChemicalAdjustmentWorksheetAlgaecide, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
     title() { return `You need to add algaecide to your cloudy green ${this.units.poolVolume} gallon pool.\u00A0\u00A0The label on the algaecide says that it takes ${this.units.chemicalAmount} ${this.units.chemicalType} of algaecide per ${this.units.unitVolume} gallons to kill the algae.\u00A0\u00A0How many gallons is this?` },
     units() { return this.$store.getters.units }
