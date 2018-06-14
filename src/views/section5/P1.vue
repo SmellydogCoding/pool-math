@@ -4,15 +4,19 @@
       v-layout(row wrap)
         v-flex(xs12).my-2
           p.title {{ title }}
-        v-flex.pr-3(xs12 md6)
+        v-flex.px-3(xs12 md6)
           app-IllustrationBlock
-        v-flex.answer-block--background(xs12 md6)
-          app-AnswerBlock
+        v-flex.answer-block--background.pa-2(xs12 md6)
+          app-SelectAnswer
+          app-AnswerMessage
+          app-NextOrNew
 </template>
 
 <script>
-import AnswerBlock from '../../components/shared/AnswerBlock'
 import IllustrationBlock from '../../components/shared/IllustrationBlock'
+import NextOrNew from '../../components/shared/NextOrNew'
+import AnswerMessage from '../../components/shared/AnswerMessage'
+import SelectAnswer from '../../components/shared/SelectAnswer'
 
 export default {
   data() {
@@ -25,7 +29,7 @@ export default {
       answerSet: {type: 'Br', decimals: 1}
     }
   },
-  components: { appAnswerBlock: AnswerBlock, appIllustrationBlock: IllustrationBlock },
+  components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
     title() { return `The free chlorine reading for your pool is ${this.units.freeCl} ppm.\u00A0\u00A0The total chlorine reading is ${this.units.totalCl} ppm.\u00A0\u00A0What is the breakpoint value for this pool?` },
     units() { return this.$store.getters.units }
