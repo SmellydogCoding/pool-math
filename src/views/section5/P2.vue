@@ -29,7 +29,7 @@ export default {
     return {
       problem: 's5p2',
       hint: {title: 'Hint for Problem 2', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
-      next: {text: 'Intro to Section 6', route: '/soon'},
+      next: {text: 'Intro to Section 6', route: '/intro-to-section-6'},
       newButton: 'New Breakpoint Chemical Adjustment Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       problemUse: true,

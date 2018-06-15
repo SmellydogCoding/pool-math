@@ -93,7 +93,7 @@ export default {
         {
           title: 'Section 6 - Flow Rate and Turnover Rate',
           subsections: [
-            {link: '/s6Intro', title: '6.0 - About This Section'},
+            {link: '/intro-to-section-6', title: '6.0 - About This Section'},
             {link: '/s6p1', title: '6.1 - Calculate Turnover Rate - Pool'},
             {link: '/s6p2', title: '6.2 - Calculate Turnover Rate - Hot Tub'},
             {link: '/s6p3', title: '6.3 - Calculate Flow Rate - Pool'},

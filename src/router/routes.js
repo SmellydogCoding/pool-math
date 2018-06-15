@@ -30,5 +30,6 @@ export const routes = [
   { path: '/s4p8', component: () => import('../views/section4/P8'), meta: { title: 'Section 4 Problem 8' } },
   { path: '/s5Intro', component: () => import('../views/section5/Intro'), meta: { title: 'Intro to Section 5' } },
   { path: '/s5p1', component: () => import('../views/section5/P1'), meta: { title: 'Section 5 Problem 1' } },
-  { path: '/s5p2', component: () => import('../views/section5/P2'), meta: { title: 'Section 5 Problem 2' } }
+  { path: '/s5p2', component: () => import('../views/section5/P2'), meta: { title: 'Section 5 Problem 2' } },
+  { path: '/intro-to-section-6', component: () => import('../views/section6/Intro'), meta: { title: 'Intro to Flow Rate and Turnover Rate' } }
 ]
