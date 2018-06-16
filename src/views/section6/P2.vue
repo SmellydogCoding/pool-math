@@ -21,17 +21,17 @@ import SelectAnswer from '../../components/shared/SelectAnswer'
 export default {
   data() {
     return {
-      problem: 's6p1',
-      image: {src: 'src/assets/section6/problem1.jpg', alt: 'illustration for problem 1'},
-      hint: {title: 'Hint for Problem 1', type: 'textHint', text: 'Turnover Rate = Pool Volume / Flow Rate / 60'},
-      next: {text: 'Problem 2: Calculate Turnover Rate of a Hot Tub', route: '/turnover-rate-of-a-hot-tub'},
-      newButton: 'New Pool Turnover Rate Problem',
+      problem: 's6p2',
+      image: {src: 'src/assets/section6/problem2.jpg', alt: 'illustration for problem 2'},
+      hint: {title: 'Hint for Problem 2', type: 'textHint', text: 'Turnover Rate = Hot Tub Volume / Flow Rate'},
+      next: {text: 'Problem 3: Calculate Flow Rate of a Pool', route: '/flow-rate-of-a-pool'},
+      newButton: 'New Hot Tub Turnover Rate Problem',
       answerSet: {type: 'turnover', decimals: 1}
     }
   },
   components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
-    title() { return `You have a ${this.units.volume} pool that has a flow rate of ${this.units.flow} Gallons Per Minute.\u00A0\u00A0What is the Turnover Rate (in Hours) of this pool?` },
+    title() { return `You have a ${this.units.volume} Hot Tub that has a flow rate of ${this.units.flow} Gallons Per Minute.\u00A0\u00A0What is the Turnover Rate (in Minutes) of this Hot Tub?` },
     units() { return this.$store.getters.units }
   },
   created() {

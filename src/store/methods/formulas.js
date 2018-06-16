@@ -389,5 +389,16 @@ export default {
       return { volume, flow }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.volume} / ${units.flow} / 60 = ${correct} Hours.` }
+  },
+  s6p2: {
+    initial: () => { return { volume: 2000, flow: 70 } },
+    correct: (units) => { return parseFloat((units.volume / units.flow).toFixed(1)) },
+    newValues: () => {
+      let volume = getRandom(1000, 5000, 100)
+      let flowFactor = getRandom(0.5, 1.5, 0.1, 1)
+      let flow = parseFloat(((volume / 30) * flowFactor).toFixed(0))
+      return { volume, flow }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.volume} / ${units.flow} = ${correct} Minutes.` }
   }
 }
