@@ -1,6 +1,7 @@
 import {getFactors} from './factors'
 import {getRandom} from './random'
 import chemical from './chemicalAdjustmentValues'
+import poolTypes from './poolTypes'
 export default {
   s1p1: {
     initial: () => { return {ounces: 24} },
@@ -400,5 +401,17 @@ export default {
       return { volume, flow }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.volume} / ${units.flow} = ${correct} Minutes.` }
+  },
+  s6p3: {
+    initial: () => { return { name: 'Swimming Pool', volume: 30000, turnover: 6 } },
+    correct: (units) => { return parseFloat((units.volume / units.turnover / 60).toFixed(1)) },
+    newValues: () => {
+      let currentPoolIndex = getRandom(0, 4)
+      let volume = getRandom(poolTypes[currentPoolIndex].min, poolTypes[currentPoolIndex].max, poolTypes[currentPoolIndex].mod)
+      let name = poolTypes[currentPoolIndex].name
+      let turnover = poolTypes[currentPoolIndex].turnover
+      return { name, volume, turnover }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.volume} / ${units.turnover} / 60 = ${correct} Gallons Per Minute.` }
   }
 }
