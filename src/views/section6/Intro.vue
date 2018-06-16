@@ -22,7 +22,6 @@
 <script>
   import Step1 from '../../components/section6/Step1.vue';
   import Step2 from '../../components/section6/Step2.vue';
-  // import Step3 from '../../components/section6/Step3.vue';
   
   export default {
     data() { 
@@ -32,8 +31,8 @@
         steps: 2,
         button: 'next',
         next: {
-          buttonText: 'Problem 1 - Calculate Turnover Rate in a Pool',
-          link: '/s6p1'
+          buttonText: 'Problem 1 - Calculate Turnover Rate of a Pool',
+          link: '/turnover-rate-of-a-pool'
         }
       } 
     },
@@ -47,7 +46,6 @@
     components: {
       appStep1: Step1,
       appStep2: Step2,
-      // appStep3: Step3
     }
   }
 </script>

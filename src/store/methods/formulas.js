@@ -378,5 +378,16 @@ export default {
       return { poolVolume, unitVolume, freeCl, totalCl, breakpoint, desiredChange, chemicalName, chemicalAmount, chemicalUnit, changeProvided, waterFactor, chemicalFactor, total, conversion, conversionTotal, conversionType, conversionFactor }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0You need to add ${correct} ${units.conversionType}.` }
+  },
+  s6p1: {
+    initial: () => { return { volume: 50000, flow: 130 } },
+    correct: (units) => { return parseFloat((units.volume / units.flow / 60).toFixed(1)) },
+    newValues: () => {
+      let volume = getRandom(40000, 150000, 5000)
+      let flowFactor = getRandom(0.5, 1.5, 0.1, 1)
+      let flow = parseFloat(((volume / 6 / 60) * flowFactor).toFixed(0))
+      return { volume, flow }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.volume} / ${units.flow} / 60 = ${correct} Hours.` }
   }
 }
