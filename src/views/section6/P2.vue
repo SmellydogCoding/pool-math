@@ -31,7 +31,7 @@ export default {
   },
   components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
-    title() { return `You have a ${this.units.volume} Hot Tub that has a flow rate of ${this.units.flow} Gallons Per Minute.\u00A0\u00A0What is the Turnover Rate (in Minutes) of this Hot Tub?` },
+    title() { return `You have a ${this.units.volume} gallon hot tub that has a flow rate of ${this.units.flow} Gallons Per Minute.\u00A0\u00A0What is the Turnover Rate (in Minutes) of this Hot Tub?` },
     units() { return this.$store.getters.units }
   },
   created() {

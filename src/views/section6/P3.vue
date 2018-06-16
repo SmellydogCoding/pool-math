@@ -31,7 +31,7 @@ export default {
   },
   components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
-    title() { return `You have a ${this.units.volume} Gallon ${this.units.name} that has a required turnover rate of ${this.units.turnover} Hours${this.units.turnover === 8 ? ' (This is an older pool that was "grandfathered" in under the old flow rate requirement)' : ''}.\u00A0\u00A0What is the minimum Flow Rate (in Gallons Per Minute) that is required to meet the Turnover Rate?` },
+    title() { return `You have a ${this.units.volume} gallon ${this.units.name} that has a required turnover rate of ${this.units.turnover} Hours${this.units.turnover === 8 ? ' (This is an older pool that was "grandfathered" in under the old flow rate requirement)' : ''}.\u00A0\u00A0What is the minimum Flow Rate (in Gallons Per Minute) that is required to meet the Turnover Rate?` },
     units() { return this.$store.getters.units }
   },
   created() {

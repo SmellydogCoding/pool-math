@@ -413,5 +413,14 @@ export default {
       return { name, volume, turnover }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.volume} / ${units.turnover} / 60 = ${correct} Gallons Per Minute.` }
+  },
+  s6p4: {
+    initial: () => { return { volume: 1000 } },
+    correct: (units) => { return parseFloat((units.volume / 30).toFixed(1)) },
+    newValues: () => {
+      let volume = getRandom(1000, 5000, 100)
+      return { volume }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.volume} / 30 = ${correct} Gallons Per Minute.` }
   }
 }

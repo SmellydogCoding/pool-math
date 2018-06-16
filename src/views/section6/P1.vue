@@ -31,7 +31,7 @@ export default {
   },
   components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },
   computed: {
-    title() { return `You have a ${this.units.volume} pool that has a flow rate of ${this.units.flow} Gallons Per Minute.\u00A0\u00A0What is the Turnover Rate (in Hours) of this pool?` },
+    title() { return `You have a ${this.units.volume} gallon pool that has a flow rate of ${this.units.flow} Gallons Per Minute.\u00A0\u00A0What is the Turnover Rate (in Hours) of this pool?` },
     units() { return this.$store.getters.units }
   },
   created() {
