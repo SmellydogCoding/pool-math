@@ -22,13 +22,14 @@
 <script>
   import Step1 from '../../components/section7/Step1.vue';
   import Step2 from '../../components/section7/Step2.vue';
+  import Step3 from '../../components/section7/Step3.vue';
   
   export default {
     data() { 
       return { 
         e1: 0,
         index: 0,
-        steps: 2,
+        steps: 3,
         button: 'next',
         next: {
           buttonText: 'Problem 1 - Calculate Diatomaceous Earth Filter Size',
@@ -46,6 +47,7 @@
     components: {
       appStep1: Step1,
       appStep2: Step2,
+      appStep3: Step3,
     }
   }
 </script>
