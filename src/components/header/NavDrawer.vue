@@ -101,15 +101,17 @@ export default {
           ]
         },
         {
-          title: 'Section 7 - Filter Sizing',
+          title: 'Section 7 - Filter Sizing and Max Flow',
           subsections: [
-            {link: '/s7Intro', title: '7.0 - About This Section'},
-            {link: '/s7p1', title: '7.1 - Diatomaceous Earth - Filter Size'},
-            {link: '/s7p2', title: '7.2 - Diatomaceous Earth - Max Flow'},
-            {link: '/s7p3', title: '7.3 - Sand Filter - Filter Size'},
-            {link: '/s7p4', title: '7.4 - Sand Filter - Max Flow'},
-            {link: '/s7p5', title: '7.5 - Cartridge Filter - Filter Size'},
-            {link: '/s7p6', title: '7.6 - Cartridge Filter - Max Flow'}
+            {link: '/intro-to-section-7', title: '7.0 - About This Section'},
+            {link: '/diatomaceous-earth-calculate-filter-size', title: '7.1 - Diatomaceous Earth - Calculate Filter Size'},
+            {link: '/diatomaceous-earth-filter-size-required', title: '7.2 - Diatomaceous Earth - Filter Size Required'},
+            {link: '/diatomaceous-earth-filter-max-flow-provided', title: '7.3 - Diatomaceous Earth - Max Flow Provided'},
+            {link: '/sand-filter-calculate-filter-size', title: '7.4 - Sand Filter - Calculate Filter Size'},
+            {link: '/sand-filter-size-required', title: '7.5 - Sand Filter - Filter Size Required'},
+            {link: '/sand-filter-max-flow-provided', title: '7.6 - Sand Filter - Max Flow Provided'},
+            {link: '/cartridge-filter-size-required', title: '7.7 - Cartridge Filter - Filter Size Required'},
+            {link: '/cartridge-filter-max-flow-provided', title: '7.8 - Cartridge Filter - Max Flow Provided'}
           ]
         }
       ]

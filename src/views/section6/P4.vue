@@ -24,7 +24,7 @@ export default {
       problem: 's6p4',
       image: {src: 'src/assets/section6/problem4.jpg', alt: 'illustration for problem 4'},
       hint: {title: 'Hint for Problem ', type: 'textHint', text: 'Flow Rate = Hot Tub Volume / Turnover Rate'},
-      next: {text: 'Intro to Section 7 - Filter Sizing', route: '/intro-to-section-7'},
+      next: {text: 'Intro to Section 7 - Filter Sizing and Max Flow', route: '/intro-to-section-7'},
       newButton: 'New Hot Tub Flow Rate Problem',
       answerSet: {type: 'flow', decimals: 1}
     }

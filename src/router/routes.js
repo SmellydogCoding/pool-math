@@ -35,5 +35,14 @@ export const routes = [
   { path: '/turnover-rate-of-a-pool', component: () => import('../views/section6/P1'), meta: { title: 'Turnover Rate of a Pool' } },
   { path: '/turnover-rate-of-a-hot-tub', component: () => import('../views/section6/P2'), meta: { title: 'Turnover Rate of a Hot Tub' } },
   { path: '/flow-rate-of-a-pool', component: () => import('../views/section6/P3'), meta: { title: 'Flow Rate of a Pool' } },
-  { path: '/flow-rate-of-a-hot-tub', component: () => import('../views/section6/P4'), meta: { title: 'Flow Rate of a Hot Tub' } }
+  { path: '/flow-rate-of-a-hot-tub', component: () => import('../views/section6/P4'), meta: { title: 'Flow Rate of a Hot Tub' } },
+  { path: '/intro-to-section-7', component: () => import('../views/section7/Intro'), meta: { title: 'Intro to Flow Rate and Turnover Rate' } },
+  { path: '/diatomaceous-earth-calculate-filter-size', component: () => import('../views/section7/P1'), meta: { title: 'Diatomaceous Earth - Calculate Filter Size' } },
+  { path: '/diatomaceous-earth-filter-size-required', component: () => import('../views/section7/P2'), meta: { title: 'Diatomaceous Earth - Filter Size Required' } },
+  { path: '/diatomaceous-earth-max-flow-provided', component: () => import('../views/section7/P3'), meta: { title: 'Diatomaceous Earth - Max Flow Provided' } },
+  { path: '/sand-filter-calculate-filter-size', component: () => import('../views/section7/P4'), meta: { title: 'Sand Filter - Calculate Filter Size' } },
+  { path: '/sand-filter-size-required', component: () => import('../views/section7/P5'), meta: { title: 'Sand Filter - Filter Size Required' } },
+  { path: '/sand-filter-max-flow-provided', component: () => import('../views/section7/P6'), meta: { title: 'Sand Filter - Max Flow Provided' } },
+  { path: '/cartridge-filter-size-required', component: () => import('../views/section7/P7'), meta: { title: 'Cartridge Filter - Filter Size Required' } },
+  { path: '/cartridge-filter-max-flow-provided', component: () => import('../views/section7/P8'), meta: { title: 'Cartridge Filter - Max Flow Provided' } }
 ]
