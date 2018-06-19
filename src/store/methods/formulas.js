@@ -422,5 +422,16 @@ export default {
       return { volume }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.volume} / 30 = ${correct} Gallons Per Minute.` }
+  },
+  s7p1: {
+    initial: () => { return { length: 1.5, width: 1.5, grids: 5 } },
+    correct: (units) => { return parseFloat((units.length * units.width * 2 * units.grids).toFixed(1)) },
+    newValues: () => {
+      let length = getRandom(1, 5, 0.5)
+      let width = getRandom(1, 5, 0.5)
+      let grids = getRandom(1, 10, 1)
+      return { length, width, grids }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} x ${units.width} x ${units.grids} = ${correct}ft\u00B2.` }
   }
 }
