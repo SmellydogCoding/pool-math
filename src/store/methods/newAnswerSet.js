@@ -14,6 +14,15 @@ export const getNewAnswerSet = (correct, type, decimals) => {
       case 2: newAnswers = [correct - 0.1, lastChoice, correct, correct + 0.1].map(answer => parseFloat(answer.toFixed(decimals))); break
       case 3: newAnswers = [correct + 0.1, correct - 0.1, lastChoice, correct].map(answer => parseFloat(answer.toFixed(decimals))); break
     }
+  } else if (type === 'filter grid') {
+    let lastChoice
+    Math.floor(Math.random() * 2) === 1 ? lastChoice = correct + 2 : lastChoice = correct - 2
+    switch (correctPosition) {
+      case 0: newAnswers = [correct, correct + 1, correct - 1, lastChoice].map(answer => parseFloat(answer.toFixed(decimals))); break
+      case 1: newAnswers = [lastChoice, correct, correct + 1, correct - 1].map(answer => parseFloat(answer.toFixed(decimals))); break
+      case 2: newAnswers = [correct - 1, lastChoice, correct, correct + 1].map(answer => parseFloat(answer.toFixed(decimals))); break
+      case 3: newAnswers = [correct + 1, correct - 1, lastChoice, correct].map(answer => parseFloat(answer.toFixed(decimals))); break
+    }
   } else {
     switch (correctPosition) {
       case 0: newAnswers = [correct, correct * 1.25, correct * 1.35, correct * 1.5].map(answer => parseFloat(answer.toFixed(decimals))); break

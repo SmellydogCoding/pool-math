@@ -24,9 +24,9 @@ export default {
       problem: 's7p1',
       image: {src: 'src/assets/section7/problem1-2-3.jpg', alt: 'illustration for problem 1'},
       hint: {title: 'Hint for Problem 1', type: 'textHint', text: 'Total Filter Area = Grid Length x Grid Width x 2 x Number of Grids'},
-      next: {text: 'Problem 2: Calculate Required Size of Diatomaceous Earth Filter', route: '/diatomaceous-earth-filter-size-required'},
+      next: {text: 'Problem 2: Required Size of Diatomaceous Earth Filter', route: '/diatomaceous-earth-filter-size-required'},
       newButton: 'New Diatomaceous Earth Filter Size Problem',
-      answerSet: {type: 'turnover', decimals: 1}
+      answerSet: {type: 'filter', decimals: 1}
     }
   },
   components: { appIllustrationBlock: IllustrationBlock, appNextOrNew: NextOrNew, appAnswerMessage: AnswerMessage, appSelectAnswer: SelectAnswer },

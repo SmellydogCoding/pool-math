@@ -433,5 +433,18 @@ export default {
       return { length, width, grids }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.length} x ${units.width} x ${units.grids} = ${correct}ft\u00B2.` }
+  },
+  s7p2: {
+    initial: () => { return { length: 2, width: 2, flow: 100, fmr: 2.0 } },
+    correct: (units) => { return Math.ceil(units.flow / units.fmr / (units.length * units.width * 2)) },
+    newValues: () => {
+      let length = getRandom(1, 5, 0.5)
+      let width = getRandom(1, 5, 0.5)
+      let flow = getRandom(30, 150, 10)
+      let fmrFactor = getRandom(0, 1)
+      let fmr = fmrFactor === 0 ? 2.0 : 2.5
+      return { length, width, flow, fmr }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.flow} / ${units.fmr} / (${units.length} x ${units.width} x 2) = ${correct} grids (rounded up).` }
   }
 }

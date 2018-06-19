@@ -1,7 +1,6 @@
 export const getRandom = (min, max, mod = 0, decimals = 0) => {
   let number
   !Number.isInteger(min) || !Number.isInteger(max) ? number = parseFloat((Math.random() * (max - min) + min).toFixed(decimals)) : number = Math.floor(Math.random() * (max - min + 1)) + min
-  console.log('number ' + number)
   if (mod > 0.5) {
     let remainder = number % mod
     remainder <= Math.floor(mod / 2) ? number -= remainder : number += mod - remainder
@@ -15,7 +14,6 @@ export const getRandom = (min, max, mod = 0, decimals = 0) => {
     } else if (decimal < 0.3 || decimal > 0.7) {
       number = Math.round(number)
     }
-    console.log('decimal ' + decimal)
     return number
   } else { return number }
 }
