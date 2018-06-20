@@ -477,5 +477,15 @@ export default {
       return { flow, fmr }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.flow} / ${units.fmr} = ${correct}ft\u00B2.` }
+  },
+  s7p6: {
+    initial: () => { return { area: 25, fmr: 13 } },
+    correct: (units) => { return parseFloat((units.area * units.fmr).toFixed(1)) },
+    newValues: () => {
+      let area = getRandom(5, 50, 5)
+      let fmr = getRandom(5, 20, 1)
+      return { area, fmr }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.area} x ${units.fmr} = ${correct} gpm.` }
   }
 }
