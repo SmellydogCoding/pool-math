@@ -467,5 +467,15 @@ export default {
       return { diameter, radius }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} x ${units.radius} x 3.14 = ${correct}ft\u00B2.` }
+  },
+  s7p5: {
+    initial: () => { return { flow: 75, fmr: 14 } },
+    correct: (units) => { return parseFloat((units.flow / units.fmr).toFixed(1)) },
+    newValues: () => {
+      let flow = getRandom(30, 150, 10)
+      let fmr = getRandom(5, 20, 1)
+      return { flow, fmr }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.flow} / ${units.fmr} = ${correct}ft\u00B2.` }
   }
 }
