@@ -457,5 +457,15 @@ export default {
       return { area, fmr }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.area} x ${units.fmr} = ${correct} gpm.` }
+  },
+  s7p4: {
+    initial: () => { return { diameter: 6, radius: 3 } },
+    correct: (units) => { return parseFloat((units.radius * units.radius * 3.14).toFixed(1)) },
+    newValues: () => {
+      let diameter = getRandom(1, 10, 0.5)
+      let radius = diameter / 2
+      return { diameter, radius }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.radius} x ${units.radius} x 3.14 = ${correct}ft\u00B2.` }
   }
 }

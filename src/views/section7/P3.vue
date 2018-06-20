@@ -24,7 +24,7 @@ export default {
       problem: 's7p3',
       image: {src: 'src/assets/section7/problem1-2-3.jpg', alt: 'illustration for problem 3'},
       hint: {title: 'Hint for Problem 3', type: 'textHint', text: 'Maximum Flow Rate = Filter Area x Filter Media Rate'},
-      next: {text: 'Problem 3: Sand Filter - Calculate Filter Size', route: '/sand-filter-calculate-filter-size'},
+      next: {text: 'Problem 4: Sand Filter - Calculate Filter Size', route: '/sand-filter-calculate-filter-size'},
       newButton: 'New Diatomaceous Earth Max Flow Provided Problem',
       answerSet: {type: 'filter', decimals: 0}
     }
