@@ -446,5 +446,16 @@ export default {
       return { length, width, flow, fmr }
     },
     correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.flow} / ${units.fmr} / (${units.length} x ${units.width} x 2) = ${correct} grids (rounded up).` }
+  },
+  s7p3: {
+    initial: () => { return { area: 40, fmr: 2.0 } },
+    correct: (units) => { return parseFloat((units.area * units.fmr).toFixed(0)) },
+    newValues: () => {
+      let area = getRandom(10, 100, 5)
+      let fmrFactor = getRandom(0, 1)
+      let fmr = fmrFactor === 0 ? 2.0 : 2.5
+      return { area, fmr }
+    },
+    correctMessage: (units, correct) => { return `Correct!\u00A0\u00A0${units.area} x ${units.fmr} = ${correct} gpm.` }
   }
 }
