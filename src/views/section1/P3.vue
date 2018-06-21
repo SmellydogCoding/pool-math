@@ -24,7 +24,7 @@ export default {
       problem: 's1p3',
       image: {src: 'src/assets/section1/problem3.jpg', alt: 'pool image for problem 3'},
       hint: {title: 'Hint for Problem 3', type: 'textHint', text: 'Fluid Ounces / 8 = Cups'},
-      next: {text: 'Problem 4: Yards to Feet', route: '/s1p4'},
+      next: {text: 'Problem 4: Yards to Feet', route: '/converting-yards-to-feet'},
       newButton: 'New Fluid Ounces to Cups Problem',
       answerSet: {type: 'conversion', decimals: 1}
     }

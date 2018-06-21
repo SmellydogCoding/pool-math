@@ -32,7 +32,7 @@
         steps: 4,
         button: 'next',
         nextText: 'Section 1 - Conversions',
-        nextRoute: '/s1Intro'
+        nextRoute: '/intro-to-section-1'
       }
     },
     methods: {

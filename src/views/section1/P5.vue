@@ -24,7 +24,7 @@ export default {
       problem: 's1p5',
       image: {src: 'src/assets/section1/problem5.jpg', alt: 'pool image for problem 5'},
       hint: {title: 'Hint for Problem 5', type: 'textHint', text: 'Inches / 12 = Feet'},
-      next: {text: 'Section 2: Area and Volume', route: '/s2Intro'},
+      next: {text: 'Section 2: Area and Volume', route: '/intro-to-section-2'},
       newButton: 'New Inches to Feet Problem',
       answerSet: {type: 'conversion', decimals: 2}
     }

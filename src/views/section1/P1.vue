@@ -24,7 +24,7 @@ export default {
       problem: 's1p1',
       image: {src: 'src/assets/section1/problem1.jpg', alt: 'pool image for problem 1'},
       hint: {title: 'Hint for Problem 1', type: 'textHint', text: 'Ounces / 16 = Pounds'},
-      next: {text: 'Problem 2: Fluid Ounces to Gallons', route: '/s1p2'},
+      next: {text: 'Problem 2: Fluid Ounces to Gallons', route: '/converting-fluid-ounces-to-gallons'},
       newButton: 'New Ounces to Pounds Problem',
       answerSet: {type: 'conversion', decimals: 1}
     }

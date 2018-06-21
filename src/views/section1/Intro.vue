@@ -31,7 +31,7 @@
         steps: 3,
         button: 'next',
         nextText: 'Problem 1 - Convert Ounces to Pounds',
-        nextRoute: '/s1p1'
+        nextRoute: '/converting-ounces-to-pounds'
       }
     },
     methods: {
