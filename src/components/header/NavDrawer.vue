@@ -13,7 +13,7 @@
               v-icon close
       v-list.pt-0(dense)
         v-divider(light)
-        router-link.list-item--link-bottom-border.py-2(to="/howto" tag="v-list-tile" active-class="active")
+        router-link.list-item--link-bottom-border.py-2(to="/how-to-use-this-website" tag="v-list-tile" active-class="active")
           v-list-tile-content
             v-list-tile-title.subheading.text-xs-center How to Use This Website
         v-expansion-panel
@@ -38,56 +38,56 @@ export default {
         {
           title: 'Section 1 - Conversions',
           subsections: [
-            {link: '/s1Intro', title: '1.0 - About This Section'},
-            {link: '/s1p1', title: '1.1 - Convert Ounces to Pounds'},
-            {link: '/s1p2', title: '1.2 - Convert Fluid Ounces to Gallons'},
-            {link: '/s1p3', title: '1.3 - Convert Fluid Ounces to Cups'},
-            {link: '/s1p4', title: '1.4 - Convert Yards to Feet'},
-            {link: '/s1p5', title: '1.5 - Convert Inches to Feet'}
+            {link: '/intro-to-section-1', title: '1.0 - About This Section'},
+            {link: '/converting-ounces-to-pounds', title: '1.1 - Convert Ounces to Pounds'},
+            {link: '/converting-fluid-ounces-to-gallons', title: '1.2 - Convert Fluid Ounces to Gallons'},
+            {link: '/converting-fluid-ounces-to-cups', title: '1.3 - Convert Fluid Ounces to Cups'},
+            {link: '/converting-yards-to-feet', title: '1.4 - Convert Yards to Feet'},
+            {link: '/converting-inches-to-feet', title: '1.5 - Convert Inches to Feet'}
           ]
         },
         {
           title: 'Section 2 - Area and Volume',
           subsections: [
-            {link: '/s2Intro', title: '2.0 - About This Section'},
-            {link: '/s2p1', title: '2.1 - Area of a Swimming Pool'},
-            {link: '/s2p2', title: '2.2 - Area of a Hot Tub'},
-            {link: '/s2p3', title: '2.3 - Volume of Water in a Swimming Pool'},
-            {link: '/s2p4', title: '2.4 - Volume of Water in a Multi-Depth Pool'},
-            {link: '/s2p5', title: '2.5 - Volume of Water in a Hot Tub'},
-            {link: '/s2p6', title: '2.6 - Volume of Water in a Hot Tub With Seats'},
-            {link: '/s2p7', title: '2.7 - Volume of Water Loss in a Swimming Pool'},
-            {link: '/s2p8', title: '2.8 - Volume of Water Loss in a Hot Tub'}
+            {link: '/intro-to-section-2', title: '2.0 - About This Section'},
+            {link: '/area-of-a-swimming-pool', title: '2.1 - Area of a Swimming Pool'},
+            {link: '/area-of-a-hot-tub', title: '2.2 - Area of a Hot Tub'},
+            {link: '/volume-of-water-in-a-swimming-pool', title: '2.3 - Volume of Water in a Swimming Pool'},
+            {link: '/volume-of-water-in-a-multi-depth-pool', title: '2.4 - Volume of Water in a Multi-Depth Pool'},
+            {link: '/volume-of-water-in-a-hot-tub', title: '2.5 - Volume of Water in a Hot Tub'},
+            {link: '/volume-of-water-in-a-hot-tub-with-seats', title: '2.6 - Volume of Water in a Hot Tub With Seats'},
+            {link: '/volume-of-water-loss-in-a-swimming-pool', title: '2.7 - Volume of Water Loss in a Swimming Pool'},
+            {link: '/volume-of-water-loss-in-a-hot-tub', title: '2.8 - Volume of Water Loss in a Hot Tub'}
           ]
         },
         {
           title: 'Section 3 - Water Balance',
           subsections: [
-            {link: '/s3Intro', title: '3.0 - About This Section'},
-            {link: '/s3p1', title: '3.1 - Calculate Saturation Index'},
-            {link: '/s3p2', title: '3.2 - Calculate Saturation Index - With CA'}
+            {link: '/intro-to-section-3', title: '3.0 - About This Section'},
+            {link: '/calculating-saturation-index', title: '3.1 - Calculate Saturation Index'},
+            {link: '/calculating-saturation-index-with-cyanuric-acid', title: '3.2 - Calculate Saturation Index - With CA'}
           ]
         },
         {
           title: 'Section 4 - Chemical Adjustments',
           subsections: [
-            {link: '/s4Intro', title: '4.0 - About This Section'},
-            {link: '/s4p1', title: '4.1 - Adding an algaecide'},
-            {link: '/s4p2', title: '4.2 - Adjustment with a Label'},
-            {link: '/s4p3', title: '4.3 - Adjustment Without a Label - Raise Chlorine'},
-            {link: '/s4p4', title: '4.4 - Adjustment Without a Label - Raise Alkalinity'},
-            {link: '/s4p5', title: '4.5 - Adjustment Without a Label - Lower Alkalinity'},
-            {link: '/s4p6', title: '4.6 - Adjustment Without a Label - Raise Calcium'},
-            {link: '/s4p7', title: '4.7 - Adjustment Without a Label - Raise Stabilizer'},
-            {link: '/s4p8', title: '4.8 - Adjustment Without a Label - Lower Chlorine'}
+            {link: '/intro-to-section-4', title: '4.0 - About This Section'},
+            {link: '/adding-an-algaecide', title: '4.1 - Adding an algaecide'},
+            {link: '/chemical-adjustment-with-a-label', title: '4.2 - Adjustment with a Label'},
+            {link: '/chemical-adjustment-without-a-label-raise-chlorine', title: '4.3 - Adjustment Without a Label - Raise Chlorine'},
+            {link: '/chemical-adjustment-without-a-label-raise-alkalinity', title: '4.4 - Adjustment Without a Label - Raise Alkalinity'},
+            {link: '/chemical-adjustment-without-a-label-lower-alkalinity', title: '4.5 - Adjustment Without a Label - Lower Alkalinity'},
+            {link: '/chemical-adjustment-without-a-label-raise-calcium', title: '4.6 - Adjustment Without a Label - Raise Calcium'},
+            {link: '/chemical-adjustment-without-a-label-raise-cyanuric-acid', title: '4.7 - Adjustment Without a Label - Raise Stabilizer'},
+            {link: '/chemical-adjustment-without-a-label-lower-chlorine', title: '4.8 - Adjustment Without a Label - Lower Chlorine'}
           ]
         },
         {
           title: 'Section 5 - Breakpoint Chlorination',
           subsections: [
-            {link: '/s5Intro', title: '5.0 - About This Section'},
-            {link: '/s5p1', title: '5.1 - Calculate Breakpoint'},
-            {link: '/s5p2', title: '5.2 - Breakpoint Chemical Adjustment'}
+            {link: '/intro-to-section-5', title: '5.0 - About This Section'},
+            {link: '/calculate-breakpoint', title: '5.1 - Calculate Breakpoint'},
+            {link: '/breakpoint-chemical-adjustment', title: '5.2 - Breakpoint Chemical Adjustment'}
           ]
         },
         {
