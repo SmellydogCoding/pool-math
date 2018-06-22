@@ -26,7 +26,7 @@ export default {
     return {
       problem: 's4p4',
       hint: {title: 'Hint for Problem 4', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
-      next: {text: 'Problem 5: Chemical Adjustment - no label - Lower Alkalinity', route: '/s4p5'},
+      next: {text: 'Problem 5: Chemical Adjustment - no label - Lower Alkalinity', route: '/chemical-adjustment-without-a-label-lower-alkalinity'},
       newButton: 'New Raise Alkalinity without a Label Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       problemUse: true,

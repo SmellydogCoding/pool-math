@@ -35,7 +35,7 @@
         button: 'next',
         next: {
           buttonText: 'Problem 1 - Adding an Algaecide',
-          link: '/s4p1'
+          link: '/adding-an-algaecide'
         }
       } 
     },

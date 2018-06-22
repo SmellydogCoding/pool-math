@@ -26,7 +26,7 @@ export default {
     return {
       problem: 's4p6',
       hint: {title: 'Hint for Problem 6', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
-      next: {text: 'Problem 7: Chemical Adjustment - no label - Raise Stabilizer', route: '/s4p7'},
+      next: {text: 'Problem 7: Chemical Adjustment - no label - Raise Cyanuric Acid', route: '/chemical-adjustment-without-a-label-raise-cyanuric-acid'},
       newButton: 'New Raise Calcium without a Label Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       problemUse: true,

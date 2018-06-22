@@ -26,7 +26,7 @@ export default {
     return {
       problem: 's4p7',
       hint: {title: 'Hint for Problem 7', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
-      next: {text: 'Problem 8: Chemical Adjustment - no label - Lower Chlorine', route: '/s4p8'},
+      next: {text: 'Problem 8: Chemical Adjustment - no label - Lower Chlorine', route: '/chemical-adjustment-without-a-label-lower-chlorine'},
       newButton: 'New Raise Stabilizer without a Label Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       problemUse: true,

@@ -23,7 +23,7 @@ export default {
     return {
       problem: 's4p1',
       hint: {title: 'Hint for Problem 1', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheetAlgaecide'},
-      next: {text: 'Problem 2: Chemical Adjustment with a Label', route: '/s4p2'},
+      next: {text: 'Problem 2: Chemical Adjustment with a Label', route: '/chemical-adjustment-with-a-label'},
       newButton: 'New Add Algaecide Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       problemUse: true

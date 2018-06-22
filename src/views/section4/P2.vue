@@ -23,7 +23,7 @@ export default {
     return {
       problem: 's4p2',
       hint: {title: 'Hint for Problem 2', type: 'componentHint', text: '', component: 'ChemicalAdjustmentWorksheet'},
-      next: {text: 'Problem 3: Chemical Adjustment - no label - Raise Chlorine', route: '/s4p3'},
+      next: {text: 'Problem 3: Chemical Adjustment - no label - Raise Chlorine', route: '/chemical-adjustment-without-a-label-raise-chlorine'},
       newButton: 'New Add Chlorine with a Label Problem',
       answerSet: {type: 'Chemical Adjustment', decimals: 2},
       problemUse: true
