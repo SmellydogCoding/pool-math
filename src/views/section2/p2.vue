@@ -24,7 +24,7 @@ export default {
       problem: 's2p2',
       image: {src: 'src/assets/section2/problem2.jpg', alt: 'illustration for problem 2'},
       hint: {title: 'Hint for Problem 2', type: 'textHint', text: 'Surface Area = Radius * Radius * 3.14<br><br>Radius = Diameter / 2'},
-      next: {text: 'Problem 3: Volume of a Swimming Pool', route: '/s2p3'},
+      next: {text: 'Problem 3: Volume of a Swimming Pool', route: '/volume-of-water-in-a-swimming-pool'},
       newButton: 'New Hot Tub Area Problem',
       answerSet: {type: 'area', decimals: 2}
     }

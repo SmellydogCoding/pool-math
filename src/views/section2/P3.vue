@@ -24,7 +24,7 @@ export default {
       problem: 's2p3',
       image: {src: 'src/assets/section2/problem3.jpg', alt: 'illustration for problem 3'},
       hint: {title: 'Hint for Problem 3', type: 'textHint', text: 'Volume = Length * Width * Average Depth * 7.5<br></br>Average Depth = (Depth in the Deep End + Depth in the Shallow End) / 2'},
-      next: {text: 'Problem 4: Volume of Water in a Multi-Depth Pool', route: '/s2p4'},
+      next: {text: 'Problem 4: Volume of Water in a Multi-Depth Pool', route: '/volume-of-water-in-a-multi-depth-pool'},
       newButton: 'New Pool Volume Problem',
       answerSet: {type: 'volume', decimals: 1}
     }

@@ -24,7 +24,7 @@ export default {
       problem: 's2p1',
       image: {src: 'src/assets/section2/problem1.png', alt: 'illustration for problem 1'},
       hint: {title: 'Hint for Problem 1', type: 'textHint', text: 'Surface Area = Length * Width'},
-      next: {text: 'Problem 2: Area of a Hot Tub', route: '/s2p2'},
+      next: {text: 'Problem 2: Area of a Hot Tub', route: '/area-of-a-hot-tub'},
       newButton: 'New Pool Area Problem',
       answerSet: {type: 'area', decimals: 0}
     }

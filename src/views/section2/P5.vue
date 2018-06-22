@@ -24,7 +24,7 @@ export default {
       problem: 's2p5',
       image: {src: 'src/assets/section2/problem5.jpg', alt: 'illustration for problem 5'},
       hint: {title: 'Hint for Problem 5', type: 'textHint', text: 'Volume = Radius * Radius * 3.14 * Depth * 7.5<br><br>Radius = Diameter / 2'},
-      next: {text: 'Problem 6: Volume of a Hot Tub with Seats', route: '/s2p6'},
+      next: {text: 'Problem 6: Volume of a Hot Tub with Seats', route: '/volume-of-water-in-a-hot-tub-with-seats'},
       newButton: 'New Hot Tub Volume Problem',
       answerSet: {type: 'volume', decimals: 2}
     }

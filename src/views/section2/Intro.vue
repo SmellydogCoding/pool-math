@@ -38,7 +38,7 @@
         button: 'next',
         next: {
           buttonText: 'Problem 1 - Area of a Pool',
-          link: '/s2p1'
+          link: '/area-of-a-swimming-pool'
         }
       } 
     },

@@ -24,7 +24,7 @@ export default {
       problem: 's2p8',
       image: {src: 'src/assets/section2/problem8.jpg', alt: 'illustration for problem 8'},
       hint: {title: 'Hint for Problem 8', type: 'textHint', text: 'Volume = Radius * Radius * Depth of Water Lost (in Feet) * 3.14<br><br>feet = inches / 12'},
-      next: {text: 'Intro to Section 3', route: '/s3Intro'},
+      next: {text: 'Intro to Section 3', route: '/intro-to-section-3'},
       newButton: 'New Hot Tub Water Loss Problem',
       answerSet: {type: 'water loss', decimals: 2}
     }
