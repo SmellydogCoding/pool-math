@@ -33,7 +33,7 @@
         button: 'next',
         next: {
           buttonText: 'Problem 1 - Calculate Breakpoint Value',
-          link: '/s5p1'
+          link: '/calculate-breakpoint'
         }
       } 
     },

@@ -24,7 +24,7 @@ export default {
       problem: 's5p1',
       image: {src: 'src/assets/section5/problem1.jpg', alt: 'pool image for problem 1'},
       hint: {title: 'Hint for Problem 1', type: 'textHint', text: 'Total Chlorine - Free Chlorine = Combined Chlorine<br>Combined Chlorine * 10 = Breakpoint Value'},
-      next: {text: 'Problem 2: Breakpoint Chemical Adjustment', route: '/s5p2'},
+      next: {text: 'Problem 2: Breakpoint Chemical Adjustment', route: '/breakpoint-chemical-adjustment'},
       newButton: 'New Breakpoint Value Problem',
       answerSet: {type: 'Br', decimals: 1}
     }
