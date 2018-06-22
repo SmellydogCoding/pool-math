@@ -23,7 +23,7 @@ export default {
     return {
       problem: 's3p1',
       hint: {title: 'Hint for Problem 1', type: 'componentHint', text: '', component: 'SaturationIndexTable'},
-      next: {text: 'Problem 2: Saturation Index with Cyanuric Acid', route: '/s3p2'},
+      next: {text: 'Problem 2: Saturation Index with Cyanuric Acid', route: '/calculating-saturation-index-with-cyanuric-acid'},
       newButton: 'New Saturation Index Problem',
       answerSet: {type: 'SI', decimals: 1}
     }

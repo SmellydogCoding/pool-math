@@ -23,7 +23,7 @@ export default {
     return {
       problem: 's3p2',
       hint: {title: 'Hint for Problem 2', type: 'componentHint', text: '', component: 'SaturationIndexTable', cyanuric: true},
-      next: {text: 'Intro to Section 4', route: '/s4Intro'},
+      next: {text: 'Intro to Section 4', route: '/intro-to-section-4'},
       newButton: 'New Saturation Index Problem',
       answerSet: {type: 'SI', decimals: 1}
     }

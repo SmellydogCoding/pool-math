@@ -33,7 +33,7 @@
         button: 'next',
         next: {
           buttonText: 'Problem 1 - Calculate Saturation Index',
-          link: '/s3p1'
+          link: '/calculating-saturation-index'
         }
       } 
     },
