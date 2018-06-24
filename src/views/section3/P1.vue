@@ -4,7 +4,7 @@
       v-layout(row wrap)
         v-flex(xs12).my-2
           p.title {{ title }}
-        v-flex.px-2(xs12 md6)
+        v-flex.SI-container(xs12 md6)
           app-SaturationIndexBlock
         v-flex.answer-block--background.pa-2(xs12 md6)
           app-SelectAnswer
@@ -39,3 +39,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  @media screen and (min-width: 960px) {
+    .SI-container { padding-right: 0.5rem; }
+  }
+</style>

@@ -50,5 +50,9 @@ export default {
 <style scoped>
   table { background-color: #424242; color: #fff; }
   thead { border-bottom: 1px solid #333; }
+  thead tr th { padding: 0.25rem; }
   tbody tr td:first-child { text-align: left; }
+  @media screen and (max-width: 960px) {
+    table { margin-bottom: 0.5rem; }
+  }
 </style>

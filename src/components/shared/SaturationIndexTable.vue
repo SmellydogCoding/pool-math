@@ -110,7 +110,7 @@
         td 800
         td 2.9
     tfoot.ml-4 Key:&nbsp;&nbsp;Tf - Temperature Factor&nbsp;&nbsp;&nbsp;&nbsp;Cf - Calcuim Factor&nbsp;&nbsp;&nbsp;&nbsp;Af - Alkalinity Factor&nbsp;&nbsp;&nbsp;&nbsp;TDSf - Total Dissolved Solids Factor
-    p.mt-2 If you are taking the Certified Pool Operator class, this chart is also on page 69 of your Pool and Spa Operator Handbook.&nbsp;&nbsp;Use the chart to find the factor for each chemistry value.&nbsp;&nbsp;I your value is between 2 of the values on the table, then use the factor for the next highest value.&nbsp;&nbsp;For example, if the temperature is 79F, use the factor for 84F.&nbsp;&nbsp;use the factors to find Saturation Index using the following formula: #[br]
+    p.mt-2 Use the chart to find the factor for each chemistry value.&nbsp;&nbsp;I your value is between 2 of the values on the table, then use the factor for the next highest value.&nbsp;&nbsp;For example, if the temperature is 79F, use the factor for 84F.&nbsp;&nbsp;use the factors to find Saturation Index using the following formula: #[br]
       span.light-blue--text Saturation Index = pH + Tf + Cf + Af - TDSf
     p.body-2(:class="{ 'mb-0': !cyanuric}") Download #[a(:href="siT" target="new") this table (as a PDF).] #[span.right Download a #[a(:href="siW" target="new") Saturation Index WorkSheet.]]
     p.mb-0(v-if="cyanuric") Remember that if your pool has Cyanuric Acid you have to use the Adjusted Total Alkalinity to find the Alkalinity Factor. #[br]

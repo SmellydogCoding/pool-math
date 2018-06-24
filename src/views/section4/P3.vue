@@ -4,7 +4,7 @@
       v-layout(row wrap)
         v-flex(xs12).my-2
           p.title {{ title }}
-        v-flex.px-3(xs12 md6)
+        v-flex.CA-container(xs12 md6)
           appChemicalAdjustmentWorksheet(:poolVolume='units.poolVolume' :unitVolume='units.unitVolume' :desiredChange='units.desiredChange' :chemicalAmount='units.chemicalAmount' :chemicalType='units.chemicalUnit' :changeProvided='units.changeProvided' :waterFactor='units.waterFactor' :chemicalFactor='units.chemicalFactor' :total='units.total' :conversion='units.conversion' :problemUse="problemUse")
           p.mt-2.py-1.px-2.white.d-inline-block.rounded
             a.indigo--text.darken-4(:href="cT" target="new") Download the Chemical Adjustment Table

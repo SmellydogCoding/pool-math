@@ -91,16 +91,28 @@ footer { color: white; }
   .title { font-size: 1.25rem !important; }
   .subheading { font-size: 0.875rem !important; }
   .dialog--active { width: 60%; }
+  .btn { line-height: 1.0rem; }
   .btn__content { white-space: inherit; max-width: 100%; }
   .mobile--reduce-text-075 .btn__content  { font-size: 0.75rem; line-height: 0.75rem; }
   .mobile--reduce-text-085 .btn__content  { font-size: 0.85rem; line-height: 0.85rem; }
   .mobile--reduce-text-095 .btn__content  { font-size: 0.95rem; line-height: 0.95rem; }
   .alert div { font-size: 1.2rem; }
   .flex img.mobile--shrink-to-fit { max-width: 100%; }
+  .stepper__header { padding-right: 1.0rem; }
+}
+
+@media screen and (max-width: 360px) {
+  .btn { font-size: 0.75rem; line-height: 0.75rem; }
 }
 
 .hint--dialog-component { width: 90%; }
 .hint--dialog-text { width: 40%; }
+
 @media screen and (max-width:960px) {
   .hint--dialog-component, .hint--dialog-text { width: 75%; }
+  .CA-container { margin-bottom: 0.5rem; }
+}
+
+@media screen and (min-width:960px) {
+  .CA-container { padding-right: 0.5rem; }
 }

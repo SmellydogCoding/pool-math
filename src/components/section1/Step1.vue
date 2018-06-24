@@ -5,7 +5,7 @@
       p.title.ma-a Conversions
     v-card-text
       div
-        p In this section we will practice conversions that you will need as a Certified Pool Operator.
+        p In this section we will practice volume and distance conversions.
 </template>
 
 <script>

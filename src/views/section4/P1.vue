@@ -4,7 +4,7 @@
       v-layout(row wrap)
         v-flex(xs12).my-2
           p.title {{ title }}
-        v-flex.px-3(xs12 md6)
+        v-flex.CA-container(xs12 md6)
           app-ChemicalAdjustmentWorksheetAlgaecide(:poolVolume='units.poolVolume' :unitVolume='units.unitVolume' :chemicalAmount='units.chemicalAmount' :chemicalType='units.chemicalType' :waterFactor='units.waterFactor' :total='units.total' :conversion='units.conversion' :problemUse="problemUse")
         v-flex.answer-block--background.pa-2(xs12 md6)
           app-SelectAnswer

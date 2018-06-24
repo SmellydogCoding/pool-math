@@ -23,4 +23,8 @@ export default {
   }
   .toolbar__items { align-items: center; }
   .button--default-size { height: 36px; }
+  @media screen and (max-width: 360px) {
+    .toolbar__title { font-size: 1.25rem; }
+    .btn { font-size: 0.75rem; line-height: 0.75rem; }
+  }
 </style>

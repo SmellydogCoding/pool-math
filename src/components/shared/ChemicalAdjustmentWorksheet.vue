@@ -87,4 +87,11 @@ export default {
   @media screen and (max-height: 700px) {
     .slim td { height: 2.0rem; }
   }
+  /* adjust column widths for small devices */
+  @media screen and (max-width: 600px) {
+    tbody tr td { width: 15%; padding: 0.5rem; }
+    tbody tr td:nth-child(2) { padding: 0; width: 5%; }
+    tbody tr td:nth-child(4) { padding: 0; width: 0; }
+    tbody tr td:nth-child(6) { padding: 0; width: 5%; }
+  }
 </style>
