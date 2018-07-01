@@ -24,12 +24,13 @@
   import Step2 from '../components/HowTo/Step2.vue';
   import Step3 from '../components/HowTo/Step3.vue';
   import Step4 from '../components/HowTo/Step4.vue';
+  import Step5 from '../components/HowTo/Step5.vue';
   export default {
     data() {
       return {
         e1: 0,
         index: 0,
-        steps: 4,
+        steps: 5,
         button: 'next',
         nextText: 'Section 1 - Conversions',
         nextRoute: '/intro-to-section-1'
@@ -46,6 +47,7 @@
       appStep2: Step2,
       appStep3: Step3,
       appStep4: Step4,
+      appStep5: Step5,
     }
   }
 </script>
