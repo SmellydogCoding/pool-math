@@ -40,7 +40,10 @@ li.active > a { color: #1976d2 !important; }
   z-index: 0;   
 }
 
-.content--wrap { align-items: start; }
+.content--wrap { 
+  align-items: start; 
+  z-index: 1; /* fix IE 11 issue where the main content would render under the background */
+}
 .flex img { align-self: center; }
 .flex img.shrink-to-fit { max-width: 100%; }
 .answer-block--background { background-color: rgba(256,256,256,0.8); }

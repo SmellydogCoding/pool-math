@@ -1,3 +1,5 @@
+import 'es6-promise/auto'
+import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App.vue'
 import Vuetify from 'vuetify'
@@ -8,6 +10,7 @@ import './global.css'
 
 Vue.use(Vuetify)
 
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
