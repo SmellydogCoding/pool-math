@@ -9,10 +9,9 @@
 </template>
 
 <script>
-import src from '../../assets/section5/overview.jpg'
 export default {
   data() {
-    return { src, alt: 'reaction' }
+    return { src: require('../../assets/section5/overview.jpg'), alt: 'reaction' }
   }
 }
 </script>

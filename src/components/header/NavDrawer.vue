@@ -31,7 +31,7 @@ export default {
       drawer: false,
       width: '350',
       height: '900',
-      src: 'src/assets/buoy.jpg',
+      src: require('../../assets/buoy.jpg'),
       alt: 'buoy',
       title: 'Pool Math Problems Menu',
       menu: [

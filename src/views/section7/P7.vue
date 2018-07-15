@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's7p7',
-      image: {src: 'src/assets/section7/problem7-8.jpg', alt: 'illustration for problem 7'},
+      image: {src: require('../../assets/section7/problem7-8.jpg'), alt: 'illustration for problem 7'},
       hint: {title: 'Hint for Problem 7', type: 'textHint', text: 'Filter Area Required = Flow Rate / Filter Media Rate'},
       next: {text: 'Problem 7: Cartridge Filter - Maximum Flow Provided', route: '/cartridge-filter-max-flow-provided'},
       newButton: 'New Cartridge Filter Size Required Problem',

@@ -8,10 +8,9 @@
 </template>
 
 <script>
-import src from '../../assets/section6/overview.jpg'
 export default {
   data() {
-    return { src, alt: 'spary pool' }
+    return { src: require('../../assets/section6/overview.jpg'), alt: 'spary pool' }
   }
 }
 </script>

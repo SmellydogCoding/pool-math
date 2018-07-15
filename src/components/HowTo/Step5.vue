@@ -20,12 +20,12 @@ export default {
       height: 0,
       small: {
         message: 'Although this website will work on any device, for best results it is recommended that you use a device with a minimum screen width of 960px.',
-        img: 'src/assets/howto/small.jpg',
+        img: small,
         alt: 'big dog in small pool'
       },
       ok: {
         message: 'Your screen size looks good.\u00A0\u00A0Let\u0027s dive in!',
-        img: 'src/assets/howto/ok.jpg',
+        img: ok,
         alt: 'dog diving in lake'
       }
     }

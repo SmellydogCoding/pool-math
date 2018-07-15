@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's2p6',
-      image: {src: 'src/assets/section2/problem6.jpg', alt: 'illustration for problem 6'},
+      image: {src: require('../../assets/section2/problem6.jpg'), alt: 'illustration for problem 6'},
       hint: {title: 'Hint for Problem 6', type: 'textHint', text: 'Volume = Radius * Radius * 3.14 * Depth * 7.5<br><br>Radius = Diameter / 2<br><br>Find the volume for each section and then add the 2 sections togeather to get the total.'},
       next: {text: 'Problem 7: Volume of Water Loss in a Pool', route: '/volume-of-water-loss-in-a-swimming-pool'},
       newButton: 'New Hot Tub with Seats Volume Problem',

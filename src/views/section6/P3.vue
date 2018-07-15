@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's6p3',
-      image: {src: 'src/assets/section6/problem3.jpg', alt: 'illustration for problem 3'},
+      image: {src: require('../../assets/section6/problem3.jpg'), alt: 'illustration for problem 3'},
       hint: {title: 'Hint for Problem 3', type: 'textHint', text: 'Flow Rate = Pool Volume / Turnover Rate / 60'},
       next: {text: 'Problem 4: Calculate Flow Rate of a Hot Tub', route: '/flow-rate-of-a-hot-tub'},
       newButton: 'New Pool Flow Rate Problem',

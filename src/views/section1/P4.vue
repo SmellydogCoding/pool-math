@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's1p4',
-      image: {src: 'src/assets/section1/problem4.jpg', alt: 'pool image for problem 4'},
+      image: {src: require('../../assets/section1/problem4.jpg'), alt: 'pool image for problem 4'},
       hint: {title: 'Hint for Problem 4', type: 'textHint', text: 'Yards * 3 = Feet'},
       next: {text: 'Problem 5: Inches to Feet', route: '/converting-inches-to-feet'},
       newButton: 'New Yards to Feet Problem',

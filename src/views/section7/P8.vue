@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's7p8',
-      image: {src: 'src/assets/section7/problem7-8.jpg', alt: 'illustration for problem 8'},
+      image: {src: require('../../assets/section7/problem7-8.jpg'), alt: 'illustration for problem 8'},
       hint: {title: 'Hint for Problem 8', type: 'textHint', text: 'Maximum Flow Provided = Filter Area x Filter Media Rate'},
       next: {text: 'Congratulations!\u00A0\u00A0You finished all of the problems!\u00A0\u00A0Start over?', route: '/'},
       newButton: 'New Cartridge Filter Maximum Flow Provided Problem',

@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's1p2',
-      image: {src: 'src/assets/section1/problem2.jpg', alt: 'pool image for problem 2'},
+      image: {src: require('../../assets/section1/problem2.jpg'), alt: 'pool image for problem 2'},
       hint: {title: 'Hint for Problem 2', type: 'textHint', text: 'Fluid Ounces / 128 = Gallons'},
       next: {text: 'Problem 3: Fluid Ounces to Cups', route: '/converting-fluid-ounces-to-cups'},
       newButton: 'New Fluid Ounces to Gallons Problem',

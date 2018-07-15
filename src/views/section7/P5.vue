@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's7p5',
-      image: {src: 'src/assets/section7/problem4-5-6.jpg', alt: 'illustration for problem 5'},
+      image: {src: require('../../assets/section7/problem4-5-6.jpg'), alt: 'illustration for problem 5'},
       hint: {title: 'Hint for Problem 5', type: 'textHint', text: 'Filter Area Required = Flow Rate / Filter Media Rate'},
       next: {text: 'Problem 6: Sand Filter - Maximum Flow Provided', route: '/sand-filter-max-flow-provided'},
       newButton: 'New Sand Filter Size Required Problem',

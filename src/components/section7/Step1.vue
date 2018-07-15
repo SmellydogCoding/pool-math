@@ -8,10 +8,9 @@
 </template>
 
 <script>
-import src from '../../assets/section7/overview.jpg'
 export default {
   data() {
-    return { src, alt: 'sand filter' }
+    return { src: require('../../assets/section7/overview.jpg'), alt: 'sand filter' }
   }
 }
 </script>

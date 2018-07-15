@@ -6,5 +6,5 @@
       v-card-text
         v-layout(row wrap justify-center text-xs-center)
         v-flex.text-xs-center
-          img.shrink-to-fit(src="src/assets/howto/step3.jpg" alt="illustration of a correct answer")
+          img.shrink-to-fit(src="../../assets/howto/step3.jpg" alt="illustration of a correct answer")
 </template>

@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's2p7',
-      image: {src: 'src/assets/section2/problem7.jpg', alt: 'illustration for problem 7'},
+      image: {src: require('../../assets/section2/problem7.jpg'), alt: 'illustration for problem 7'},
       hint: {title: 'Hint for Problem 7', type: 'textHint', text: 'Volume = Length * Width * Depth of Water Lost (in Feet) * 7.5<br><br>Feet = Inches / 12'},
       next: {text: 'Problem 8: Volume of Water Lost in a Hot Tub', route: '/volume-of-water-loss-in-a-hot-tub'},
       newButton: 'New Pool Water Loss Problem',

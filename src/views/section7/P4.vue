@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's7p4',
-      image: {src: 'src/assets/section7/problem4-5-6.jpg', alt: 'illustration for problem 4'},
+      image: {src: require('../../assets/section7/problem4-5-6.jpg'), alt: 'illustration for problem 4'},
       hint: {title: 'Hint for Problem 4', type: 'textHint', text: 'Total Filter Area = Radius x Radius x 3.14<br>Radius = Diameter / 2'},
       next: {text: 'Problem 5: Sand Filter - Filter Size Required', route: '/sand-filter-size-required'},
       newButton: 'New Sand Filter Size Problem',

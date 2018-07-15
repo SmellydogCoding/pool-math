@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       problem: 's7p2',
-      image: {src: 'src/assets/section7/problem1-2-3.jpg', alt: 'illustration for problem 2'},
+      image: {src: require('../../assets/section7/problem1-2-3.jpg'), alt: 'illustration for problem 2'},
       hint: {title: 'Hint for Problem 2', type: 'textHint', text: 'Filter Area Required = Flow Rate / Filter Media Rate<br>Grid Filtering Area = Length x Width x 2<br>Total Grids Needed = Filter Area Required / Grid Filtering Area'},
       next: {text: 'Problem 3: Maximum Flow Provided by a Diatomaceous Earth Filter', route: '/diatomaceous-earth-max-flow-provided'},
       newButton: 'New Diatomaceous Earth Grids Required Problem',
