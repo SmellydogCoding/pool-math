@@ -45,5 +45,6 @@ export const routes = [
   { path: '/sand-filter-max-flow-provided', component: () => import('../views/section7/P6'), meta: { title: 'Sand Filter - Max Flow Provided' } },
   { path: '/cartridge-filter-size-required', component: () => import('../views/section7/P7'), meta: { title: 'Cartridge Filter - Filter Size Required' } },
   { path: '/cartridge-filter-max-flow-provided', component: () => import('../views/section7/P8'), meta: { title: 'Cartridge Filter - Max Flow Provided' } },
+  { path: '/pool-math', redirect: '/' },
   { path: '*', component: () => import('../views/404'), meta: { title: '404 - Page Not Found' } }
 ]
