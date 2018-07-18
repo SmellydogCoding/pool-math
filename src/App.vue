@@ -4,7 +4,7 @@
     transition(name="slide" mode="out-in")
       router-view
     v-footer(app dark)
-      span &copy; 2018 #[a(href="http://www.smellydogcoding.com") Smellydog Coding]
+      span &copy; 2018 #[span.blue--text.darken-4 Smellydog Coding]
 </template>
 
 <script>
