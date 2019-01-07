@@ -3,8 +3,8 @@
     app-header
     transition(name="slide" mode="out-in")
       router-view
-    v-footer(app dark)
-      span &copy; 2018 #[a(href="http://www.smellydogcoding.com") Smellydog Coding]
+    v-footer.px-3(app dark)
+      span &copy; {{ new Date().getFullYear() }} &nbsp; #[a(href="http://www.smellydogcoding.com") Smellydog Coding]
 </template>
 
 <script>
