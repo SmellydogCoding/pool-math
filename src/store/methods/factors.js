@@ -10,7 +10,7 @@ export const getFactors = (temperature, calcium, alkalinity, TDS) => {
               : (temperature > 66 && temperature <= 76) ? newFactors.push(0.6)
                 : (temperature > 76 && temperature <= 84) ? newFactors.push(0.7)
                   : (temperature > 84 && temperature <= 94) ? newFactors.push(0.8)
-                    : (temperature > 95 && temperature <= 105) ? newFactors.push(0.8)
+                    : (temperature > 95 && temperature <= 105) ? newFactors.push(0.9)
                       : console.log('temperature out of range')
 
   calcium === 25 ? newFactors.push(1.0)
